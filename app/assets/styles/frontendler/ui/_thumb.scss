@@ -1,0 +1,14 @@
+.thumb {
+	border-radius:3px;
+	img {
+		box-sizing:border-box;
+		border-radius:3px;
+		padding: 4px;
+		border: 1px solid #ccc;
+	}
+	&.circle {
+		img {
+			border-radius:50%;
+		}
+	}
+}

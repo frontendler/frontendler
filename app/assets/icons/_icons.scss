@@ -1,0 +1,51 @@
+@mixin icon-font-face ($path){
+	@font-face {
+		font-family: "frontendler-icons";
+		src: url($path +'frontendler-icons.eot');
+		src: url($path +'frontendler-icons.eot?#iefix') format('eot'),
+			url($path +'frontendler-icons.woff') format('woff'),
+			url($path +'frontendler-icons.ttf') format('truetype'),
+			url($path +'frontendler-icons.svg#frontendler-icons') format('svg');
+		// src: url('./frontendler-icons.eot');
+		// src: url('./frontendler-icons.eot?#iefix') format('eot'),
+		// 	url('./frontendler-icons.woff') format('woff'),
+		// 	url('./frontendler-icons.ttf') format('truetype'),
+		// 	url('./frontendler-icons.svg#frontendler-icons') format('svg');
+	}	
+}
+
+%icon {
+	font-family: "frontendler-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+	vertical-align: middle;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == sass {
+		$char: "\E001";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before) {
+	&:#{$insert} {
+		@extend %icon;
+		content: icon-char($filename);
+	}
+}
+@mixin icon-classes (){
+	.icon-sass {
+		@include icon(sass);
+	}
+		
+}

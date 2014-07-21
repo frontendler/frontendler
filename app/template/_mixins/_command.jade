@@ -1,0 +1,10 @@
+mixin command(name,type,hash)
+	div.command-block
+		h3.command-name
+			a(name="#{hash}").name=name
+		pre.box-code
+			code(class="#{type}")
+				if block
+					block
+
+

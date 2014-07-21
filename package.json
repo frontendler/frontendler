@@ -1,0 +1,46 @@
+{
+  "name": "Frontendler",
+  "version": "0.0.1",
+  "author": {
+    "name": "Daniel Beff",
+    "email": "daniel.beff@gmail.com",
+    "url": "http://www.danielbeff.com.br"
+  },
+  "license": "MIT",
+  "homepage": "http://frontendler.com.br/",
+  "description": "The clean, simple and efficient framework.",
+  "dependencies": {},
+  "devDependencies": {
+    "connect": "^2.14.4",
+    "connect-livereload": "^0.4.0",
+    "gulp": "^3.6.0",
+    "gulp-autoprefixer": "^0.0.7",
+    "gulp-cache": "^0.1.1",
+    "gulp-clean": "^0.2.4",
+    "gulp-csso": "^0.2.6",
+    "gulp-filter": "^0.4.1",
+    "gulp-iconfont": "^0.1.1",
+    "gulp-iconfont-css": "0.0.9",
+    "gulp-imagemin": "^0.5.0",
+    "gulp-jade": "^0.6.1",
+    "gulp-jshint": "^1.5.3",
+    "gulp-livereload": "^1.2.0",
+    "gulp-load-plugins": "^0.5.0",
+    "gulp-ruby-sass": "^0.4.3",
+    "gulp-size": "^0.3.0",
+    "gulp-uglify": "^0.3.1",
+    "gulp-useref": "^0.4.2",
+    "jshint-stylish": "^0.2.0",
+    "opn": "^0.1.1",
+    "gulp-plumber": "^0.6.3",
+    "gulp-sync": "^0.1.2",
+    "gulp-util": "^3.0.0",
+    "gulp-bower-files": "^0.2.1",
+    "streamqueue": "^0.1.1",
+    "wiredep": "^1.4.3",
+    "gulp-flatten": "^0.0.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

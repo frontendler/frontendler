@@ -1,0 +1,19 @@
+body {
+	color: theme-color(grey);
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: theme-color(dark);
+	font-weight: normal;
+}
+.btn {
+	@include theme-all(background);
+	font-weight: 600;
+	font-size: 14px; 
+}
+.note{
+	font-weight:600;
+	font-size:14px;
+}
+
+

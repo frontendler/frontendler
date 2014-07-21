@@ -1,0 +1,21 @@
+div.docs-top
+	div.container
+		div.logo.dark
+			a.link(href="/")
+				h1 Frontendler
+				small Docs
+		div.bt-menu menu
+
+div.docs-navbar
+	div.container
+		div.menu
+			ul.itens
+				each val, key in menu
+					li.item
+						if selected === key
+							a.link.selected(href=val, title=key)= key
+						else
+							a.link(href=val, title=key)= key
+
+
+

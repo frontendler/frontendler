@@ -1,0 +1,12 @@
+.btn {
+	border-radius:3px;
+	transition: background-color $transition-speed, color $transition-speed;
+	box-sizing:border-box;
+	display: inline-block;
+	padding: $grid-margin/4 $grid-margin/2 ;
+	cursor: pointer;
+}
+
+.btn:hover {
+	// @include theme(background, hover); 
+}

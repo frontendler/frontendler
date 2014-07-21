@@ -1,0 +1,76 @@
+@function theme-color($color-name,$color-status:false) {
+	$color: map-get($theme-colors,$color-name);
+	@if ($color == null) {
+		@warn "'#{$color-name}' dont exist in theme-colors list";
+		@return null;
+	}
+	
+	@if $color-status==false {
+		@return nth($color, 1);
+	}@else if $color-status=="background" {
+		@return nth($color, 1);
+	}@else if $color-status=="foreground" {
+		@return nth($color, 2);
+	}@else if $color-status=="background-hover" {
+		@return nth($color, 3);
+	}@else if $color-status=="foreground-hover" {
+		@return nth($color, 4); 
+	}
+	
+	@return "none";
+}
+@mixin theme-all($type){
+	@each $color in map-keys($theme-colors){
+		@include theme ($color,$type);	
+	}
+}
+
+@mixin theme($color,$type) {
+	&.#{$color} {
+		// background
+		@if $type == background {
+			background-color: theme-color($color,"background");
+			color: theme-color($color,"foreground");
+			&:hover{
+				background-color: theme-color($color,"background-hover");
+				color: theme-color($color,"foreground-hover");
+			}
+		}
+		// input
+		@else if $type == input{
+			&:focus{
+				border: 1px solid theme-color($color,"background");
+				color: theme-color($color,"background-hover");
+			}
+		}
+		// note
+		@else if $type == note {
+			background-color: theme-color($color,"background");
+			color: theme-color($color,"foreground");
+			.close-btn {
+				background-color: theme-color($color,"foreground");
+				color: theme-color($color,"background");
+				&:hover {
+					color: theme-color($color,"background");
+					background-color: theme-color($color,"foreground-hover");
+				}
+			}
+		}
+		// breadcrumb
+		@else if $type == breadcrumb {
+			background-color: theme-color($color,"background");
+			color: theme-color($color,"foreground");
+			&:after {
+				border-left-color: theme-color($color,"background");
+			}
+			&:hover{
+				background-color: theme-color($color,"background-hover");
+				&:after {
+					border-left-color: theme-color($color,"background-hover");
+					color: theme-color($color,"foreground-hover");
+				}
+			}
+		}
+		@content;
+	}
+}

@@ -1,0 +1,32 @@
+table {
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px;
+	width: 100%;
+	border: 1px solid #ccc;
+	thead th,
+	tbody td,
+	tr td {
+		display: table-cell;
+		padding: 10px;
+		vertical-align: top;
+		text-align: left;
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+	}
+	tr td, tbody tr td {
+		font-size: $font-size-text;
+	}
+	thead {
+		background-color: #f9f9f9;
+		tr th {
+			font-size: $font-size-text;
+			font-weight: bold;
+			vertical-align: bottom;
+		}
+	}
+	tbody tr:hover {
+		background-color: #f1f1f1;
+	}
+}
