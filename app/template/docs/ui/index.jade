@@ -1,0 +1,224 @@
+extends /_layouts/_docs
+block link
+	-var selected = 'UI';
+block sidebar
+	include /_includes/_docs_sidebar_ui
+block content
+
+	article.base
+		+title("Base")
+		div.container
+			div.heading
+				+subtitle("Headings","headings")
+				div.details
+					<h1>h1 heading</h1>
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					br
+					<h2>h2 heading</h2>
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					br
+					<h3>h3 heading</h3>
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					br
+					<h4>h4 heading</h4>
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					br
+					<h5>h5 heading</h5>
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					br
+					<h6>h6 heading</h6>
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+			div.paragraph
+				+subtitle("Paragraph","list")
+				div.details
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni magnam nisi blanditiis dolore dignissimos voluptatibus quas at necessitatibus neque quo. Alias et fuga voluptas numquam mollitia nobis officia quas eligendi.
+			div.list
+				+subtitle("List","list")
+				div.details
+					div.list-col
+						ul.one
+							- for (var i = 0; i < 5; i++) {
+							li item &nbsp;
+								strong=i
+							- }
+					div.list-col
+						ul.two
+							- for (var i = 0; i < 5; i++) {
+							li item &nbsp;
+								strong=i
+							- }
+					div.list-col
+						ul.tree
+							- for (var i = 0; i < 5; i++) {
+							li item &nbsp;
+								strong=i
+							- }
+			div.bold
+				+subtitle("Bold","bold")
+				div.details
+					p 
+						strong Lorem ipsum 
+						| dolor sit amet, consectetur adipisicing elit.
+			div.bold
+				+subtitle("Italic","italic")
+				div.details
+					p 
+						em Lorem ipsum 
+						| dolor sit amet, consectetur adipisicing elit.
+	article.colors
+		+title('Colors')
+		div.container
+			div.color.ocean &nbsp;
+			div.color.blue &nbsp;
+			div.color.purple &nbsp;
+			div.color.pink &nbsp;
+			div.color.green &nbsp;
+			div.color.yellow &nbsp;
+			div.color.orange &nbsp;
+			div.color.red &nbsp;
+			div.color.dark &nbsp;
+			div.color.gray &nbsp;
+			div.color.silver &nbsp;
+	article.buttons
+		+title('Button')
+		div.container
+			div.btn.ocean Ocean
+			div.btn.blue Blue
+			div.btn.purple Purple
+			div.btn.pink Pink
+			div.btn.green Green
+			div.btn.yellow Yellow
+			div.btn.orange Orange
+			div.btn.red Red
+			br
+			div.btn.dark Dark
+			div.btn.gray Gray
+			div.btn.silver Silver
+	article.breadcrumbs
+		+title('Breadcrumb')
+		div.container
+			ol.breadcrumb
+				li
+					a.silver(href='javascript:;') home
+				li
+					a.silver(href='javascript:;') about
+				li
+					a.blue(href='javascript:;') me
+	article.thumbs
+		+title('Thumbnail')
+		div.galeria
+			div.thumb
+				img(src='/assets/images/thumb.png', alt='Thumb exemple', width='100%')
+			div.thumb.circle
+				img(src='/assets/images/thumb2.png', alt='Thumb exemple')
+			div.thumb.circle
+				img(src='/assets/images/thumb3.png', alt='Thumb exemple')
+				
+	article.blockquote
+		+title('Blockquote')
+		div.grupo
+			blockquote
+				| Normalize.css is a small CSS file that provides better cross-browser consistency in the default styling of HTML elements. It’s a modern, HTML5-ready, alternative to the traditional CSS reset."
+				cite Nicolas Gallagher
+	article.forms
+		+title('Form')
+		div.grupo
+			div.form
+				h4 Form simple
+				label Name
+				input(type='text')
+				label Email
+				input(type='text')
+				label Message
+				textarea
+				br
+				a.btn.blue(href='#') Send
+			div.form
+				h4 Form validation
+				label Error
+				input.red(type='text')
+				label Alert
+				input.yellow(type='password')
+				label Correct
+				input.green(type='password')
+				label Disabled
+				input(type='password', disabled='disabled')
+				br
+				a.btn.blue(href='#') Send
+			div.form
+				h4 Form group
+				label Login
+				div.form-group
+					input(type='text', placeholder='User')
+					input(type='text', placeholder='E-mail')
+					input(type='password', placeholder='Password')
+				div.note.ocean.close
+					| Usuário e senha inválidos!
+					span.close-btn.
+						×
+				div.note.silver.close
+					| Usuário e senha inválidos!
+					span.close-btn.
+						×
+				a.btn.blue(href='#') Sign up
+		div.grupo
+			div.form(action='')
+				h4 Switch (Checkbox)
+				div.col
+					label I like SASS
+					div.switch.on
+						div.switch-btn
+				div.col
+					label I like SASS
+					div.switch.off
+						div.switch-btn
+			div.form(action='')
+				h4 Select
+				label Guitars Brands
+				div.select
+					div.select-btn.btn.dark
+						span.text
+					select
+						option(value='fender') Fender American Stardard
+						option(value='gibson') Gibson United State Of America
+						option(value='prs') PRS
+				br
+				label CSS frameworks
+				div.select
+					div.select-btn.btn.blue
+						span.text
+					select
+						option(value='frontendler') Frontendler
+						option(value='bootstrap') Bootstrap
+						option(value='gamby') Gumby
+			div.form
+				h4 Radio
+				label Radio
+				input(type='radio', name='teste')
+	article.tables
+		+title('Tables')
+		div.container
+			table
+				thead
+					tr
+						th #
+						th Make
+						th Model
+						th Year
+				tbody
+					tr
+						td 1
+						td Honda
+						td Accord
+						td 2009
+					tr
+						td 2
+						td Toyota
+						td Camry
+						td 2012
+					tr
+						td 3
+						td Hyundai
+						td Elantra
+						td 2010

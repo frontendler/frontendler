@@ -1,0 +1,17 @@
+include /_mixins/_title
+include /_mixins/_subtitle
+include /_mixins/_command
+include /_includes/_header
+
+block link
+	-var selected = 'Start';
+-var menu = { 'Start': '/docs', 'Library': '/docs/library', 'UI': '/docs/ui' };
+
+body(class="docs")
+	include /_includes/_docs_top
+	div.docs-main
+		block sidebar
+		div.docs-content
+			block content
+	include /_includes/_docs_bottom
+	include /_includes/_footer

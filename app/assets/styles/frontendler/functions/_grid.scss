@@ -1,0 +1,91 @@
+@mixin grid-row($empty: false, $fluid: false) {
+	@include clearfix;
+	box-sizing:border-box;
+	margin: 0 auto;
+	display: block;
+
+	@if $empty == empty {
+		padding-left: $grid-margin / 2;
+		padding-right: $grid-margin / 2;
+	}
+	@if $fluid == fluid {
+		//looping para incluir breakpoints todos com largura 100%
+		@each $break in map-keys($grid-breakpoints) {
+			@include grid-breakpoint($break) {
+				width: 100%;
+			}
+		}
+	}
+	@else {
+		//looping para incluir breakpoints
+		@each $break in map-keys($grid-breakpoints) {
+			@include grid-breakpoint($break) {
+				width: nth(map-get($grid-breakpoints,$break), 1);
+			}
+		}
+	}
+}
+@mixin grid-col($col, $cols: 12, $collapse: false) {
+	@include clearfix;
+	box-sizing:border-box;
+	$width: 100% * $col / $cols;
+	width: $width;
+
+	@if $width != 100% {
+		float: left;
+	}
+	@if $collapse != collapse {
+		padding-left: $grid-margin / 2;
+		padding-right: $grid-margin / 2;
+	}
+
+	//looping para incluir breakpoints
+	@each $break in map-keys($grid-breakpoints) {
+		@include grid-breakpoint($break) {
+			$width:nth(map-get($grid-breakpoints,$break), 1);
+			@if ($width == 100%){
+				width: $width;
+			}
+		}
+	}
+}
+@mixin grid-col-breakpoint($device, $col, $cols: 12, $collapse: false) {
+	@include grid-breakpoint($device) {
+		$width: 100% * $col / $cols;
+		@if $width != 100% {
+			width: $width;
+		}
+		@if $collapse == collapse {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+@mixin grid-breakpoint($devices...) {
+	@if ($grid-breakpoints != false) {
+		@each $device in $devices {
+			@if (map-get($grid-breakpoints,$device) != null) {
+				$break:map-get($grid-breakpoints,$device);
+				@if (length($break) > 3) {
+					@media only screen and (#{nth($break, 2)}-width: nth($break, 3)) and (#{nth($break, 4)}-width: nth($break, 5)) {
+						@content;
+					}
+				}
+				@else{
+					@media only screen and (#{nth($break, 2)}-width: nth($break, 3)) {
+						@content;
+					}
+				}
+			}
+			@else{
+				@warn $device "is not a valid grid breakpoint";
+			}
+		}
+	}
+}
+
+@mixin grid-breakpoint-hide($device) {
+	@include grid-breakpoint($device) {
+		display: none;
+	}
+}

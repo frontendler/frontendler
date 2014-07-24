@@ -1,0 +1,33 @@
+@function haveInList($list, $key) {
+	@each $item in $list {
+		//@debug "tamanho" length($list);
+		@if ($key == nth($item, 1)) {
+			@return true;
+		}
+	}
+	@return false; 
+}
+
+@function singleton($args...) {
+    @return append((), $args);
+}
+
+@mixin clearfix (){
+	&:before,
+	&:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+
+	&:after {
+	    clear: both;
+	}
+
+	/**
+	 * For IE 6/7 only
+	 * Include this rule to trigger hasLayout and contain floats.
+	 */
+	&{
+	    *zoom: 1;
+	}
+}

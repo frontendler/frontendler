@@ -1,0 +1,17 @@
+extends /_layouts/_docs
+block link
+	-var selected = 'Start';
+block sidebar
+	include /_includes/_docs_sidebar_start
+block content
+	div.typo
+		+title("Yeoman generator")
+		div.install
+			div.container 	
+				+command("Install generator","bash","install").
+					$ npm install -g generator-frontendler
+				+command("Create a new project","bash","create").
+					$ yo frontendler
+				+command("Run with grunt server","bash","run").
+					$ grunt server 
+

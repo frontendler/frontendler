@@ -1,0 +1,96 @@
+//------------------------------------------------------
+//HEADER
+//------------------------------------------------------
+.home{
+	.header {
+		@include clearfix;
+		background: #174c6b;
+		.container {
+			@include grid-row;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+
+	h1 {
+		font-size: 120px;
+		color: #fff;
+		font-family: $font-family-logo;
+		margin: 0;
+		text-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+
+		@include grid-breakpoint(phone) {
+			font-size: 70px;
+			line-height: 40px;
+		}
+
+		small {
+			color: #B0C3D4;
+			font-family: $font-family;
+			font-size: 15px;
+			margin-left: 20px;
+			font-weight: normal;
+			@include grid-breakpoint(phone) {
+				display: block;
+			}
+		}
+	}
+	h2 {
+		color: #B0C3D4;
+		margin: 10px 0;
+	}
+	h3 {
+		margin-top: 0;
+		margin-bottom: 30px;
+		color: #B0C3D4;
+	}
+	.info {
+		@include grid-col(12, 12);
+	}
+	.btn {
+		@include theme(ocean,background);
+		@include theme(blue,background);
+		margin: 0 $grid-margin / 2 $grid-margin / 2 0;
+	}
+
+	.label {
+		@include theme(ocean,background);
+		border-radius:3px;
+		display: inline-block;
+		padding: 1px 8px 4px 8px;
+		font-size: $font-size-text - 1;
+		line-height: inherit;
+		font-weight: 600;
+	}
+
+	//------------------------------------------------------
+	//ABOUT
+	//------------------------------------------------------
+	.about {
+		margin-top: $grid-margin;
+		.container {
+			@include grid-row;
+		}
+		.item {
+			@include grid-col(4);
+			margin-bottom: $grid-margin;
+			h4 {
+				font-size: 20px;
+				margin-bottom: $grid-margin / 2;
+			}
+		}
+	}
+
+	//------------------------------------------------------
+	//FOOTER
+	//------------------------------------------------------
+	.footer {
+		@include grid-breakpoint-hide(tablet);
+		.container {
+			@include grid-row(empty);
+		}
+		background: theme-color(dark);
+		color: #fff;
+		padding: 15px 0;
+	}
+}

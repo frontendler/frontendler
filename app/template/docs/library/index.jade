@@ -1,0 +1,48 @@
+extends /_layouts/_docs
+block link
+	-var selected = 'Library';
+block sidebar
+	include /_includes/_docs_sidebar_library
+block content
+	article.grid
+		+title("Grid")
+		div.container
+			+command("grid-margin","scss","grid-margin").
+				$grid-margin: 40px;
+			+command("grid-col","scss","grid-col").
+				@include grid-col ($col, $cols: 12, $collapse: false);
+			+command("grid-col-breakpoint","scss","grid-col-breakpoint").
+				@include grid-col-breakpoint ($device, $col, $cols: 12, $collapse: false);
+			+command("grid-breakpoint","scss","grid-breakpoint").
+				@include grid-breakpoint ($devices...);
+			+command("grid-breakpoint-hide","scss","grid-breakpoint-hide").
+				@include grid-breakpoint-hide ($device);
+	article.theme
+		+title("Theme")
+		div.container
+			+command("theme-colors","scss","theme-colors").
+				/* 1 = background */
+				/* 2 = foreground */
+				/* 3 = background-hover */
+				/* 4 = foreground-hover */
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4
+				$theme-colors:
+				ocean &nbsp;&nbsp;&nbsp;&nbsp; #00a7ca &nbsp; #a4d6e5 &nbsp; #52cbf2 &nbsp; #d5f0fb &nbsp;&nbsp;&nbsp;&nbsp; #00a7ca &nbsp; #a4d6e5 &nbsp; #52cbf2 &nbsp; #d5f0fb,
+				blue #0075d3 #a4c2e9 #2c8bee #d0e0f9,
+				purple #8244a7 #c7b1d6 #9e5dc1 #e4d7ed,
+				pink #dd318a #f0adca #ff52a1 #ffd5e6,
+				green #71be48 #c1e0b3 #87d873 #e1f4d8,
+				yellow #f59d37 #fad2aa #ffb950 #ffebd3,
+				orange #f75925 #fbb8a7 #ff7439 #ffdbd0,
+				red #dd202b #f0a9ab #fe4542 #ffd3d2,
+				dark #1c2731 #a8abac #313d48 #d0d2d4,
+				grey #606c78 #bbbfc2 #798591 #dddfe2,
+				silver #939fac #ced3d8 #b4c0cc #eaedf0;
+				&nbsp;
+
+			+command("theme-color","scss","theme-color").
+				@include theme-color ($color-name, $color-status:false);
+			+command("theme","scss","theme").
+				@include theme ($color, $type);
+			+command("theme-all","scss","theme-all").
+				@include theme-all ($type);
