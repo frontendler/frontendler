@@ -34,9 +34,6 @@
 	@if $width != 100% {
 		float: left;
 	}
-	@else {
-		clear: both;
-	}
 	@if $collapse != collapse {
 		padding-left: $grid-margin / 2;
 		padding-right: $grid-margin / 2;
@@ -47,7 +44,7 @@
 		@include grid-breakpoint($break) {
 			$width:nth(map-get($grid-breakpoints,$break), 1);
 			@if ($width == 100%){
-				width: $width; 
+				width: $width;
 			}
 		}
 	}
@@ -68,8 +65,8 @@
 	@if ($grid-breakpoints != false) {
 		@each $device in $devices {
 			@if (map-get($grid-breakpoints,$device) != null) {
-				$break:map-get($grid-breakpoints,$device);			
-				@if (length($break) > 3) { 
+				$break:map-get($grid-breakpoints,$device);
+				@if (length($break) > 3) {
 					@media only screen and (#{nth($break, 2)}-width: nth($break, 3)) and (#{nth($break, 4)}-width: nth($break, 5)) {
 						@content;
 					}
@@ -79,7 +76,7 @@
 						@content;
 					}
 				}
-			} 
+			}
 			@else{
 				@warn $device "is not a valid grid breakpoint";
 			}
