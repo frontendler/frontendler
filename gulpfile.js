@@ -8,21 +8,21 @@
 // plugins
 var gulp = require('gulp');
 var gulpsync = require('gulp-sync')(gulp);
-var $ = require('gulp-load-plugins')();
+var plugins = require('gulp-load-plugins')();
 
 // environments
-var app = "app";
-var dev = ".tmp";
-var prod = "dist";
+var app = 'app';
+var dev = '.tmp';
+var prod = 'dist';
 
 //folders
-var styles = "assets/styles";
-var scripts = "assets/scripts";
-var images = "assets/images";
-var icons = "assets/icons";
-var fonts = "assets/fonts";
-var template = "template";
-var bower = "bower";
+var styles = 'assets/styles';
+var scripts = 'assets/scripts';
+var images = 'assets/images';
+var icons = 'assets/icons';
+var fonts = 'assets/fonts';
+var template = 'template';
+var bower = 'bower';
 
 //font
 var fontName = 'frontendler-icons';
@@ -35,8 +35,8 @@ var fontName = 'frontendler-icons';
 gulp.task('styles',function() {
 	
 	return gulp.src( app + '/' + styles + '/**/*.scss')
-		.pipe($.plumber())
-		.pipe($.rubySass({
+		.pipe(plugins.plumber())
+		.pipe(plugins.rubySass({
 			style: 'expanded',
 			precision: 10,
 			debugInfo:false,
@@ -44,44 +44,44 @@ gulp.task('styles',function() {
 			loadPath: [app]
 			//sourcemap: true
 		}))
-		.pipe($.autoprefixer('> 5%', 'last 3 version', 'ie 9'))
+		.pipe(plugins.autoprefixer('> 5%', 'last 3 version', 'ie 9'))
 		.pipe(gulp.dest( dev + '/' + styles))
-		.pipe($.size());
+		.pipe(plugins.size());
 });
 
 gulp.task('scripts', function() {
 	return gulp.src(app + '/' + scripts + '/**/*.js')
-		.pipe($.plumber())
-		.pipe($.jshint())
-		.pipe($.jshint.reporter(require('jshint-stylish')))
+		.pipe(plugins.plumber())
+		.pipe(plugins.jshint())
+		.pipe(plugins.jshint.reporter(require('jshint-stylish')))
 		.pipe(gulp.dest(dev + '/' + scripts))
-		.pipe($.size());
+		.pipe(plugins.size());
 });
 
 gulp.task('templates', function() {
 	var YOUR_LOCALS = {};
 	return gulp.src([ app+ '/' + template + '/**/*.jade', '!' +app + '/' + template + '/**/_*.jade'])
-		.pipe($.plumber())
-		.pipe($.size())
-		.pipe($.jade({
+		.pipe(plugins.plumber())
+		.pipe(plugins.size())
+		.pipe(plugins.jade({
 			locals: YOUR_LOCALS,
 			pretty: true,
 			basedir: app+ '/' + template
 		}))
 		.pipe(gulp.dest(dev + '/'))
-		.pipe($.size());
+		.pipe(plugins.size());
 });
 
 gulp.task('icons', function() {
 	return gulp.src([app + '/' + icons + '/svg/**/*.svg'])
-		.pipe($.plumber())
-		.pipe($.iconfontCss({
+		.pipe(plugins.plumber())
+		.pipe(plugins.iconfontCss({
 			fontName: fontName,
 			path: app + '/' + icons + '/_icons_template.scss',
 			targetPath: '../_icons.scss',
 			//fontPath: '../../icones/'
 		}))
-		.pipe($.iconfont({
+		.pipe(plugins.iconfont({
 			fontName: fontName
 		}))
 		.pipe(gulp.dest(app + '/' + icons + '/font' ));
@@ -90,23 +90,23 @@ gulp.task('icons', function() {
 gulp.task('fonts', function () {
 	var streamqueue = require('streamqueue');
 	return streamqueue({objectMode: true},
-		gulp.src([app + '/' + fonts + '/**/*',app + "/" + bower + "/**/*"])
+		gulp.src([app + '/' + fonts + '/**/*',app + '/' + bower + '/**/*'])
     )
-    .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
-    .pipe($.flatten())
+    .pipe(plugins.filter('**/*.{eot,svg,ttf,woff}'))
+    .pipe(plugins.flatten())
     .pipe(gulp.dest(prod + '/' + fonts));
 });
 
 gulp.task('images', function() {
 	return gulp.src(app + '/' + images + '/**/*')
-		.pipe($.plumber())
-		.pipe($.cache($.imagemin({
+		.pipe(plugins.plumber())
+		.pipe(plugins.cache(plugins.imagemin({
 			optimizationLevel: 3,
 			progressive: true,
 			interlaced: true
 		})))
 		.pipe(gulp.dest(dev + '/' + images))
-		.pipe($.size());
+		.pipe(plugins.size());
 });
 
 //-------------------------------------------------------------------
@@ -115,20 +115,20 @@ gulp.task('images', function() {
 
 gulp.task('watch-clean', function() {
 	return gulp.src([dev], {read: false})
-	.pipe($.plumber())
-	.pipe($.clean());
+	.pipe(plugins.plumber())
+	.pipe(plugins.clean());
 });
 
 gulp.task('watch-copy-bower', function() {
 	return gulp.src([app + '/' + bower + '/**/*.*'])
-		.pipe($.plumber())
-		.pipe(gulp.dest(dev + '/' + bower))
+		.pipe(plugins.plumber())
+		.pipe(gulp.dest(dev + '/' + bower));
 });
 
 gulp.task('watch-copy-icons', function() {
 	return gulp.src([app + '/' + icons + '/font/**/*.*'])
-		.pipe($.plumber())
-		.pipe(gulp.dest(dev + '/' + icons))
+		.pipe(plugins.plumber())
+		.pipe(gulp.dest(dev + '/' + icons));
 });
 
 gulp.task('watch-connect', function() {
@@ -142,8 +142,8 @@ gulp.task('watch-connect', function() {
 	require('http').createServer(app)
 		.listen(8080)
 		.on('listening', function() {
-			$.util.log($.util.colors.green('Started connect web server on http://localhost:8080'));
-			$.util.log($.util.colors.green('Waiting for changes ...'));
+			plugins.util.log(plugins.util.colors.green('Started connect web server on http://localhost:8080'));
+			plugins.util.log(plugins.util.colors.green('Waiting for changes ...'));
 			//open browser
 			require('opn')('http://localhost:8080/');
 		});
@@ -160,7 +160,7 @@ gulp.task('watch', gulpsync.sync([
 	'watch-copy-bower',
 	'watch-connect'],
 	'watch'), function() {
-	var server = $.livereload();
+	var server = plugins.livereload();
 				
 	// watch for changes
 	gulp.watch([
@@ -186,20 +186,20 @@ gulp.task('watch', gulpsync.sync([
 
 gulp.task('build-clean', function() {
 	return gulp.src([prod,dev], {read: false})
-	.pipe($.plumber())
-	.pipe($.clean());
+	.pipe(plugins.plumber())
+	.pipe(plugins.clean());
 });
 
 gulp.task('build-copy-bower', function() {
 	return gulp.src([app + '/' + bower +  '/**/*.*'])
-		.pipe($.plumber())
-		.pipe(gulp.dest(dev + '/' + bower ))
+		.pipe(plugins.plumber())
+		.pipe(gulp.dest(dev + '/' + bower ));
 });
 
 gulp.task('build-copy-icons', function() {
 	return gulp.src([app + '/' + icons + '/font/**/*.*'])
-		.pipe($.plumber())
-		.pipe(gulp.dest(dev + '/' + icons))
+		.pipe(plugins.plumber())
+		.pipe(gulp.dest(dev + '/' + icons));
 });
 
 gulp.task('build-copy-others', function() {
@@ -210,31 +210,31 @@ gulp.task('build-copy-others', function() {
 		'!' + dev + '/**/*.js',
 		'!' + dev + '/' + bower + '/**/*.*'
 		])
-		.pipe($.plumber())
+		.pipe(plugins.plumber())
 		.pipe(gulp.dest(prod));	
 });
 
 gulp.task('build-html',function() {
-	var jsFilter = $.filter('**/*.js');
-	var cssFilter = $.filter('**/*.css');
+	var jsFilter = plugins.filter('**/*.js');
+	var cssFilter = plugins.filter('**/*.css');
 	return gulp.src([dev + '/**/*.html','!'+dev + '/' + bower + '/**/*.*'])
-		.pipe($.plumber())
-		.pipe($.useref.assets())
+		.pipe(plugins.plumber())
+		.pipe(plugins.useref.assets())
 		.pipe(jsFilter)
-		.pipe($.uglify())
+		.pipe(plugins.uglify())
 		.pipe(jsFilter.restore())
 		.pipe(cssFilter)
-		.pipe($.csso())
+		.pipe(plugins.csso())
 		.pipe(cssFilter.restore())
-		.pipe($.useref.restore())
-		.pipe($.useref())
+		.pipe(plugins.useref.restore())
+		.pipe(plugins.useref())
 		.pipe(gulp.dest(prod + '/'))
-		.pipe($.size());
+		.pipe(plugins.size());
 });
 gulp.task('build-size',function() {
 	return gulp.src(prod + '/**/*')
-		.pipe($.plumber())
-		.pipe($.size({title: 'build size:', gzip: true}));
+		.pipe(plugins.plumber())
+		.pipe(plugins.size({title: 'build size:', gzip: true}));
 });
 
 gulp.task('build',gulpsync.sync([
@@ -251,8 +251,8 @@ gulp.task('build',gulpsync.sync([
 	'build-html',
 	'build-size'],
 	'build'),function(){
-		$.util.log($.util.colors.green('Build Sucess!'));
-		$.util.beep();
+		plugins.util.log(plugins.util.colors.green('Build Sucess!'));
+		plugins.util.beep();
 	});
 
 gulp.task('default',['build'],function() {
@@ -266,7 +266,7 @@ gulp.task('default',['build'],function() {
 	require('http').createServer(app)
 		.listen(8080)
 		.on('listening', function() {
-			$.util.log($.util.colors.green('Started connect web server on http://localhost:8080'));
+			plugins.util.log(plugins.util.colors.green('Started connect web server on http://localhost:8080'));
 			require('opn')('http://localhost:8080/');
 		});
 });

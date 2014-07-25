@@ -25,7 +25,7 @@ Run frontendler
 
 watch ```$ gulp watch```
 
-build ```$ gulp watch```
+build ```$ gulp build```
 
 
 SASS library
