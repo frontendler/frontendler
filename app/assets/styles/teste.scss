@@ -8,22 +8,13 @@
 //------------------------------------------------------
 @import "app/base";
 
-html{
-	background: #ff0000;
-}
 
-.grid-teste{ 
-	@include grid-row;
-	//@debug ("width do device");
-	// @debug (nth($break, 1));
-	// @debug (nth($break, 2));
-	background:yellow;
+main{
+	@include grid-row();
 	.col{
-		@include grid-col(4,12);
-		text-align: center;
-		padding-top:10px;
-		padding-bottom:10px;
-		@include theme(ocean,background);
+		display:none;
+		@include grid-col(12,12);
+		@include grid-breakpoint-show(tablet);
 	}
 }
 
