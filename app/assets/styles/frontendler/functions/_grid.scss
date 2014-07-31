@@ -1,3 +1,7 @@
+
+// MIXINS
+// ========================================
+
 @mixin grid-row($empty: false, $fluid: false) {
 	@include clearfix;
 	box-sizing:border-box;
@@ -34,7 +38,7 @@
 	@if $width != 100% {
 		float: left;
 	}
-	@if $collapse != collapse {
+	@if $collapse != collapse and $collapse != true  {
 		padding-left: $grid-margin / 2;
 		padding-right: $grid-margin / 2;
 	}
@@ -55,7 +59,7 @@
 		@if $width != 100% {
 			width: $width;
 		}
-		@if $collapse == collapse {
+		@if $collapse == collapse or $collapse == true {
 			padding-left: 0;
 			padding-right: 0;
 		}
@@ -84,8 +88,20 @@
 	}
 }
 
-@mixin grid-breakpoint-hide($device) {
-	@include grid-breakpoint($device) {
-		display: none;
+@mixin grid-breakpoint-hide($devices...) {
+	@each $device in $devices {
+		@include grid-breakpoint($device) {
+			display: none;
+		}
+	}
+	
+	
+	
+}
+@mixin grid-breakpoint-show($devices...) {	
+	@each $device in $devices {
+		@include grid-breakpoint($device) {
+			display: block; 
+		}
 	}
 }
