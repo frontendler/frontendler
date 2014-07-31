@@ -11,7 +11,7 @@
         "type": "git",
         "url": "git://github.com/dbeff/Frontendler.git"
     },
-    "keywords" : "framework,sass,responsive,frontend",
+    "keywords" : "framework,sass,responsive,frontend,frontendler",
     "license": "MIT",
     "homepage": "http://frontendler.com.br/",
     "main":"app/assets/styles/frontendler/_frontendler.scss",
