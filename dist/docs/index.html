@@ -52,18 +52,23 @@
     <div class="docs-sidebar">
       <div class="container">
         <div class="tree">
-          <div class="group"><a class="title">Yeoman</a>
+          <div class="group"><a class="title">Dependencies</a>
             <ul class="itens">
-              <li class="item"><a href="/docs/#install" class="link">install</a></li>
-              <li class="item"><a href="/docs/#create" class="link">create</a></li>
-              <li class="item"><a href="/docs/#run" class="link">run</a></li>
+              <li class="item"><a href="/docs/#sass" class="link">Install SASS</a></li>
+              <li class="item"><a href="/docs/#node" class="link">Install Node</a></li>
+              <li class="item"><a href="/docs/#gulp" class="link">Install Gulp</a></li>
             </ul>
           </div>
-          <div class="group"><a class="title">Bootstrap</a>
+          <div class="group"><a class="title">Install</a>
             <ul class="itens">
-              <li class="item"><a href="/docs/#install" class="link">install</a></li>
-              <li class="item"><a href="/docs/#create" class="link">create</a></li>
-              <li class="item"><a href="/docs/#run" class="link">run</a></li>
+              <li class="item"><a href="/docs/#clone" class="link">Clone the project</a></li>
+              <li class="item"><a href="/docs/#npm" class="link">install project dependencies</a></li>
+            </ul>
+          </div>
+          <div class="group"><a class="title">Run Frontendler</a>
+            <ul class="itens">
+              <li class="item"><a href="/docs/#watch" class="link">Watch source</a></li>
+              <li class="item"><a href="/docs/#build" class="link">Build</a></li>
             </ul>
           </div>
         </div>
@@ -72,27 +77,51 @@
     <div class="docs-content">
       <div class="typo">
         <h2 class="docs-title">
-          <hr/><span>Yeoman generator</span>
+          <hr/><span>Dependencies</span>
         </h2>
         <div class="install">
-          <div class="container">	
+          <div class="container">
             <div class="command-block">
-              <h3 class="command-name"><a name="install" class="name">Install generator</a></h3>
-              <pre class="box-code"><code class="bash">$ npm install -g generator-frontendler</code></pre>
+              <h3 class="command-name"><a name="sass" class="name">SASS</a></h3>
+              <pre class="box-code"><code class="bash">$ sudo gem install sass</code></pre>
             </div>
             <div class="command-block">
-              <h3 class="command-name"><a name="create" class="name">Create a new project</a></h3>
-              <pre class="box-code"><code class="bash">$ yo frontendler</code></pre>
+              <h3 class="command-name"><a name="node" class="name">NODE JS</a></h3>
+              <pre class="box-code"><code class="bash">Download and install in this page http://nodejs.org/</code></pre>
             </div>
             <div class="command-block">
-              <h3 class="command-name"><a name="run" class="name">Run with gulp watch</a></h3>
-              <pre class="box-code"><code class="bash">$ gulp watch </code></pre>
+              <h3 class="command-name"><a name="gulp" class="name">GULP</a></h3>
+              <pre class="box-code"><code class="bash">$npm install gulp -g</code></pre>
+            </div>
+          </div>
+        </div>
+        <h2 class="docs-title">
+          <hr/><span>Install</span>
+        </h2>
+        <div class="install">
+          <div class="container">
+            <div class="command-block">
+              <h3 class="command-name"><a name="clone" class="name">Clone the project</a></h3>
+              <pre class="box-code"><code class="bash">$ git clone git@github.com:dbeff/frontendler.git</code></pre>
             </div>
             <div class="command-block">
-              <h3 class="command-name"><a name="run" class="name">Build with gulp build</a></h3>
-              <pre class="box-code"><code class="bash">
-                  $ gulp watch 
-                  </code></pre>
+              <h3 class="command-name"><a name="npm" class="name">Install project dependencies</a></h3>
+              <pre class="box-code"><code class="bash">$ npm install</code></pre>
+            </div>
+          </div>
+        </div>
+        <h2 class="docs-title">
+          <hr/><span>Run Frontendler</span>
+        </h2>
+        <div class="install">
+          <div class="container">
+            <div class="command-block">
+              <h3 class="command-name"><a name="watch" class="name">Watch</a></h3>
+              <pre class="box-code"><code class="bash">$ gulp watch</code></pre>
+            </div>
+            <div class="command-block">
+              <h3 class="command-name"><a name="build" class="name">Build</a></h3>
+              <pre class="box-code"><code class="bash">$ gulp build</code></pre>
             </div>
           </div>
         </div>

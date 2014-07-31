@@ -83,6 +83,20 @@
             <pre class="box-code"><code class="scss">$grid-margin: 40px;</code></pre>
           </div>
           <div class="command-block">
+            <h3 class="command-name"><a name="grid-margin-outer" class="name">grid-margin</a></h3>
+            <pre class="box-code"><code class="scss">$grid-margin-outer: 5px;</code></pre>
+          </div>
+          <div class="command-block">
+            <h3 class="command-name"><a name="grid-margin-outer" class="name">grid-margin</a></h3>
+            <pre class="box-code"><code class="scss">
+                $grid-breakpoints:(
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;phone: 100% max 480px,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tablet: 100% min 481px max 1023px,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desktop: 1000px min 1024px max 1200px,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desktop-large: 1200px min 1200px
+                );</code></pre>
+          </div>
+          <div class="command-block">
             <h3 class="command-name"><a name="grid-col" class="name">grid-col</a></h3>
             <pre class="box-code"><code class="scss">@include grid-col ($col, $cols: 12, $collapse: false);</code></pre>
           </div>
@@ -92,11 +106,18 @@
           </div>
           <div class="command-block">
             <h3 class="command-name"><a name="grid-breakpoint" class="name">grid-breakpoint</a></h3>
-            <pre class="box-code"><code class="scss">@include grid-breakpoint ($devices...);</code></pre>
+            <pre class="box-code"><code class="scss">
+                @include grid-breakpoint ($devices...){
+                 ...
+                };</code></pre>
           </div>
           <div class="command-block">
             <h3 class="command-name"><a name="grid-breakpoint-hide" class="name">grid-breakpoint-hide</a></h3>
-            <pre class="box-code"><code class="scss">@include grid-breakpoint-hide ($device);</code></pre>
+            <pre class="box-code"><code class="scss">@include grid-breakpoint-hide ($devices...);</code></pre>
+          </div>
+          <div class="command-block">
+            <h3 class="command-name"><a name="grid-breakpoint-show" class="name">grid-breakpoint-hide</a></h3>
+            <pre class="box-code"><code class="scss">@include grid-breakpoint-show ($devices...);</code></pre>
           </div>
         </div>
       </article>
@@ -114,7 +135,7 @@
                 /* 4 = foreground-hover */
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4
                 $theme-colors:
-                ocean &nbsp;&nbsp;&nbsp;&nbsp; #00a7ca &nbsp; #a4d6e5 &nbsp; #52cbf2 &nbsp; #d5f0fb &nbsp;&nbsp;&nbsp;&nbsp; #00a7ca &nbsp; #a4d6e5 &nbsp; #52cbf2 &nbsp; #d5f0fb,
+                ocean &nbsp;&nbsp;&nbsp;&nbsp; #00a7ca &nbsp; #a4d6e5 &nbsp; #52cbf2 &nbsp; #d5f0fb
                 blue #0075d3 #a4c2e9 #2c8bee #d0e0f9,
                 purple #8244a7 #c7b1d6 #9e5dc1 #e4d7ed,
                 pink #dd318a #f0adca #ff52a1 #ffd5e6,
@@ -130,7 +151,7 @@
           </div>
           <div class="command-block">
             <h3 class="command-name"><a name="theme-color" class="name">theme-color</a></h3>
-            <pre class="box-code"><code class="scss">@include theme-color ($color-name, $color-status:false);</code></pre>
+            <pre class="box-code"><code class="scss">theme-color ($color-name, $color-status:false);</code></pre>
           </div>
           <div class="command-block">
             <h3 class="command-name"><a name="theme" class="name">theme</a></h3>

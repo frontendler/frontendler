@@ -9,6 +9,7 @@ $font-size-text: 14px;
 //-----------------------------------------------------------
 //GRID
 //-----------------------------------------------------------
+$grid-margin-outer: 5px;
 $grid-margin: 40px;
 $grid-breakpoints:(
 	phone: 100% max 480px,
@@ -35,8 +36,6 @@ $theme-colors:(
 	orange: #f75925 #fbb8a7 #ff7439 #ffdbd0,
 	red: #dd202b #f0a9ab #fe4542 #ffd3d2,
 	dark: #1c2731 #a8abac #313d48 #d0d2d4,
-	gray: #606c78 #bbbfc2 #798591 #dddfe2, 
+	gray: #606c78 #bbbfc2 #798591 #dddfe2,
 	silver: #939fac #ced3d8 #b4c0cc #eaedf0
 )
-
-

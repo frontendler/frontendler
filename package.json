@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "homepage": "http://frontendler.com.br/",
-  "description": "The clean, simple and efficient framework.",
+  "description": "The clean responsive framework. Simple and efficient",
   "dependencies": {},
   "devDependencies": {
     "connect": "^2.14.4",

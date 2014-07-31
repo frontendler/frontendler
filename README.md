@@ -40,6 +40,11 @@ grid-margin
 ```
 $grid-margin: 40px;
 ```
+grid-margin-outer
+
+```
+$grid-margin-outer: 5px;
+```
 
 grid-breakpoints
 

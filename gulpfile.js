@@ -33,14 +33,14 @@ var fontName = 'frontendler-icons';
 //-------------------------------------------------------------------
 
 gulp.task('styles',function() {
-	
+
 	return gulp.src( app + '/' + styles + '/**/*.scss')
 		.pipe(plugins.plumber())
 		.pipe(plugins.rubySass({
 			style: 'expanded',
 			precision: 10,
 			debugInfo:false,
-			lineNumbers:true,
+			lineNumbers:false,
 			loadPath: [app]
 			//sourcemap: true
 		}))
@@ -161,14 +161,14 @@ gulp.task('watch', gulpsync.sync([
 	'watch-connect'],
 	'watch'), function() {
 	var server = plugins.livereload();
-				
+
 	// watch for changes
 	gulp.watch([
 		dev + '/**/*.html',
 		dev + '/' + styles + '/**/*.css',
 		dev + '/' + scripts + '/**/*.js',
 		dev + '/' + images + '/**/*',
-		'!' + dev + '/' + bower + '/**/*.*' 
+		'!' + dev + '/' + bower + '/**/*.*'
 	]).on('change', function(file) {
 		server.changed(file.path);
 	});
@@ -176,7 +176,7 @@ gulp.task('watch', gulpsync.sync([
 	gulp.watch( [app + '/' + styles + '/**/*.scss',app + '/' + icons + '/**/*.scss'], ['styles']);
 	gulp.watch( app + '/' + scripts + '/**/*.js', ['scripts']);
 	gulp.watch( app + '/' + images + '/**/*', ['images']);
-	
+
 });
 
 
@@ -211,7 +211,7 @@ gulp.task('build-copy-others', function() {
 		'!' + dev + '/' + bower + '/**/*.*'
 		])
 		.pipe(plugins.plumber())
-		.pipe(gulp.dest(prod));	
+		.pipe(gulp.dest(prod));
 });
 
 gulp.task('build-html',function() {

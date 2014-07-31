@@ -9,8 +9,12 @@
 	display: block;
 
 	@if $empty == empty {
-		padding-left: $grid-margin / 2;
-		padding-right: $grid-margin / 2;
+		padding-left: $grid-margin / 2 + $grid-margin-outer;
+		padding-right: $grid-margin / 2 + $grid-margin-outer;
+	}
+	@else {
+		padding-left: $grid-margin-outer;
+		padding-right: $grid-margin-outer;
 	}
 	@if $fluid == fluid {
 		//looping para incluir breakpoints todos com largura 100%
@@ -94,14 +98,14 @@
 			display: none;
 		}
 	}
-	
-	
-	
+
+
+
 }
-@mixin grid-breakpoint-show($devices...) {	
+@mixin grid-breakpoint-show($devices...) {
 	@each $device in $devices {
 		@include grid-breakpoint($device) {
-			display: block; 
+			display: block;
 		}
 	}
 }
