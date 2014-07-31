@@ -14,6 +14,7 @@
     "keywords" : "framework,sass,responsive,frontend",
     "license": "MIT",
     "homepage": "http://frontendler.com.br/",
+    "main":"app/assets/styles/frontendler/_frontendler.scss",
     "ignore": [
         "app/assets/icons/",
         "app/assets/images/",
