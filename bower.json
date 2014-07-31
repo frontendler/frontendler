@@ -1,11 +1,25 @@
 {
-  "name": "Frontendler",
-  "version": "0.0.1",
-  "ignore": [
+    "name": "Frontendler",
+    "version": "0.0.1",
+    "description": "The clean responsive framework.",
+    "author": {
+        "name": "Daniel Beff",
+        "email": "daniel.beff@gmail.com",
+        "homepage": "http://www.danielbeff.com.br"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/dbeff/Frontendler.git"
+    }
+    "keywords" : "framework,sass,responsive,frontend",
+    "license": "MIT",
+    "homepage": "http://frontendler.com.br/",
+    "ignore": [
         "app/assets/icons/",
         "app/assets/images/",
         "app/assets/scripts/",
         "app/template/",
+        "app/bower/",
         "app/.htaccess",
         "app/robots.txt",
         "dist",
