@@ -4,7 +4,8 @@
   "ignore": [
         "app/assets/icons/",
         "app/assets/images/",
-        "app/templates/",
+        "app/assets/scripts/",
+        "app/template/",
         "app/.htaccess",
         "app/robots.txt",
         "dist",
