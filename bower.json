@@ -19,6 +19,7 @@
         "app/assets/icons/",
         "app/assets/images/",
         "app/assets/scripts/",
+        "app/assets/styles/app/",
         "app/template/",
         "app/bower/",
         "app/.htaccess",
