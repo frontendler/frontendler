@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/dbeff/Frontendler.git"
+        "url": "git://github.com/dbeff/frontendler.git"
     },
     "keywords" : "framework,sass,responsive,frontend,frontendler",
     "license": "MIT",
