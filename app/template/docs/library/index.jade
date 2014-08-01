@@ -9,15 +9,17 @@ block content
 		div.container
 			+command("grid-margin","scss","grid-margin").
 				$grid-margin: 40px;
-			+command("grid-margin","scss","grid-margin-outer").
+			+command("grid-margin-outer","scss","grid-margin-outer").
 				$grid-margin-outer: 5px;
-			+command("grid-margin","scss","grid-margin-outer").
+			+command("grid-breakpoints","scss","grid-breakpoints").
 				$grid-breakpoints:(
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;phone: 100% max 480px,
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tablet: 100% min 481px max 1023px,
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desktop: 1000px min 1024px max 1200px,
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desktop-large: 1200px min 1200px
 				);
+			+command("grid-row","scss","grid-row").
+				@include grid-row($empty: false, $fluid: false);
 			+command("grid-col","scss","grid-col").
 				@include grid-col ($col, $cols: 12, $collapse: false);
 			+command("grid-col-breakpoint","scss","grid-col-breakpoint").
@@ -28,7 +30,7 @@ block content
 				};
 			+command("grid-breakpoint-hide","scss","grid-breakpoint-hide").
 				@include grid-breakpoint-hide ($devices...);
-			+command("grid-breakpoint-hide","scss","grid-breakpoint-show").
+			+command("grid-breakpoint-show","scss","grid-breakpoint-show").
 				@include grid-breakpoint-show ($devices...);
 	article.theme
 		+title("Theme")

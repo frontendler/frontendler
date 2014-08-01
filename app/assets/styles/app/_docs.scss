@@ -1,4 +1,4 @@
-.docs { 
+.docs {
     //------------------------------------------------------
     //  TOP
     //------------------------------------------------------
@@ -83,7 +83,7 @@
         padding-top: $grid-margin / 2;
         padding-bottom: $grid-margin / 2;
         background-color: #ecf0f1;
-        
+
         .tree {
             @include grid-col(3, 12, collapse);
             width: 100%;
@@ -101,6 +101,7 @@
                     color: transparentize(theme-color(dark), 0.3);
                     font-weight: 600;
                     padding: 2px 0;
+                    font-size:16px;
                     &:after {
                         border-radius:3px;
                         margin-left: 5px;
@@ -121,6 +122,8 @@
                             font-weight: 600;
                             padding-left: $grid-margin / 4;
                             font-size: 14px;
+                            padding: 2px 10px;
+                            font-size: 13px;
                             &:hover {
                                 color: theme-color(ocean);
                             }

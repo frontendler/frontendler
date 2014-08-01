@@ -54,11 +54,15 @@
         <div class="tree">
           <div class="group"><a class="title">Grid</a>
             <ul class="itens">
+              <li class="item"><a href="/docs/library/#grid-margin" class="link">grid-margin</a></li>
+              <li class="item"><a href="/docs/library/#grid-margin-outer" class="link">grid-margin-outer</a></li>
+              <li class="item"><a href="/docs/library/#grid-breakpoints" class="link">grid-breakpoints</a></li>
               <li class="item"><a href="/docs/library/#grid-row" class="link">grid-row</a></li>
               <li class="item"><a href="/docs/library/#grid-col" class="link">grid-col</a></li>
               <li class="item"><a href="/docs/library/#grid-col-breakpoint" class="link">grid-col-breakpoint</a></li>
               <li class="item"><a href="/docs/library/#grid-breakpoint" class="link">grid-breakpoint</a></li>
               <li class="item"><a href="/docs/library/#grid-breakpoint-hide" class="link">grid-breakpoint-hide</a></li>
+              <li class="item"><a href="/docs/library/#grid-breakpoint-show" class="link">grid-breakpoint-show</a></li>
             </ul>
           </div>
           <div class="group"><a class="title">Theme</a>
@@ -83,11 +87,11 @@
             <pre class="box-code"><code class="scss">$grid-margin: 40px;</code></pre>
           </div>
           <div class="command-block">
-            <h3 class="command-name"><a name="grid-margin-outer" class="name">grid-margin</a></h3>
+            <h3 class="command-name"><a name="grid-margin-outer" class="name">grid-margin-outer</a></h3>
             <pre class="box-code"><code class="scss">$grid-margin-outer: 5px;</code></pre>
           </div>
           <div class="command-block">
-            <h3 class="command-name"><a name="grid-margin-outer" class="name">grid-margin</a></h3>
+            <h3 class="command-name"><a name="grid-breakpoints" class="name">grid-breakpoints</a></h3>
             <pre class="box-code"><code class="scss">
                 $grid-breakpoints:(
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;phone: 100% max 480px,
@@ -95,6 +99,10 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desktop: 1000px min 1024px max 1200px,
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desktop-large: 1200px min 1200px
                 );</code></pre>
+          </div>
+          <div class="command-block">
+            <h3 class="command-name"><a name="grid-row" class="name">grid-row</a></h3>
+            <pre class="box-code"><code class="scss">@include grid-row($empty: false, $fluid: false);</code></pre>
           </div>
           <div class="command-block">
             <h3 class="command-name"><a name="grid-col" class="name">grid-col</a></h3>
@@ -116,7 +124,7 @@
             <pre class="box-code"><code class="scss">@include grid-breakpoint-hide ($devices...);</code></pre>
           </div>
           <div class="command-block">
-            <h3 class="command-name"><a name="grid-breakpoint-show" class="name">grid-breakpoint-hide</a></h3>
+            <h3 class="command-name"><a name="grid-breakpoint-show" class="name">grid-breakpoint-show</a></h3>
             <pre class="box-code"><code class="scss">@include grid-breakpoint-show ($devices...);</code></pre>
           </div>
         </div>
