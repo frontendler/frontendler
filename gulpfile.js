@@ -139,7 +139,7 @@ gulp.task('html',function() {
 //-------------------------------------------------------------------
 
 
-gulp.task('clean', del.bind(null, [dev, prod]));
+gulp.task('clean:dev', del.bind(null, [dev]));
 
 
 gulp.task('copy:dev', function() {
@@ -155,16 +155,18 @@ gulp.task('copy:dev', function() {
 	gulp.src([app + '/' + images + '**/*.*'])
 		.pipe(gulp.dest(dev + '/' + images))
 		.pipe(plugins.size({title: 'images'}));
-		
+
 	gulp.src([app + '/' + fonts])
 		.pipe(gulp.dest(dev + '/' + fonts))
 		.pipe(plugins.size({title: 'fonts'}));
 });
 
-gulp.task('watch', runSequence(['clean','styles','templates']), function () {
-	
+gulp.task('serve:dev', function () {
+
 	browserSync({
 		notify: true,
+		logFileChanges:true,
+		//tunnel: 'frontendler',
 		port:9000,
 		server: {
 			baseDir: [dev]
@@ -177,12 +179,18 @@ gulp.task('watch', runSequence(['clean','styles','templates']), function () {
 	gulp.watch( [app + '/' + images + '/**/*'], ['images',reload]);
 	gulp.watch( [app + '/' + icons + '/svg/**/*.svg'], ['icons',reload]);
 	gulp.watch( [app + '/' + fonts + '**/*'], ['fonts',reload]);
-	
+
+});
+
+gulp.task('watch',['clean'] function(cb) {
+	runSequence('copy:dev',['styles','templates'],cb)
 });
 
 //-------------------------------------------------------------------
 // BUILD
 //-------------------------------------------------------------------
+
+gulp.task('clean:dev', del.bind(null, [dev]));
 
 gulp.task('copy:prod', function() {
 	return gulp.src([
