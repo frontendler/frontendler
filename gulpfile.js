@@ -31,11 +31,9 @@ var images = 'assets/images';
 var icons = 'assets/icons';
 var fonts = 'assets/fonts';
 var template = 'template';
-var bower = 'bower';
 
 //font
 var fontName = 'frontendler-icons';
-
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 8',
@@ -48,7 +46,6 @@ var AUTOPREFIXER_BROWSERS = [
   'android >= 4.4',
   'bb >= 10'
 ];
-
 
 //-------------------------------------------------------------------
 // TASKS
