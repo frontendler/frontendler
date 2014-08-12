@@ -66,7 +66,8 @@ gulp.task('styles',function() {
 		}))
 		.pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
 		.pipe(gulp.dest( dev + '/' + styles))
-		.pipe(plugins.size({title: 'styles'}));
+        .pipe(reload({stream:true}))
+        .pipe(plugins.size({title: 'styles'}));
 });
 
 gulp.task('scripts', function() {
@@ -83,7 +84,6 @@ gulp.task('templates', function() {
 	var YOUR_LOCALS = {};
 	return gulp.src([ app+ '/' + template + '/**/*.jade', '!' +app + '/' + template + '/**/_*.jade'])
 		.pipe(plugins.plumber())
-		.pipe(plugins.size())
 		.pipe(plugins.jade({
 			locals: YOUR_LOCALS,
 			pretty: true,
@@ -174,7 +174,7 @@ gulp.task('serve:dev', function () {
 	});
 
 	gulp.watch( [app + '/' + template + '/**/*.jade'], ['templates',reload]);
-	gulp.watch( [app + '/' + styles + '/**/*.scss',app + '/' + icons + '/**/*.scss'], ['styles',reload]);
+	gulp.watch( [app + '/' + styles + '/**/*.scss',app + '/' + icons + '/**/*.scss'], ['styles']);
 	gulp.watch( [app + '/' + scripts + '/**/*.js'], ['scripts',reload]);
 	gulp.watch( [app + '/' + images + '/**/*'], ['images',reload]);
 	gulp.watch( [app + '/' + icons + '/svg/**/*.svg'], ['icons',reload]);
@@ -182,16 +182,15 @@ gulp.task('serve:dev', function () {
 
 });
 
-gulp.task('watch',['clean'] function(cb) {
-	runSequence('copy:dev',['styles','templates'],cb)
+gulp.task('watch',['clean:dev'],function(cb) {
+	runSequence('copy:dev',['styles','templates'],'serve:dev',cb);
 });
 
 //-------------------------------------------------------------------
 // BUILD
 //-------------------------------------------------------------------
 
-gulp.task('clean:dev', del.bind(null, [dev]));
-
+gulp.task('clean:prod', del.bind(null, [prod]));
 gulp.task('copy:prod', function() {
 	return gulp.src([
 		dev + '/**/*.*',
@@ -203,13 +202,11 @@ gulp.task('copy:prod', function() {
 		.pipe(gulp.dest(prod));
 });
 
-gulp.task('build',['clean'],function(cb){
-	runSequence(['icons','styles','scripts','templates','images','copy:dev','copy:prod','html'], cb);
+gulp.task('build',['clean:prod'],function(cb){
+	runSequence([,'copy:dev','icons','styles','scripts','templates','images','copy:prod','html'], cb);
 	plugins.util.log(plugins.util.colors.green('Build Sucess!'));
 	plugins.util.beep();
 });
-
-
 
 // Run PageSpeed Insights
 // Update `url` below to the public URL for your site

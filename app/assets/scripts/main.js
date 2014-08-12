@@ -6,12 +6,12 @@ $(document).ready(function() {
         var select = $(this);
         select.find ('.select-btn span.text').html(select.find('select :selected').text());
         select.find ('.select-btn').click (function (){
-            console.log ('select clicado');
+            console.
             $(this).closest('.select').find('select').trigger('click');    
         });
         select.find ('select').change(function() {
             var a = $(this).closest('.select').find('.select-btn');
-            a.find('span.text').html($(this).find(':selected').text());
+            a.find('span.text').html($(this).find(':selected').text());   
         });
     });
 
