@@ -1,17 +1,10 @@
-@mixin icon-font-face ($path){
-	@font-face {
-		font-family: "<%= fontName %>";
-		src: url($path +'<%= fontName %>.eot');
-		src: url($path +'<%= fontName %>.eot?#iefix') format('eot'),
-			url($path +'<%= fontName %>.woff') format('woff'),
-			url($path +'<%= fontName %>.ttf') format('truetype'),
-			url($path +'<%= fontName %>.svg#<%= fontName %>') format('svg');
-		// src: url('<%= fontPath %><%= fontName %>.eot');
-		// src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
-		// 	url('<%= fontPath %><%= fontName %>.woff') format('woff'),
-		// 	url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
-		// 	url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
-	}	
+@font-face {
+	font-family: "<%= fontName %>";
+	src: url('<%= fontPath %><%= fontName %>.eot');
+	src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+		url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+		url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+		url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
 }
 
 %icon {

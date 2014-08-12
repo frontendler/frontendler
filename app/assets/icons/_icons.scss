@@ -1,17 +1,10 @@
-@mixin icon-font-face ($path){
-	@font-face {
-		font-family: "frontendler-icons";
-		src: url($path +'frontendler-icons.eot');
-		src: url($path +'frontendler-icons.eot?#iefix') format('eot'),
-			url($path +'frontendler-icons.woff') format('woff'),
-			url($path +'frontendler-icons.ttf') format('truetype'),
-			url($path +'frontendler-icons.svg#frontendler-icons') format('svg');
-		// src: url('./frontendler-icons.eot');
-		// src: url('./frontendler-icons.eot?#iefix') format('eot'),
-		// 	url('./frontendler-icons.woff') format('woff'),
-		// 	url('./frontendler-icons.ttf') format('truetype'),
-		// 	url('./frontendler-icons.svg#frontendler-icons') format('svg');
-	}	
+@font-face {
+	font-family: "frontendler-icons";
+	src: url('../icons/frontendler-icons.eot');
+	src: url('../icons/frontendler-icons.eot?#iefix') format('eot'),
+		url('../icons/frontendler-icons.woff') format('woff'),
+		url('../icons/frontendler-icons.ttf') format('truetype'),
+		url('../icons/frontendler-icons.svg#frontendler-icons') format('svg');
 }
 
 %icon {

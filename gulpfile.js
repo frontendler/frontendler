@@ -15,7 +15,6 @@ var pagespeed = require('psi');
 var reload = browserSync.reload;
 
 
-
 //-------------------------------------------------------------------
 // SETUP
 //-------------------------------------------------------------------
@@ -76,7 +75,6 @@ gulp.task('scripts', function() {
 		.pipe(reload({stream: true, once: true}))
 	    .pipe(plugins.jshint())
 	    .pipe(plugins.jshint.reporter('jshint-stylish'))
-		.pipe(gulp.dest(dev + '/' + scripts))
 	    .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
 });
 
@@ -99,13 +97,13 @@ gulp.task('icons', function() {
 		.pipe(plugins.iconfontCss({
 			fontName: fontName,
 			path: app + '/' + icons + '/_icons_template.scss',
-			targetPath: '../_icons.scss',
-			//fontPath: '../../icones/'
+			targetPath: '_icons.scss',
+			fontPath:  '../icons/'
 		}))
 		.pipe(plugins.iconfont({
 			fontName: fontName
 		}))
-		.pipe(gulp.dest(app + '/' + icons + '/font' ))
+		.pipe(gulp.dest(app + '/' + icons ))
 		.pipe(plugins.size({title: 'icons'}));
 });
 
@@ -117,19 +115,20 @@ gulp.task('images', function() {
 			progressive: true,
 			interlaced: true
 		})))
-		.pipe(gulp.dest(dev + '/' + images))
+		.pipe(gulp.dest(prod + '/' + images))
 		.pipe(plugins.size());
 });
 
 gulp.task('html',function() {
-	var assets = plugins.useref.assets();
-	return gulp.src([dev + '/**/*.html','!'+dev + '/' + bower + '/**/*.*'])
+	var assets = plugins.useref.assets({searchPath: '{' + dev + ',' + app + '}' });
+	return gulp.src([dev + '/**/*.html'])
 		.pipe(plugins.plumber())
 		.pipe(assets)
 		.pipe(plugins.if('*.js', plugins.uglify()))
 		.pipe(plugins.if('*.css', plugins.csso()))
 		.pipe(assets.restore())
     	.pipe(plugins.useref())
+        .pipe(plugins.if('*.html', plugins.minifyHtml()))
 		.pipe(gulp.dest(prod + '/'))
 		.pipe(plugins.size({title: 'html'}));
 });
@@ -140,27 +139,6 @@ gulp.task('html',function() {
 
 
 gulp.task('clean:dev', del.bind(null, [dev]));
-
-
-gulp.task('copy:dev', function() {
-	//bower
-	gulp.src([app + '/' + bower + '/**/*.*'])
-		.pipe(gulp.dest(dev + '/' + bower))
-		.pipe(plugins.size({title: 'bower'}));
-	//icons
-	gulp.src([app + '/' + icons + '/font/**/*.*'])
-		.pipe(gulp.dest(dev + '/' + icons))
-		.pipe(plugins.size({title: 'icons'}));
-	//images
-	gulp.src([app + '/' + images + '**/*.*'])
-		.pipe(gulp.dest(dev + '/' + images))
-		.pipe(plugins.size({title: 'images'}));
-
-	gulp.src([app + '/' + fonts])
-		.pipe(gulp.dest(dev + '/' + fonts))
-		.pipe(plugins.size({title: 'fonts'}));
-});
-
 gulp.task('serve:dev', function () {
 
 	browserSync({
@@ -169,21 +147,21 @@ gulp.task('serve:dev', function () {
 		//tunnel: 'frontendler',
 		port:9000,
 		server: {
-			baseDir: [dev]
+			baseDir: [dev,app]
 		}
 	});
 
 	gulp.watch( [app + '/' + template + '/**/*.jade'], ['templates',reload]);
 	gulp.watch( [app + '/' + styles + '/**/*.scss',app + '/' + icons + '/**/*.scss'], ['styles']);
 	gulp.watch( [app + '/' + scripts + '/**/*.js'], ['scripts',reload]);
-	gulp.watch( [app + '/' + images + '/**/*'], ['images',reload]);
+	gulp.watch( [app + '/' + images + '/**/*'], [reload]);
 	gulp.watch( [app + '/' + icons + '/svg/**/*.svg'], ['icons',reload]);
 	gulp.watch( [app + '/' + fonts + '**/*'], ['fonts',reload]);
-
+    
 });
 
 gulp.task('watch',['clean:dev'],function(cb) {
-	runSequence('copy:dev',['styles','templates'],'serve:dev',cb);
+	runSequence(['styles','templates'],'serve:dev',cb);
 });
 
 //-------------------------------------------------------------------
@@ -192,20 +170,16 @@ gulp.task('watch',['clean:dev'],function(cb) {
 
 gulp.task('clean:prod', del.bind(null, [prod]));
 gulp.task('copy:prod', function() {
-	return gulp.src([
-		dev + '/**/*.*',
-		'!' + dev + '/**/*.html',
-		'!' + dev + '/**/*.css',
-		'!' + dev + '/**/*.js',
-		'!' + dev + '/' + bower + '/**/*.*'
-		])
-		.pipe(gulp.dest(prod));
+	gulp.src(app + '/' + icons + '/*.{eot,svg,ttf,woff}')
+		.pipe(gulp.dest(prod + '/' + icons));
+    gulp.src(app + '/' + fonts + '/**/*.{eot,svg,ttf,woff}')
+        .pipe(gulp.dest(prod + '/' + fonts));
+    gulp.src(app + '/*.*')
+        .pipe(gulp.dest(prod));
 });
 
 gulp.task('build',['clean:prod'],function(cb){
-	runSequence([,'copy:dev','icons','styles','scripts','templates','images','copy:prod','html'], cb);
-	plugins.util.log(plugins.util.colors.green('Build Sucess!'));
-	plugins.util.beep();
+	runSequence(['styles','scripts','templates','images','copy:prod'],'html', cb);
 });
 
 // Run PageSpeed Insights
@@ -215,7 +189,7 @@ gulp.task('pagespeed', pagespeed.bind(null, {
   // free (no API key) tier. You can use a Google
   // Developer API key if you have one. See
   // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
-  url: 'https://example.com',
-  strategy: 'mobile'
+  url: 'https://frontendler.com.br'
+  // strategy: 'mobile'
 }));
 
