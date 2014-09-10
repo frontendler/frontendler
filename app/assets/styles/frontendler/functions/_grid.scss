@@ -2,12 +2,12 @@
 // MIXINS
 // ========================================
 
-@mixin grid-row($empty: false, $fluid: false) {
+@mixin grid-row($empty: false, $breakpoints: $grid-breakpoints) {
 	@include clearfix;
 	box-sizing:border-box;
 	margin: 0 auto;
 	display: block;
-
+	//inclui padding caso o elemento não possuir colunas
 	@if $empty == empty {
 		padding-left: $grid-margin / 2 + $grid-margin-outer;
 		padding-right: $grid-margin / 2 + $grid-margin-outer;
@@ -15,23 +15,13 @@
 	@else {
 		padding-left: $grid-margin-outer;
 		padding-right: $grid-margin-outer;
-	}
-	@if $fluid == fluid {
-		//looping para incluir breakpoints todos com largura 100%
-		@each $break in map-keys($grid-breakpoints) {
-			@include grid-breakpoint($break) {
-				width: 100%;
-			}
-		}
-	}
-	@else {
-		//looping para incluir breakpoints
-		@each $break in map-keys($grid-breakpoints) {
-			@include grid-breakpoint($break) {
-				width: nth(map-get($grid-breakpoints,$break), 1);
-			}
-		}
-	}
+	}	
+	//looping para incluir breakpoints
+	@each $break in map-keys($breakpoints) {
+		@include grid-breakpoint($break) {
+			width: nth(map-get($breakpoints,$break), 1);
+		} 
+	}	
 }
 @mixin grid-col($col, $cols: 12, $collapse: false) {
 	@include clearfix;
@@ -45,16 +35,6 @@
 	@if $collapse != collapse and $collapse != true  {
 		padding-left: $grid-margin / 2;
 		padding-right: $grid-margin / 2;
-	}
-
-	//looping para incluir breakpoints
-	@each $break in map-keys($grid-breakpoints) {
-		@include grid-breakpoint($break) {
-			$width:nth(map-get($grid-breakpoints,$break), 1);
-			@if ($width == 100%){
-				width: $width;
-			}
-		}
 	}
 }
 @mixin grid-col-breakpoint($device, $col, $cols: 12, $collapse: false) {
@@ -91,16 +71,12 @@
 		}
 	}
 }
-
 @mixin grid-breakpoint-hide($devices...) {
 	@each $device in $devices {
 		@include grid-breakpoint($device) {
 			display: none;
 		}
 	}
-
-
-
 }
 @mixin grid-breakpoint-show($devices...) {
 	@each $device in $devices {

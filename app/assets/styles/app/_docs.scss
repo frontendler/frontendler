@@ -1,4 +1,12 @@
 .docs {
+    
+    $grid-breakpoints-docs:(
+        phone: 100% max 480px,
+        tablet: 100% min 481px max 1023px,
+        desktop: 100% min 1024px max 1200px,
+        desktop-large: 100% min 1200px
+    );
+    
     //------------------------------------------------------
     //  TOP
     //------------------------------------------------------
@@ -6,7 +14,7 @@
         background-color: theme-color(dark);
         padding: 3px 0;
         .container {
-            @include grid-row(false, fluid);
+            @include grid-row(false, $grid-breakpoints-docs);
             .logo {
                 @include grid-col(12, 12);
                 h1 {
@@ -45,7 +53,7 @@
         background-color: theme-color(ocean);
         color: #a4d6e5;
         .container {
-            @include grid-row(false, fluid);
+            @include grid-row(false, $grid-breakpoints-docs);
             font-weight: 600;
             .menu {
                 @include grid-col(8, 12);
@@ -136,8 +144,9 @@
     //------------------------------------------------------
     //  MAIN
     //------------------------------------------------------
+    
     .docs-main {
-        @include grid-row(false, fluid);
+        @include grid-row(false, $grid-breakpoints-docs);
         background: #ecf0f1;
     }
     //------------------------------------------------------

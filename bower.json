@@ -1,7 +1,7 @@
 {
     "name": "Frontendler",
     "version": "0.0.6",
-    "description": "The clean responsive framework. Simple and efficient",
+    "description": "The responsive development kit",
     "author": {
         "name": "Daniel Beff",
         "email": "daniel.beff@gmail.com",
@@ -11,7 +11,7 @@
         "type": "git",
         "url": "git://github.com/dbeff/frontendler.git"
     },
-    "keywords" : "framework,sass,responsive,frontend,frontendler",
+    "keywords" : "sass,responsive,frontend,developer,kit",
     "license": "MIT",
     "homepage": "http://frontendler.com.br/",
     "main":"app/assets/styles/frontendler/_frontendler.scss",

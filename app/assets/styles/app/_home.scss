@@ -5,6 +5,7 @@
 	.header {
 		@include clearfix;
 		background: #174c6b;
+		
 		.container {
 			@include grid-row;
 			padding-top: 50px;
@@ -43,6 +44,7 @@
 		margin-top: 0;
 		margin-bottom: 30px;
 		color: #B0C3D4;
+		font-size:25px;
 	}
 	.info {
 		@include grid-col(12, 12);
