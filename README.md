@@ -1,15 +1,18 @@
+
+
 Frontendler
 ===========
 
-The responsive frontend kit. 
+[![Bower version](https://badge.fury.io/bo/frontendler.svg)](http://badge.fury.io/bo/frontendler)
+[![Build Status](https://travis-ci.org/dbeff/frontendler.svg?branch=master)](https://travis-ci.org/dbeff/frontendler)
+
+The responsive frontend kit.
 
 Simple, efficient.
 
 http://frontendler.com.br/
 
-
-Dependencies
-------
+#Dependencies 
 
 Frontendler need sass,nodeJs and gulp to run.
 
@@ -17,34 +20,31 @@ SASS - [How to install](http://sass-lang.com/install)
 
 NODE JS - [How to install](http://nodejs.org/)
 
-GULP 
+GULP
 ```
 $ npm install gulp -g
 ```
 
-Install
-------
+#Install
 
 Install project dependencies ```$ npm install```
 
-Run frontendler
-------
+##Run frontendler
 
-watch 
+watch
 ```
 $ gulp watch
 ```
 
-build 
+build
 ```
 $ gulp build
 ```
 
 
-SASS library
-------
+#SASS library
 
-### GRID
+## GRID
 
 grid-margin
 
@@ -100,7 +100,7 @@ grid-breakpoint-show
 @mixin grid-breakpoint-hide ($devices...);
 ```
 
-### THEME
+## THEME
 
 $theme-colors
 
