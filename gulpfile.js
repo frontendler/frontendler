@@ -36,7 +36,7 @@ var template = 'template';
 var fontName = 'frontendler-icons';
 
 var AUTOPREFIXER_BROWSERS = [
-  'ie >= 8',
+  'ie >= 9',
   'ie_mob >= 10',
   'ff >= 30',
   'chrome >= 34',
@@ -154,7 +154,7 @@ gulp.task('serve:dev', function () {
 	gulp.watch( [app + '/' + images + '/**/*'], [reload]);
 	gulp.watch( [app + '/' + icons + '/svg/**/*.svg'], ['icons',reload]);
 	gulp.watch( [app + '/' + fonts + '**/*'], ['fonts',reload]);
-    
+
 });
 
 gulp.task('watch',['clean:dev'],function(cb) {
@@ -189,4 +189,3 @@ gulp.task('pagespeed', pagespeed.bind(null, {
   url: 'https://frontendler.com.br'
   // strategy: 'mobile'
 }));
-

@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "homepage": "http://frontendler.com.br/",
-  "description": "The clean responsive framework. Simple and efficient",
+  "description": "The responsive frontend kit. Simple, efficient.",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^1.3.5",
