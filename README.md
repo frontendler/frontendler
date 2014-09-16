@@ -1,7 +1,9 @@
 Frontendler
 ===========
 
-The responsive framework. Clean, simple, efficient.
+The responsive frontend kit. 
+
+Simple, efficient.
 
 http://frontendler.com.br/
 
@@ -11,11 +13,14 @@ Dependencies
 
 Frontendler need sass,nodeJs and gulp to run.
 
-1) SASS - [How to install](http://sass-lang.com/install)
+SASS - [How to install](http://sass-lang.com/install)
 
-2) NODE JS - [How to install](http://nodejs.org/)
+NODE JS - [How to install](http://nodejs.org/)
 
-3) GULP - ```$ npm install gulp -g```
+GULP 
+```
+$ npm install gulp -g
+```
 
 Install
 ------
@@ -25,9 +30,15 @@ Install project dependencies ```$ npm install```
 Run frontendler
 ------
 
-watch ```$ gulp watch```
+watch 
+```
+$ gulp watch
+```
 
-build ```$ gulp build```
+build 
+```
+$ gulp build
+```
 
 
 SASS library
@@ -37,18 +48,18 @@ SASS library
 
 grid-margin
 
-```
+```scss
 $grid-margin: 40px;
 ```
 grid-margin-outer
 
-```
+```scss
 $grid-margin-outer: 5px;
 ```
 
 grid-breakpoints
 
-```
+```scss
 $grid-breakpoints:(
 phone: 100% max 480px,
 tablet: 100% min 481px max 1023px,
@@ -59,19 +70,19 @@ desktop-large: 1200px min 1200px
 
 grid-col
 
-```
+```scss
 @mixin grid-col ($col, $cols: 12, $collapse: false);
 ```
 
 grid-col-breakpoint
 
-```
+```scss
 @mixin grid-col-breakpoint ($device, $col, $cols: 12, $collapse: false);
 ```
 
 grid-breakpoint
 
-```
+```scss
 @mixin grid-breakpoint ($devices...){
 	...
 };
@@ -79,13 +90,13 @@ grid-breakpoint
 
 grid-breakpoint-hide
 
-```
+```scss
 @mixin grid-breakpoint-hide ($devices...);
 ```
 
 grid-breakpoint-show
 
-```
+```scss
 @mixin grid-breakpoint-hide ($devices...);
 ```
 
@@ -93,7 +104,7 @@ grid-breakpoint-show
 
 $theme-colors
 
-```
+```scss
 $theme-colors:(
 	//name,background,foreground,background-hover,foreground-hover)
 	ocean:  #00a7ca #a4d6e5 #52cbf2 #d5f0fb,
@@ -111,18 +122,18 @@ $theme-colors:(
 ```
 
 theme-color
-```
+```scss
 @function theme-color($color-name,$color-status:false)
 ```
 
 theme-all
-```
+```scss
 @mixin theme-all($type)
 ```
 
 theme
-```
+```scss
 @mixin theme($color,$type) {
-	...
+	//put your css
 }
 ```
