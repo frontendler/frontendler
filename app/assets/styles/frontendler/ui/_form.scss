@@ -10,14 +10,14 @@
 	}
 	& input:first-child,
 	& textarea:first-child {
-		border-bottom-radius:0;
-		border-top-radius:5px;
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
 		margin: 0;
 	}
 	& input:last-child,
 	& textarea:last-child {
-		border-bottom-radius:5px;
-		border-top-radius:0;
+		border-bottom-left-radius:5px;
+		border-bottom-right-radius:5px;
 	}
 	& input:focus,
 	& textarea:focus {

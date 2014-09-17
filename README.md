@@ -12,7 +12,7 @@ Simple, efficient.
 
 http://frontendler.com.br/
 
-#Dependencies 
+#Dependencies
 
 Frontendler need sass,nodeJs and gulp to run.
 
@@ -51,10 +51,10 @@ grid-margin
 ```scss
 $grid-gutter: 40px;
 ```
-grid-margin-outer
+grid-gutter-outside
 
 ```scss
-$grid-gutter-outer: 5px;
+grid-gutter-outside: 5px;
 ```
 
 grid-breakpoints
@@ -67,23 +67,28 @@ desktop: 1000px min 1024px max 1200px,
 desktop-large: 1200px min 1200px
 );
 ```
+grid-row
+
+```scss
+@mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints)
+```
 
 grid-col
 
 ```scss
-@mixin grid-col ($col, $cols: 12, $collapse: false);
+@mixin grid-col($col, $cols: 12, $gutter: $grid-gutter)
 ```
 
 grid-col-breakpoint
 
 ```scss
-@mixin grid-col-breakpoint ($device, $col, $cols: 12, $collapse: false);
+@mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false)
 ```
 
 grid-breakpoint
 
 ```scss
-@mixin grid-breakpoint ($devices...){
+@mixin grid-breakpoint($devices...){
 	...
 };
 ```

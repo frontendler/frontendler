@@ -1,12 +1,12 @@
 .docs {
-    
+
     $grid-breakpoints-docs:(
         phone: 100% max 480px,
         tablet: 100% min 481px max 1023px,
         desktop: 100% min 1024px max 1200px,
         desktop-large: 100% min 1200px
     );
-    
+
     //------------------------------------------------------
     //  TOP
     //------------------------------------------------------
@@ -93,7 +93,7 @@
         background-color: #ecf0f1;
 
         .tree {
-            @include grid-col(3, 12, collapse);
+            @include grid-col(3, 12, 0);
             width: 100%;
             .group {
                 width: 100%;
@@ -144,7 +144,7 @@
     //------------------------------------------------------
     //  MAIN
     //------------------------------------------------------
-    
+
     .docs-main {
         @include grid-row(false, $grid-breakpoints-docs);
         background: #ecf0f1;
@@ -153,9 +153,9 @@
     //  CONTENT
     //------------------------------------------------------
     .docs-content {
-        @include grid-col(10, 12, collapse);
-        @include grid-col-breakpoint(phone, 12, 12, collapse);
-        @include grid-col-breakpoint(tablet, 12, 12, collapse);
+        @include grid-col(10, 12, 0);
+        @include grid-col-breakpoint(phone, 12, 12);
+        @include grid-col-breakpoint(tablet, 12, 12);
         float: left;
         vertical-align: top;
         padding-bottom: $grid-gutter;
@@ -265,7 +265,7 @@
         }
         .list{
             .list-col{
-                @include grid-col(4,12,collapse);
+                @include grid-col(4,12,0);
                 ul{
                     list-style-position: inside;
                 }
@@ -325,7 +325,7 @@
 
     .forms {
         .grupo {
-            @include grid-col(12,12,collapse);
+            @include grid-col(12,12,0);
             .form {
                 input{
                     @include theme(red,input);
@@ -337,6 +337,8 @@
                     @include theme(silver,note);
                 }
                 @include grid-col(1, 3);
+                @include grid-col-breakpoint(phone, 1, 1);
+                @include grid-col-breakpoint(tablet, 1, 1);
                 .btn,.note {
                     margin-bottom: $grid-gutter;
                 }
@@ -345,7 +347,7 @@
                 }
             }
             .col {
-                @include grid-col(1, 3, collapse);
+                @include grid-col(1, 3, 0);
                 @include grid-col-breakpoint(phone, 1, 2);
                 @include grid-col-breakpoint(tablet, 1, 2);
             }
@@ -363,7 +365,7 @@
             @include grid-col(12);
         }
         .galeria {
-            @include grid-col(12,12,collapse);
+            @include grid-col(12,12,0);
         }
         .thumb {
             @include grid-col(1, 8);

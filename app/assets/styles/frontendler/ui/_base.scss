@@ -94,6 +94,8 @@ textarea {
     border: 1px solid #ccc;
     font-size: $font-size-text;
     background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 input:focus,
