@@ -1,7 +1,7 @@
 
 
-Frontendler
-===========
+# Frontendler
+
 
 [![Bower version](https://badge.fury.io/bo/frontendler.svg)](http://badge.fury.io/bo/frontendler)
 [![Build Status](https://travis-ci.org/dbeff/frontendler.svg?branch=master)](https://travis-ci.org/dbeff/frontendler)
@@ -12,7 +12,7 @@ Simple, efficient.
 
 http://frontendler.com.br/
 
-#Dependencies
+## Dependencies
 
 Frontendler need sass,nodeJs and gulp to run.
 
@@ -25,7 +25,7 @@ GULP
 $ npm install gulp -g
 ```
 
-#Install
+## Install
 
 Install project dependencies ```$ npm install```
 
@@ -42,9 +42,9 @@ $ gulp build
 ```
 
 
-#SASS library
+## SASS
 
-## GRID
+### GRID
 
 grid-gutter
 
@@ -105,7 +105,7 @@ grid-breakpoint-show
 @mixin grid-breakpoint-hide ($devices...);
 ```
 
-## THEME
+### THEME
 
 $theme-colors
 
