@@ -36,7 +36,7 @@ a {
 }
 
 p {
-    font-size: $font-size-text;
+    font-size: $font-size-text;:
     margin: 0;
 }
 
@@ -89,7 +89,7 @@ textarea {
     box-sizing: border-box;
     position: relative;
     width: 100%;
-    padding: $grid-margin/4 $grid-margin/2;
+    padding: $grid-gutter/4 $grid-gutter/2;
     display: block;
     border: 1px solid #ccc;
     font-size: $font-size-text;

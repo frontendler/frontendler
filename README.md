@@ -49,12 +49,12 @@ $ gulp build
 grid-margin
 
 ```scss
-$grid-margin: 40px;
+$grid-gutter: 40px;
 ```
 grid-margin-outer
 
 ```scss
-$grid-margin-outer: 5px;
+$grid-gutter-outer: 5px;
 ```
 
 grid-breakpoints

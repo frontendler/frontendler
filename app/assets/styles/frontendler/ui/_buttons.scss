@@ -3,7 +3,7 @@
 	transition: background-color $transition-speed, color $transition-speed;
 	box-sizing:border-box;
 	display: inline-block;
-	padding: $grid-margin/4 $grid-margin/2 ;
+	padding: $grid-gutter/4 $grid-gutter/2 ;
 	cursor: pointer;
 }
 

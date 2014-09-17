@@ -52,7 +52,7 @@
 	.btn {
 		@include theme(ocean,background);
 		@include theme(blue,background);
-		margin: 0 $grid-margin / 2 $grid-margin / 2 0;
+		margin: 0 $grid-gutter / 2 $grid-gutter / 2 0;
 	}
 
 	.label {
@@ -69,16 +69,16 @@
 	//ABOUT
 	//------------------------------------------------------
 	.about {
-		margin-top: $grid-margin;
+		margin-top: $grid-gutter;
 		.container {
 			@include grid-row;
 		}
 		.item {
 			@include grid-col(4);
-			margin-bottom: $grid-margin;
+			margin-bottom: $grid-gutter;
 			h4 {
 				font-size: 20px;
-				margin-bottom: $grid-margin / 2;
+				margin-bottom: $grid-gutter / 2;
 			}
 		}
 	}

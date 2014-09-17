@@ -2,20 +2,19 @@
 // MIXINS
 // ========================================
 
-@mixin grid-row($empty: false, $breakpoints: $grid-breakpoints) {
+@mixin grid-row($gutter: 0, $breakpoints: $grid-breakpoints) {
 	@include clearfix;
 	box-sizing:border-box;
 	margin: 0 auto;
 	display: block;
-	//inclui padding caso o elemento não possuir colunas
-	@if $empty == empty {
-		padding-left: $grid-margin / 2 + $grid-margin-outer;
-		padding-right: $grid-margin / 2 + $grid-margin-outer;
-	}
-	@else {
-		padding-left: $grid-margin-outer;
-		padding-right: $grid-margin-outer;
-	}	
+	//inclui padding caso o elemento não possuir colunas	
+	padding-left: $gutter;
+	padding-right: $gutter;
+	// }
+	// @else {
+	// padding-left: $grid-gutter/2;
+	// padding-right: $grid-gutter/2;
+	// }	
 	//looping para incluir breakpoints
 	@each $break in map-keys($breakpoints) {
 		@include grid-breakpoint($break) {
@@ -33,8 +32,8 @@
 		float: left;
 	}
 	@if $collapse != collapse and $collapse != true  {
-		padding-left: $grid-margin / 2;
-		padding-right: $grid-margin / 2;
+		padding-left: $grid-gutter / 2;
+		padding-right: $grid-gutter / 2;
 	}
 }
 @mixin grid-col-breakpoint($device, $col, $cols: 12, $collapse: false) {

@@ -9,8 +9,8 @@ $font-size-text: 14px;
 //-----------------------------------------------------------
 //GRID
 //-----------------------------------------------------------
-$grid-margin-outer: 5px;
-$grid-margin: 40px;
+$grid-gutter-outer: 5px;
+$grid-gutter: 40px;
 $grid-breakpoints:(
 	phone: 100% max 480px,
 	tablet: 100% min 481px max 1023px,

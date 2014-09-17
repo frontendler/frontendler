@@ -1,7 +1,7 @@
 .note {
 	border-radius:3px;
 	position: relative;
-	padding: $grid-margin/4 $grid-margin/2;
+	padding: $grid-gutter/4 $grid-gutter/2;
 	font-size: $font-size-text - 1px;
 	font-style: italic;
 	&.close {
