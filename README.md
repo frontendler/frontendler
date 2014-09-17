@@ -46,7 +46,7 @@ $ gulp build
 
 ## GRID
 
-grid-margin
+grid-gutter
 
 ```scss
 $grid-gutter: 40px;
