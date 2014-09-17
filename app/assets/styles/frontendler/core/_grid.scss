@@ -2,27 +2,26 @@
 // MIXINS
 // ========================================
 
-@mixin grid-row($gutter: 0, $breakpoints: $grid-breakpoints) {
+@mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) {
 	@include clearfix;
 	box-sizing:border-box;
 	margin: 0 auto;
 	display: block;
-	//inclui padding caso o elemento não possuir colunas	
-	padding-left: $gutter;
-	padding-right: $gutter;
-	// }
-	// @else {
-	// padding-left: $grid-gutter/2;
-	// padding-right: $grid-gutter/2;
-	// }	
+
+	//include external gutter
+	@if $gutter != false{
+		padding-left: $gutter;
+		padding-right: $gutter;
+	}
+
 	//looping para incluir breakpoints
 	@each $break in map-keys($breakpoints) {
 		@include grid-breakpoint($break) {
 			width: nth(map-get($breakpoints,$break), 1);
-		} 
-	}	
+		}
+	}
 }
-@mixin grid-col($col, $cols: 12, $collapse: false) {
+@mixin grid-col($col, $cols: 12, $gutter: $grid-gutter) {
 	@include clearfix;
 	box-sizing:border-box;
 	$width: 100% * $col / $cols;
@@ -31,20 +30,22 @@
 	@if $width != 100% {
 		float: left;
 	}
-	@if $collapse != collapse and $collapse != true  {
-		padding-left: $grid-gutter / 2;
-		padding-right: $grid-gutter / 2;
+
+	//include gutter
+	@if $gutter != false {
+		padding-left: $gutter / 2;
+		padding-right: $gutter / 2;
 	}
 }
-@mixin grid-col-breakpoint($device, $col, $cols: 12, $collapse: false) {
+@mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false) {
 	@include grid-breakpoint($device) {
 		$width: 100% * $col / $cols;
-		@if $width != 100% {
-			width: $width;
-		}
-		@if $collapse == collapse or $collapse == true {
-			padding-left: 0;
-			padding-right: 0;
+		width: $width;
+
+		//include gutter
+		@if $gutter != false {
+			padding-left: $gutter / 2;
+			padding-right: $gutter / 2;
 		}
 	}
 }
