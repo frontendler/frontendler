@@ -4,7 +4,7 @@
 
 
 [![Bower version](https://badge.fury.io/bo/frontendler.svg)](http://badge.fury.io/bo/frontendler)
-[![Build Status](https://travis-ci.org/dbeff/frontendler.svg?branch=master)](https://travis-ci.org/dbeff/frontendler)
+[![Build Status](https://travis-ci.org/frontendler/frontendler.svg?branch=master)](https://travis-ci.org/frontendler/frontendler)
 
 The responsive frontend kit.
 
