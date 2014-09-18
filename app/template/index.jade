@@ -1,4 +1,5 @@
-extends /_layouts/_home
+extends /layouts/_default
+
 block content
 	div.header
 		div.container
@@ -7,11 +8,8 @@ block content
 				h2 The responsive development kit.
 				h3 Simple and efficient.
 				div.buttons
-					a.btn.ocean(href="/docs") Documentation
-					a.btn.blue(href="https://github.com/dbeff/Frontendler") Git Fork
-				div#fb-root
-					br
-					//iframe(src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffrontendler.com.br&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21&amp;appId=130403560469093",scrolling="no",frameborder="0",style="border:none; overflow:hidden; height:21px;",allowTransparency="true")
+					a.btn.ocean(href="https://github.com/frontendler/frontendler",target="_blank") Documentation
+					//- a.btn.blue(href="https://github.com/frontendler/frontendler") Git Fork
 	div.about
 		div.container
 			div.item
@@ -23,7 +21,7 @@ block content
 			div.item
 				h4 Semantic Grid
 				p The frontendler responsive SASS semantic grid.
-				p Use a few lines to make a responive layout.
+				p Use a few lines to make a complex responive layout.
 		div.container
 			div.item
 				h4 Components
