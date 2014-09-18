@@ -1,7 +1,4 @@
 
-// MIXINS
-// ========================================
-
 @mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) {
 	@include clearfix;
 	box-sizing:border-box;
