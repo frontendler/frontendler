@@ -102,7 +102,7 @@ grid-breakpoint-hide
 grid-breakpoint-show
 
 ```scss
-@mixin grid-breakpoint-hide ($devices...);
+@mixin grid-breakpoint-show ($devices...);
 ```
 
 ### THEME

@@ -3,9 +3,6 @@ html,body {
     font-family: $font-family;
     text-rendering: optimizeLegibility;
     font-size:$font-size-text;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
 
@@ -36,7 +33,7 @@ a {
 }
 
 p {
-    font-size: $font-size-text;:
+    font-size: $font-size-text;
     margin: 0;
 }
 
