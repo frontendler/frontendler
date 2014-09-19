@@ -2,9 +2,8 @@
 
 # Frontendler
 
-
-[![GitHub version](https://badge.fury.io/gh/frontendler%2Ffrontendler.svg)](http://badge.fury.io/gh/frontendler%2Ffrontendler)
-[![Build Status](https://travis-ci.org/frontendler/frontendler.svg?branch=master)](https://travis-ci.org/frontendler/frontendler)
+[![Frontendler version](http://img.shields.io/badge/frontendler-v0.0.7-blue.svg?style=flat)](https://github.com/frontendler/frontendler)
+[![Build Status](http://img.shields.io/travis/frontendler/frontendler.svg?style=flat)](https://travis-ci.org/frontendler/frontendler)
 
 The responsive frontend kit.
 
