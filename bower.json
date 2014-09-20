@@ -1,6 +1,6 @@
 {
-    "name": "Frontendler",
-    "version": "0.0.7",
+    "name": "frontendler",
+    "version": "0.0.8",
     "description": "The responsive development kit",
     "author": {
         "name": "Daniel Beff",
@@ -19,7 +19,6 @@
         "app/assets/icons/",
         "app/assets/images/",
         "app/assets/scripts/",
-        "app/assets/styles/app/",
         "app/template/",
         "app/bower/",
         "app/.htaccess",
