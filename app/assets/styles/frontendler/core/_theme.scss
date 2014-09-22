@@ -16,61 +16,20 @@
 	}@else if $color-status=="foreground-hover" {
 		@return nth($color, 4); 
 	}
-	
+	//if any result found write "none"
 	@return "none";
 }
-@mixin theme-all($type){
-	@each $color in map-keys($theme-colors){
-		@include theme ($color,$type);	
-	}
-}
 
-@mixin theme($color,$type) {
-	&.#{$color} {
-		// background
-		@if $type == background {
-			background-color: theme-color($color,"background");
-			color: theme-color($color,"foreground");
-			&:hover{
-				background-color: theme-color($color,"background-hover");
-				color: theme-color($color,"foreground-hover");
-			}
+@mixin theme ($color-name,$background-property:background-color,$foreground-property:color,$state:false){
+	$color: map-get($theme-colors,$color-name);
+	
+	#{$background-property}:nth($color, 1);
+	#{$foreground-property}:nth($color, 2);
+	
+	@if $state != false{
+		&:#{$state}{
+			#{$background-property}:nth($color, 3);
+			#{$foreground-property}:nth($color, 4);		
 		}
-		// input
-		@else if $type == input{
-			&:focus{
-				border: 1px solid theme-color($color,"background");
-				color: theme-color($color,"background-hover");
-			}
-		}
-		// note
-		@else if $type == note {
-			background-color: theme-color($color,"background");
-			color: theme-color($color,"foreground");
-			.close-btn {
-				background-color: theme-color($color,"foreground");
-				color: theme-color($color,"background");
-				&:hover {
-					color: theme-color($color,"background");
-					background-color: theme-color($color,"foreground-hover");
-				}
-			}
-		}
-		// breadcrumb
-		@else if $type == breadcrumb {
-			background-color: theme-color($color,"background");
-			color: theme-color($color,"foreground");
-			&:after {
-				border-left-color: theme-color($color,"background");
-			}
-			&:hover{
-				background-color: theme-color($color,"background-hover");
-				&:after {
-					border-left-color: theme-color($color,"background-hover");
-					color: theme-color($color,"foreground-hover");
-				}
-			}
-		}
-		@content;
 	}
 }

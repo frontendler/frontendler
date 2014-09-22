@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 //CORE
-@import "core/vars"; 
+@import "core/vars";
+@import "core/reset"; 
 @import "core/helpers";
 @import "core/grid";
 @import "core/theme";

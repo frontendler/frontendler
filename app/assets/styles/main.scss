@@ -2,12 +2,18 @@
 //FRONTENDLER
 //------------------------------------------------------
 @import "frontendler/frontendler";
-@import "frontendler/theme/frontendler";
+
 
 //------------------------------------------------------
 //Exemple CSS
 //------------------------------------------------------
 $font-family-logo: "Grand Hotel";
+
+html,body {
+	width: 100%;
+	font-family: $font-family;
+	font-size:$font-size-text;
+}
 
 body {
 	color: theme-color(grey);
@@ -17,18 +23,33 @@ h1,h2,h3,h4,h5,h6 {
 	color: theme-color(dark);
 	font-weight: normal;
 }
+
 .btn {
-	@include theme-all(background);
+	border-radius:3px;
+	transition: background-color $transition-speed, color $transition-speed;
+	box-sizing:border-box;
+	display: inline-block;
+	padding: $grid-gutter/4 $grid-gutter/2 ;
+	cursor: pointer;
 	font-weight: 600;
 	font-size: 14px;
+	margin: 0 $grid-gutter / 2 $grid-gutter / 2 0;
+	&.documentation{
+		@include theme (ocean,background-color,color,hover);
+	}
+	&.github{
+		@include theme (blue,background-color,color,hover);
+	}
 }
+
 .note{
 	font-weight:600;
 	font-size:14px;
 }
 
 header{
-	background: #174c6b;
+	// background: #174c6b;
+	background: theme-color(dark);
 	.container{
 		@include grid-row();
 		padding-top:50px;
@@ -49,43 +70,30 @@ h1 {
 	}
 
 	small {
-		color: #B0C3D4;
+		color: theme-color(ocean,foreground);
 		font-family: $font-family;
 		font-size: 15px;
 		margin-left: 20px;
 		font-weight: normal;
 		@include grid-breakpoint(phone) {
 			display: block;
+			margin-left: 0;
 		}
 	}
 }
 h2 {
-	color: #B0C3D4;
+	//color: theme-color(dark,foreground);
+	color: theme-color(dark,foreground);
 	margin: 10px 0;
+	
 }
 h3 {
 	margin-top: 0;
 	margin-bottom: 30px;
-	color: #B0C3D4;
-	font-size:25px;
+	color: theme-color(dark,foreground);
 }
 .info {
 	@include grid-col(12, 12);
-}
-.btn {
-	@include theme(ocean,background);
-	@include theme(blue,background);
-	margin: 0 $grid-gutter / 2 $grid-gutter / 2 0;
-}
-
-.label {
-	@include theme(ocean,background);
-	border-radius:3px;
-	display: inline-block;
-	padding: 1px 8px 4px 8px;
-	font-size: $font-size-text - 1;
-	line-height: inherit;
-	font-weight: 600;
 }
 
 main{
@@ -110,10 +118,10 @@ footer {
 		@include grid-col(12); 	
 	}
 	background: theme-color(dark);
-	color: #fff;
+	color: theme-color(dark,foreground);
 	padding: 15px 0;
 	a{
-		color:#B0C3D4;
+		color:theme-color(ocean,foreground);
 		font-weight:normal;
 	}
 }

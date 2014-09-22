@@ -15,18 +15,18 @@ http://frontendler.com.br/
 
 Frontendler need sass,nodeJs and gulp to run.
 
-SASS - [How to install](http://sass-lang.com/install)
+RUBY - [How to install](https://www.ruby-lang.org/)
+
+SASS (3.3.14) ```$ gem install sass -v 3.3.14```
+
 
 NODE JS - [How to install](http://nodejs.org/)
 
-GULP
-```
-$ npm install gulp -g
-```
+GULP ```$ npm install gulp -g```
 
 ## Install
 
-Install project dependencies ```$ npm install```
+Install project node dependencies ```$ npm install```
 
 ##Run frontendler
 
@@ -130,14 +130,7 @@ theme-color
 @function theme-color($color-name,$color-status:false)
 ```
 
-theme-all
-```scss
-@mixin theme-all($type)
-```
-
 theme
 ```scss
-@mixin theme($color,$type) {
-	//put your css
-}
+@mixin theme ($color-name,$background-property:background,$foreground-property:color,$state:false)
 ```

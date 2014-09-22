@@ -6,14 +6,25 @@ INSPECT RESET - CSS
 @version 1.0.0
 @licence MIT
 ---------------------------------------------------------*/
-* {
-	padding: 0;
-	margin: 0;
-}
-
 html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
+	text-size-adjust: 100%;
+}
+
+body{
+	margin:0;
+}
+
+* {
+	box-sizing: inherit;
+	-webkit-font-smoothing:inherit; 
+	-moz-osx-font-smoothing: inherit;
+}
+
+*:before, *:after {
+	box-sizing: inherit;
 }
 
 // --------------------------------------------------------
@@ -25,6 +36,17 @@ a {
 	display: inline-block;
 }
 
+pre {
+	overflow: auto;
+}
+
+// --------------------------------------------------------
+// EMBEDDED
+//---------------------------------------------------------
+img {
+	border: 0;
+}
+
 // --------------------------------------------------------
 // LISTS
 //---------------------------------------------------------
@@ -33,28 +55,13 @@ nav ul {
 }
 
 // --------------------------------------------------------
-// FORM
-//---------------------------------------------------------
-input, textarea, select {
-	display: block;
-	-webkit-font-smoothing: antialiased;
-}
-
-input:focus, textarea:focus, select:focus {
-	outline: none;
-}
-
-input[disabled], textarea[disabled], select[disabled] {
-	cursor: not-allowed;
-}
-
-// --------------------------------------------------------
 // TABLE
 //---------------------------------------------------------
 table {
 	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-tr, td {
-	vertical-align: middle;
+td,th {
+	padding: 0;
 }
