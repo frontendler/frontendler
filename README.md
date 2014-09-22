@@ -60,10 +60,11 @@ grid-breakpoints
 
 ```scss
 $grid-breakpoints:(
-phone: 100% max 480px,
-tablet: 100% min 481px max 1023px,
-desktop: 1000px min 1024px max 1200px,
-desktop-large: 1200px min 1200px
+	phone: 100% max 480px,
+	tablet: 100% min 481px max 768px,
+	tablet-large: 100% min 769px max 1024px,
+	desktop: 1024px min 1024px max 1199px,
+	desktop-large: 1200px min 1200px
 );
 ```
 grid-row

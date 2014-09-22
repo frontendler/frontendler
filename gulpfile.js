@@ -171,7 +171,7 @@ gulp.task('copy:prod', function() {
 		.pipe(gulp.dest(prod + '/' + icons));
     gulp.src(app + '/' + fonts + '/**/*.{eot,svg,ttf,woff}')
         .pipe(gulp.dest(prod + '/' + fonts));
-    gulp.src(app + '/*.*')
+    gulp.src([app + '/*.*'],{ dot: true })
         .pipe(gulp.dest(prod));
 });
 
