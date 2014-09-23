@@ -1,9 +1,9 @@
 
 @mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) {
-	@include clearfix;
+	@extend %clearfix;	
 	margin: 0 auto;
 	display: block;
-
+	box-sizing:border-box;
 	//include external gutter
 	@if $gutter != false{
 		padding-left: $gutter;
@@ -18,9 +18,10 @@
 	}
 }
 @mixin grid-col($col, $cols: 12, $gutter: $grid-gutter) {
-	@include clearfix;
+	@extend %clearfix;
 	$width: 100% * $col / $cols;
 	width: $width;
+	box-sizing:border-box;
 
 	@if $width != 100% {
 		float: left;
