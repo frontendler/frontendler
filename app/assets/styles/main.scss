@@ -83,14 +83,14 @@ h1 {
 }
 h2 {
 	//color: theme-color(dark,foreground);
-	color: theme-color(dark,foreground);
+	color: theme-color(ocean,foreground);
 	margin: 10px 0;
-	
+
 }
 h3 {
 	margin-top: 0;
 	margin-bottom: 30px;
-	color: theme-color(dark,foreground);
+	color: theme-color(ocean,foreground);
 }
 .info {
 	@include grid-col(12, 12);
@@ -115,7 +115,7 @@ footer {
 	@include grid-breakpoint-hide(tablet);
 	.container {
 		@include grid-row();
-		@include grid-col(12); 	
+		@include grid-col(12);
 	}
 	background: theme-color(dark);
 	color: theme-color(dark,foreground);
@@ -125,4 +125,3 @@ footer {
 		font-weight:normal;
 	}
 }
-
