@@ -1,6 +1,6 @@
 
 @mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) {
-	@extend %clearfix;	
+	@extend %clearfix;
 	margin: 0 auto;
 	display: block;
 	box-sizing:border-box;
@@ -43,6 +43,7 @@
 			padding-left: $gutter / 2;
 			padding-right: $gutter / 2;
 		}
+		@content;
 	}
 }
 @mixin grid-breakpoint($devices...) {
