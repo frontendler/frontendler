@@ -28,12 +28,8 @@ var prod = 'dist';
 var styles = 'assets/styles';
 var scripts = 'assets/scripts';
 var images = 'assets/images';
-var icons = 'assets/icons';
 var fonts = 'assets/fonts';
 var template = 'template';
-
-//font
-var fontName = 'frontendler-icons';
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 9',
@@ -88,22 +84,6 @@ gulp.task('templates', function() {
 		.pipe(plugins.size({title: 'template'}));
 });
 
-gulp.task('icons', function() {
-	return gulp.src([app + '/' + icons + '/svg/**/*.svg'])
-		.pipe(plugins.plumber())
-		.pipe(plugins.iconfontCss({
-			fontName: fontName,
-			path: app + '/' + icons + '/_icons_template.scss',
-			targetPath: '_icons.scss',
-			fontPath:  '../icons/'
-		}))
-		.pipe(plugins.iconfont({
-			fontName: fontName
-		}))
-		.pipe(gulp.dest(app + '/' + icons ))
-		.pipe(plugins.size({title: 'icons'}));
-});
-
 gulp.task('images', function() {
 	return gulp.src(app + '/' + images + '/**/*')
 		.pipe(plugins.plumber())
@@ -141,7 +121,6 @@ gulp.task('serve:dev', function () {
 	browserSync({
 		notify: true,
 		logFileChanges:true,
-		//tunnel: 'frontendler',
 		port:9000,
 		server: {
 			baseDir: [dev,app]
@@ -149,10 +128,8 @@ gulp.task('serve:dev', function () {
 	});
 
 	gulp.watch( [app + '/' + template + '/**/*.jade'], ['templates',reload]);
-	gulp.watch( [app + '/' + styles + '/**/*.scss',app + '/' + icons + '/**/*.scss'], ['styles']);
 	gulp.watch( [app + '/' + scripts + '/**/*.js'], ['scripts',reload]);
 	gulp.watch( [app + '/' + images + '/**/*'], [reload]);
-	gulp.watch( [app + '/' + icons + '/svg/**/*.svg'], ['icons',reload]);
 	gulp.watch( [app + '/' + fonts + '**/*'], ['fonts',reload]);
 
 });
@@ -167,8 +144,6 @@ gulp.task('watch',['clean:dev'],function(cb) {
 
 gulp.task('clean:prod', del.bind(null, [prod]));
 gulp.task('copy:prod', function() {
-	gulp.src(app + '/' + icons + '/*.{eot,svg,ttf,woff}')
-		.pipe(gulp.dest(prod + '/' + icons));
     gulp.src(app + '/' + fonts + '/**/*.{eot,svg,ttf,woff}')
         .pipe(gulp.dest(prod + '/' + fonts));
     gulp.src([app + '/*.*'],{ dot: true })
