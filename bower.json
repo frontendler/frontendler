@@ -1,6 +1,6 @@
 {
     "name": "frontendler",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "The responsive development kit",
     "author": {
         "name": "Daniel Beff",
@@ -16,12 +16,10 @@
     "homepage": "http://frontendler.com.br/",
     "main":"app/assets/styles/frontendler/_frontendler.scss",
     "ignore": [
-        "app/assets/icons/",
         "app/assets/images/",
         "app/assets/scripts/",
+        "app/assets/bower/",
         "app/template/",
-        "app/bower/",
-        "app/.htaccess",
         "app/robots.txt",
         "dist",
         ".bowerrc",
@@ -34,10 +32,9 @@
         "package.json"
     ],
   "dependencies": {
-
   },
   "devDependencies": {
-    "modernizr": "~2.6.2",
-    "jquery": "1.9.0"
+    "modernizr": "~2.8.3",
+    "jquery": "1.11.0"
   }
 }
