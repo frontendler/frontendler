@@ -83,6 +83,10 @@ grid-col
 grid-col-breakpoint
 
 ```scss
+@mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false)
+```
+or
+```scss
 @mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false){
 	"optional custom css"
 }
