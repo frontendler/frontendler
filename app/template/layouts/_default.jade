@@ -36,24 +36,15 @@ html(lang="en")
 		// endbuild
 
 		// build:js /assets/scripts/modernizr.js
-		script(src='assets/bower/modernizr/modernizr.js')
+		script(src='assets/scripts/libs/modernizr.js')
 		// endbuild
 
-		//html5 and media query suport for IE 9
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
 
 		body(class="home")
 			block content
 
-			footer
-				div.container
-					p Frontendler by
-						a(href="https://github.com/dbeff/") Daniel Beff
-
 				// build:js /assets/scripts/main.js
-				script(src='/assets/bower/jquery/dist/jquery.js')
+				script(src='/assets/scripts/libs/jquery.js')
 				script(src='/assets/scripts/main.js')
 				// endbuild
 
