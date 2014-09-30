@@ -133,7 +133,7 @@ gulp.task('serve:dev', function () {
 	gulp.watch( [app + '/' + scripts + '/**/*.js'], ['scripts',reload]);
     gulp.watch( [app + '/' + styles + '/**/*.scss'], ['styles',reload]);
     gulp.watch( [app + '/' + fonts + '**/*'], ['fonts',reload]);
-	gulp.watch( [app + '/' + images + '/**/*'], [reload]);
+	gulp.watch( [app + '/' + images + '/**/*'], reload);
 
 });
 
