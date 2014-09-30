@@ -134,7 +134,7 @@ gulp.task('serve:dev', function () {
     gulp.watch( [app + '/' + styles + '/**/*.scss'], ['styles',reload]);
     gulp.watch( [app + '/' + fonts + '**/*'], ['fonts',reload]);
 	gulp.watch( [app + '/' + images + '/**/*'], [reload]);
-    
+
 });
 
 gulp.task('watch',['clean:dev'],function(cb) {
@@ -147,9 +147,9 @@ gulp.task('watch',['clean:dev'],function(cb) {
 
 gulp.task('clean:prod', del.bind(null, [prod]));
 gulp.task('copy:prod', function() {
-    gulp.src([app + '/' + fonts + '/**/*.{eot,svg,ttf,woff}','node_modules/apache-server-configs/dist/.htaccess'])
+    gulp.src([app + '/' + fonts + '/**/*.{eot,svg,ttf,woff}'])
         .pipe(gulp.dest(prod + '/' + fonts));
-    gulp.src([app + '/*.*'],{ dot: true })
+    gulp.src([app + '/*.*','node_modules/apache-server-configs/dist/.htaccess'],{ dot: true })
         .pipe(gulp.dest(prod));
 });
 

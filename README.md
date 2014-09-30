@@ -2,8 +2,9 @@
 
 # Frontendler
 
-[![Frontendler version](http://img.shields.io/badge/frontendler-v0.0.8-blue.svg?style=flat)](https://github.com/frontendler/frontendler)
+[![Frontendler version](http://img.shields.io/badge/frontendler-v0.0.9-blue.svg?style=flat)](https://github.com/frontendler/frontendler)
 [![Build Status](http://img.shields.io/travis/frontendler/frontendler.svg?style=flat)](https://travis-ci.org/frontendler/frontendler)
+[![Issues](http://img.shields.io/github/issues/frontendler/frontendler.svg?style=flat)](https://github.com/frontendler/frontendler/issues)
 
 The responsive frontend kit.
 
@@ -83,7 +84,7 @@ grid-col-breakpoint
 
 ```scss
 @mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false){
-	"optional custom css" 
+	"optional custom css"
 }
 ```
 
