@@ -1,17 +1,41 @@
-extends /layouts/_default
-
+extends _layouts/_base
+block menu
+	-var selected = 'início';
 block content
 	header
-		div.container
-			div.info
-				h1 Frontendler<small>Beta</small>
-				h2 The responsive development kit.
-				h3 Simple and efficient.
-				div.buttons
-					a.btn.documentation(href="http://frontendler.com.br") Documentation
-					a.btn.github(href="https://github.com/frontendler/frontendler") Github
-	main
-		div.container
-			div.item
-				h4 Hello
-				p Build your amazing responsive app!
+		include _includes/_topo.jade
+	main.main
+		include _includes/_sidebar.jade
+		section.content
+			div.timesheet
+				
+				h1.title.
+					Timesheet
+				div.legend
+					div.item
+						span.text.
+							final de semana
+						span.color
+				table
+					tr
+						td
+						-for (var i=1;i <=31;i++) {	
+						td=i
+						- }
+					-for (var k=1;k <=10;k++) {	
+					tr
+						td.nome(style="width:200px")
+							img.foto(src="http://lorempixel.com/30/30/people/#{k}")
+							|NOME #{k}
+						-for (var i=1;i <=31;i++) {	
+						-if (i==4)
+							td
+								span.negative #{i}.0
+						-else
+							td 
+								span 8.0
+						- }
+					- }
+					
+					
+		

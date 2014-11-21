@@ -1,0 +1,17 @@
+div.topo
+	div.container
+		div.logo
+			a.link(href="/") 
+				img.imagem(src="assets/images/logo-azul.svg")
+		nav.menu
+			ul.itens
+				-var menu = { 'funcionários':'funcionários','projetos': 'projetos','times':'times','timesheet':'timesheet','férias': 'ferias' };
+				each val, key in menu
+					if selected === key
+						li.item.ativo
+							a(href="/#{val}.html",class="link #{val}")
+								div.texto=val
+					else
+						li.item
+							a(href="/#{val}.html",class="link #{val}")
+								div.texto=val

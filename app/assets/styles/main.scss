@@ -3,125 +3,37 @@
 //------------------------------------------------------
 @import "frontendler/frontendler";
 
-
 //------------------------------------------------------
-//Exemple CSS
+//APP
 //------------------------------------------------------
-$font-family-logo: "Grand Hotel";
 
-html,body {
-	width: 100%;
-	font-family: $font-family;
-	font-size:$font-size-text;
+@import "assets/styles/app/topo";
+@import "assets/styles/app/footer";
+@import "assets/styles/app/timesheet";
+
+
+body{
+	font-family:"Open Sans"
 }
 
-body {
-	color: theme-color(grey);
-}
 
-h1,h2,h3,h4,h5,h6 {
-	color: theme-color(dark);
-	font-weight: normal;
-}
+.main{
+	@include grid-row(false);
+	background-color:theme-color(dark,'background');
 
-.btn {
-	border-radius:3px;
-	transition: background-color $transition-speed, color $transition-speed;
-	box-sizing:border-box;
-	display: inline-block;
-	padding: $grid-gutter/4 $grid-gutter/2 ;
-	cursor: pointer;
-	font-weight: 600;
-	font-size: 14px;
-	margin: 0 $grid-gutter / 2 $grid-gutter / 2 0;
-	&.documentation{
-		@include theme (ocean,background-color,color,hover);
-	}
-	&.github{
-		@include theme (blue,background-color,color,hover);
-	}
-}
-
-.note{
-	font-weight:600;
-	font-size:14px;
-}
-
-header{
-	// background: #174c6b;
-	background: theme-color(dark);
-	.container{
-		@include grid-row();
-		padding-top:50px;
-		padding-bottom:50px;
-	}
-}
-
-h1 {
-	font-size: 120px;
-	color: #fff;
-	font-family: $font-family-logo;
-	margin: 0;
-	text-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
-
-	@include grid-breakpoint(phone) {
-		font-size: 70px;
-		line-height: 40px;
+	h1.title{
+		color:#0076be;
+		font-weight:600;
 	}
 
-	small {
-		color: theme-color(ocean,foreground);
-		font-family: $font-family;
-		font-size: 15px;
-		margin-left: 20px;
-		font-weight: normal;
-		@include grid-breakpoint(phone) {
-			display: block;
-			margin-left: 0;
-		}
+	.sidebar{
+		@include grid-col(2,12);
+		min-height:600px;
 	}
-}
-h2 {
-	//color: theme-color(dark,foreground);
-	color: theme-color(ocean,foreground);
-	margin: 10px 0;
-
-}
-h3 {
-	margin-top: 0;
-	margin-bottom: 30px;
-	color: theme-color(ocean,foreground);
-}
-.info {
-	@include grid-col(12, 12);
-}
-
-main{
-	margin-top: $grid-gutter;
-	.container {
-		@include grid-row;
-	}
-	.item {
-		@include grid-col(12);
-		margin-bottom: $grid-gutter;
-		h4 {
-			font-size: 20px;
-			margin-bottom: $grid-gutter / 2;
-		}
-	}
-}
-
-footer {
-	@include grid-breakpoint-hide(tablet);
-	.container {
-		@include grid-row();
-		@include grid-col(12);
-	}
-	background: theme-color(dark);
-	color: theme-color(dark,foreground);
-	padding: 15px 0;
-	a{
-		color:theme-color(ocean,foreground);
-		font-weight:normal;
+	.content{
+		@include grid-col(10,12);
+		background:#f2f4f8;
+		min-height:600px;
+		padding-top:$grid-gutter/2;
 	}
 }
