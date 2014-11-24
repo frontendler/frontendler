@@ -11,8 +11,10 @@ $grid-gutter: 40px;
 $grid-gutter-outside: 5px;
 $grid-breakpoints:(
 	phone: 100% max 480px,
-	tablet: 100% min 481px max 1024px,
-	desktop: 100% min 1024px
+	tablet: 100% min 481px max 768px,
+	tablet-large: 100% min 769px max 1024px,
+	desktop: 1024px min 1024px max 1199px,
+	desktop-large: 1200px min 1200px
 );
 
 //-----------------------------------------------------------
