@@ -1,0 +1,9 @@
+.footer{
+	background:#242933;
+	.container{
+		@include grid-row(empty);
+		color:#ccc;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}

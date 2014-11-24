@@ -1,0 +1,84 @@
+.timesheet{
+	@include grid-col(12,12,true);
+	overflow:auto;
+	table{
+		background-color:#fff;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		td{
+			text-align:center;
+			vertical-align: middle;
+			width:auto;
+			span{
+				padding:0 5px;
+				border-radius:3px;
+			}
+		}
+		.nome{
+			font-weight:600;
+			width:200px;
+			text-transform:uppercase;
+			border-left:0;
+			line-height:30px;
+			text-align:left;
+			color:theme-color(dark,"background");
+			display:table-caption;
+			.foto{
+				margin-right:10px;
+				border-radius:50%;
+				vertical-align: middle;
+			}
+		}
+
+		.negative{
+			background:#e33244;
+			color:#fff;
+
+		}
+		.positive{
+			background:yellow;
+			color:#fff;
+			border-radius:3px;
+			padding:0 5px;
+		}
+	}
+}
+
+
+.timesheet table {
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px;
+	width: 100%;
+	border: 1px solid #ddd;
+	thead th,
+	tbody td,
+	tr td {
+		display: table-cell;
+		padding: 7px;
+		vertical-align: top;
+		text-align: left;
+		border-top: 1px solid #ddd;
+		border-left: 1px solid #ddd;
+		text-align:center;
+		line-height: 30px;
+	}
+	tr td, tbody tr td {
+		font-size: $font-size-text;
+	}
+	thead {
+		background-color: #f9f9f9;
+		tr th {
+			font-size: $font-size-text;
+			font-weight: bold;
+			vertical-align: bottom;
+		}
+	}
+	tbody tr{
+		transition: background $transition-speed;
+	}
+	tbody tr:hover {
+		background-color: #f1f1f1;
+	}
+}
