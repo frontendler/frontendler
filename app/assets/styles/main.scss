@@ -48,11 +48,26 @@ hr{
 // TOP
 //------------------------------------------------------
 
+
+
+
 .top{
     border-bottom: 7px solid #333;
     .container{
         @include grid-row;
         padding: 20px 0;
+		position:relative;
+
+		//TODO - Ajustar posicao do botao e esconder quando for mobile e tablet
+		.bt-mobile{
+			display:block;
+			width:20px;
+			height:20px;
+			position:absolute;
+			right: 20px;
+			top:20px;
+			background:yellow;
+		}
         .brand{
             @include grid-col(5,12);
         }
