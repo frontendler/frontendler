@@ -122,7 +122,7 @@ gulp.task('serve:dev', function () {
 	browserSync({
 		logFileChanges:true,
         notify: true,
-        // Customize the BrowserSync console logging prefix
+        tunnel: 'frontendler',
         logPrefix: 'Frontendler',
 		server: {
 			baseDir: [dev,app]
