@@ -1,6 +1,8 @@
+
+
 # Frontendler
 
-[![Frontendler version](http://img.shields.io/badge/frontendler-v1.0.0-blue.svg?style=flat)](https://github.com/frontendler/frontendler)
+[![Frontendler version](http://img.shields.io/badge/frontendler-v0.1.0-blue.svg?style=flat)](https://github.com/frontendler/frontendler)
 [![Build Status](http://img.shields.io/travis/frontendler/frontendler.svg?style=flat)](https://travis-ci.org/frontendler/frontendler)
 
 The responsive frontend kit.
