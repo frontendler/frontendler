@@ -7,10 +7,6 @@
 
 The responsive frontend kit.
 
-
-
-
-
 Simple, efficient.
 
 http://frontendler.com.br/
