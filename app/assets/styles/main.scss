@@ -26,7 +26,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .btn {
 	border-radius:3px;
-	transition: background-color $transition-speed, color $transition-speed;
+	transition: background-color $animation-speed, color $animation-speed;
 	box-sizing:border-box;
 	display: inline-block;
 	padding: $grid-gutter/4 $grid-gutter/2 ;
@@ -58,12 +58,13 @@ header{
 }
 
 h1 {
+	opacity:0;
+	@include animation (fadeIn,0.5s,2s);
 	font-size: 120px;
 	color: #fff;
 	font-family: $font-family-logo;
 	margin: 0;
 	text-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
-
 	@include grid-breakpoint(phone) {
 		font-size: 70px;
 		line-height: 40px;
