@@ -13,11 +13,19 @@ html,body {
 	width: 100%;
 	font-family: $font-family;
 	font-size:$font-size-text;
+	transition-duration:$animation-speed;
+	animation-duration: $animation-speed;
 }
 
 body {
 	color: theme-color(grey);
 }
+
+*{
+	transition-property: all;
+}
+
+
 
 h1,h2,h3,h4,h5,h6 {
 	color: theme-color(dark);
@@ -58,13 +66,11 @@ header{
 }
 
 h1 {
-	opacity:0;
-	@include animation (fadeIn,0.5s,2s);
+	font-family: $font-family-logo;
 	font-size: 120px;
 	color: #fff;
-	font-family: $font-family-logo;
 	margin: 0;
-	text-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+	@include animation (rollIn,0.8s,1s);
 	@include grid-breakpoint(phone) {
 		font-size: 70px;
 		line-height: 40px;
