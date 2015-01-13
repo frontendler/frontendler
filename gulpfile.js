@@ -48,7 +48,7 @@ var AUTOPREFIXER_BROWSERS = [
 //-------------------------------------------------------------------
 
 gulp.task('styles',function() {
-	return gulp.src( app + '/' + styles + '/**/*.scss')
+	return gulp.src( app + '/' + styles + '/*.scss')
 		.pipe(plugins.plumber())
 
         //if you want genarate only the changed file

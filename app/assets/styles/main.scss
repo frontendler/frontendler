@@ -3,7 +3,6 @@
 //------------------------------------------------------
 @import "frontendler/frontendler";
 
-
 //------------------------------------------------------
 //Exemple CSS
 //------------------------------------------------------
@@ -22,7 +21,7 @@ body {
 }
 
 *{
-	transition-property: all;
+	transition-property: all; 
 }
 
 
@@ -130,5 +129,17 @@ footer {
 	a{
 		color:theme-color(ocean,foreground);
 		font-weight:normal;
+	}
+}
+.bt-mobile{
+
+	width:40px;
+	height:40px;
+	position:fixed;
+	top:30px;
+	right:30px;
+	@include svg-mobile-buttom(#fff, false);
+	&:hover{
+		@include svg-mobile-buttom(#fff, true);
 	}
 }
