@@ -1,0 +1,18 @@
+{
+    "name": "Frontendler - The responsive development kit.",
+    "short_name": "Frontendler",
+    "version": "versionString",
+    "default_locale": "en",
+    "icons": [{
+        "src": "assets/images/favicon/icon-152x152.png",
+        "sizes": "152x152"
+        }, {
+        "src": "assets/images/favicon/icon-120x120.png",
+        "sizes": "120x120"
+        }, {
+        "src": "assets/images/favicon/icon-76x76.png",
+        "sizes": "76x76"
+        }],
+    "start_url": "/index.html",
+    "display": "standalone"
+}
