@@ -1,3 +1,14 @@
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group API
+/// @author Hugo Giraudel
+////
+
+/// This item will have:
+/// `@group API` and `@author Hugo Giraudel`
+/// inherited from the poster.
+
 //------------------------------------------------------
 //FRONTENDLER
 //------------------------------------------------------
@@ -21,7 +32,7 @@ body {
 }
 
 *{
-	transition-property: all; 
+	transition-property: all;
 }
 
 

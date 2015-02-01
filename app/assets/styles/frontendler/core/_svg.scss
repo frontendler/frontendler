@@ -1,3 +1,4 @@
+/// @group svg
 @mixin svg-mobile-buttom ($color,$open:false) {
 	@if ($open == false){
 		.mobile-svg {

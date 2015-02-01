@@ -1,0 +1,166 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Frontendler-docs</title><link rel="stylesheet" href="./assets/css/main.css"><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Thanks to Sass-lang.com for the icons --><link href="http://sass-lang.com/favicon.ico" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Frontendler-docs</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="animation"><a href="#animation">animation</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="animation-mixin"><a href="#animation-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="animation" data-type="mixin"><a href="#mixin-animation">animation</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="grid"><a href="#grid">grid</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="grid-mixin"><a href="#grid-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="grid-row" data-type="mixin"><a href="#mixin-grid-row">grid-row</a></li><li class="sidebar__item sassdoc__item" data-name="grid-col" data-type="mixin"><a href="#mixin-grid-col">grid-col</a></li><li class="sidebar__item sassdoc__item" data-name="grid-col-breakpoint" data-type="mixin"><a href="#mixin-grid-col-breakpoint">grid-col-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-name="grid-breakpoint" data-type="mixin"><a href="#mixin-grid-breakpoint">grid-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-name="grid-breakpoint-hide" data-type="mixin"><a href="#mixin-grid-breakpoint-hide">grid-breakpoint-hide</a></li><li class="sidebar__item sassdoc__item" data-name="grid-breakpoint-show" data-type="mixin"><a href="#mixin-grid-breakpoint-show">grid-breakpoint-show</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="grid-variable"><a href="#grid-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="grid-gutter" data-type="variable"><a href="#variable-grid-gutter">grid-gutter</a></li><li class="sidebar__item sassdoc__item" data-name="grid-gutter-outside" data-type="variable"><a href="#variable-grid-gutter-outside">grid-gutter-outside</a></li><li class="sidebar__item sassdoc__item" data-name="grid-breakpoints" data-type="variable"><a href="#variable-grid-breakpoints">grid-breakpoints</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="svg"><a href="#svg">svg</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="svg-mixin"><a href="#svg-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="svg-mobile-buttom" data-type="mixin"><a href="#mixin-svg-mobile-buttom">svg-mobile-buttom</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="theme"><a href="#theme">theme</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="theme-function"><a href="#theme-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="theme-color" data-type="function"><a href="#function-theme-color">theme-color</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="theme-mixin"><a href="#theme-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="theme" data-type="mixin"><a href="#mixin-theme">theme</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="animation"><div class="container">animation</div></h1><section class="main__sub-section" id="animation-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-animation"><h3 class="item__heading"><a class="item__name" href="#mixin-animation">animation</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin animation() { 
+	animation: $keyframe $duration;
+	animation-timing-function: $aniamtion-ease;
+	animation-delay:$delay;
+	animation-fill-mode: both;
+
+	transition-timing-function: $aniamtion-ease;
+	transition-delay:$delay;
+	transform-origin: center center;
+
+	@if $duration != $animation-speed	{
+		transition-duration:$duration;
+		animation-duration: $duration;
+	}
+ }" data-collapsed="@mixin animation() { ... }"><code>@mixin animation() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-animation"><code>animation</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-animation"><code>animation</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="grid"><div class="container">grid</div></h1><section class="main__sub-section" id="grid-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-grid-row"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-row">grid-row</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) { 
+	@extend %clearfix;
+	margin: 0 auto;
+	display: block;
+	box-sizing:border-box;
+	//include external gutter
+	@if $gutter != false{
+		padding-left: $gutter;
+		padding-right: $gutter;
+	}
+
+	//looping para incluir breakpoints
+	@each $break in map-keys($breakpoints) {
+		@include grid-breakpoint($break) {
+			width: nth(map-get($breakpoints,$break), 1);
+		}
+	}
+ }" data-collapsed="@mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) { ... }"><code>@mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>gutter space</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$grid-gutter-outside</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>name of breakpoint</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$grid-breakpoints</code></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-grid-breakpoint"><code>grid-breakpoint</code></a></li></ul><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[variable]</span> <a href="#variable-grid-breakpoints"><code>grid-breakpoints</code></a></li><li><span class="item__cross-type">[variable]</span> <a href="#variable-grid-gutter"><code>grid-gutter</code></a></li></ul></section><section class="main__item container item" id="mixin-grid-col"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-col">grid-col</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-col($col, $cols:, $gutter:) { 
+	@extend %clearfix;
+	$width: 100% * $col / $cols;
+	width: $width;
+	box-sizing:border-box;
+
+	@if $width != 100% {
+		float: left;
+	}
+
+	//include gutter
+	@if $gutter != false {
+		padding-left: $gutter / 2;
+		padding-right: $gutter / 2;
+	}
+ }" data-collapsed="@mixin grid-col($col, $cols:, $gutter:) { ... }"><code>@mixin grid-col($col, $cols:, $gutter:) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$col</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$cols:</code></th><td data-label="desc"><p>12</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter:</code></th><td data-label="desc"><p>$grid-gutter</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="mixin-grid-col-breakpoint"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-col-breakpoint">grid-col-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-col-breakpoint($device, $col, $cols:, $gutter:) { 
+	@include grid-breakpoint($device) {
+		$width: 100% * $col / $cols;
+		width: $width;
+
+		//include gutter
+		@if $gutter != false {
+			padding-left: $gutter / 2;
+			padding-right: $gutter / 2;
+		}
+		@content;
+	}
+ }" data-collapsed="@mixin grid-col-breakpoint($device, $col, $cols:, $gutter:) { ... }"><code>@mixin grid-col-breakpoint($device, $col, $cols:, $gutter:) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$device</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$col</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$cols:</code></th><td data-label="desc"><p>12</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter:</code></th><td data-label="desc"><p>false</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-grid-breakpoint"><code>grid-breakpoint</code></a></li></ul></section><section class="main__item container item" id="mixin-grid-breakpoint"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-breakpoint">grid-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-breakpoint($devices...) { 
+	@if ($grid-breakpoints != false) {
+		@each $device in $devices {
+			@if (map-get($grid-breakpoints,$device) != null) {
+				$break:map-get($grid-breakpoints,$device);
+				@if (length($break) &gt; 3) {
+					@media only screen and (#{nth($break, 2)}-width: nth($break, 3)) and (#{nth($break, 4)}-width: nth($break, 5)) {
+						@content;
+					}
+				}
+				@else{
+					@media only screen and (#{nth($break, 2)}-width: nth($break, 3)) {
+						@content;
+					}
+				}
+			}
+			@else{
+				@warn $device &quot;is not a valid grid breakpoint&quot;;
+			}
+		}
+	}
+ }" data-collapsed="@mixin grid-breakpoint($devices...) { ... }"><code>@mixin grid-breakpoint($devices...) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$devices...</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#variable-grid-breakpoints"><code>grid-breakpoints</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-grid-row"><code>grid-row</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-grid-col-breakpoint"><code>grid-col-breakpoint</code></a></li></ul></section><section class="main__item container item" id="mixin-grid-breakpoint-hide"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-breakpoint-hide">grid-breakpoint-hide</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-breakpoint-hide($devices...) { 
+	@each $device in $devices {
+		@include grid-breakpoint($device) {
+			display: none;
+		}
+	}
+ }" data-collapsed="@mixin grid-breakpoint-hide($devices...) { ... }"><code>@mixin grid-breakpoint-hide($devices...) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$devices...</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="mixin-grid-breakpoint-show"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-breakpoint-show">grid-breakpoint-show</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-breakpoint-show($devices...) { 
+	@each $device in $devices {
+		@include grid-breakpoint($device) {
+			display: block;
+		}
+	}
+ }" data-collapsed="@mixin grid-breakpoint-show($devices...) { ... }"><code>@mixin grid-breakpoint-show($devices...) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$devices...</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section></section><section class="main__sub-section" id="grid-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="variable-grid-gutter"><h3 class="item__heading"><a class="item__name" href="#variable-grid-gutter">grid-gutter</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$grid-gutter: 40px;</code></pre></div></section><section class="main__item container item" id="variable-grid-gutter-outside"><h3 class="item__heading"><a class="item__name" href="#variable-grid-gutter-outside">grid-gutter-outside</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$grid-gutter-outside: 5px;</code></pre></div></section><section class="main__item container item" id="variable-grid-breakpoints"><h3 class="item__heading"><a class="item__name" href="#variable-grid-breakpoints">grid-breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$grid-breakpoints: (
+	phone: 100% max 480px,
+	tablet: 100% min 481px max 768px,
+	tablet-large: 100% min 769px max 1024px,
+	desktop: 1024px min 1024px max 1199px,
+	desktop-large: 1200px min 1200px
+);</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-grid-breakpoint"><code>grid-breakpoint</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="svg"><div class="container">svg</div></h1><section class="main__sub-section" id="svg-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-svg-mobile-buttom"><h3 class="item__heading"><a class="item__name" href="#mixin-svg-mobile-buttom">svg-mobile-buttom</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin svg-mobile-buttom() { 
+	@if ($open == false){
+		.mobile-svg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 20px;
+			width:100%;
+			height:100%;
+			fill:$color;
+			transition: all $animation-speed / 2;
+			transform: translateZ(0) rotate(0deg);
+		}
+		.mobile-svg-rect-top {
+			transition: all $animation-speed;
+			transform: translate3d(0, -15px, 0);
+		}
+		.mobile-svg-rect-bottom {
+			transition: all $animation-speed;
+			transform: translate3d(0, 15px, 0);
+		}
+	}
+	@else{
+		.mobile-svg-top{
+			transition-delay:$animation-speed/2;
+			transform: translateZ(0) rotate(45deg);
+		}
+		.mobile-svg-bottom{
+			transition-delay:$animation-speed/2;
+			transform: translateZ(0) rotate(-45deg);
+		}
+		.mobile-svg-rect{
+			transform: translate3d(0, 0, 0);
+		}
+
+	}
+ }" data-collapsed="@mixin svg-mobile-buttom() { ... }"><code>@mixin svg-mobile-buttom() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section></section><section class="main__section"><h1 class="main__heading" id="theme"><div class="container">theme</div></h1><section class="main__sub-section" id="theme-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="function-theme-color"><h3 class="item__heading"><a class="item__name" href="#function-theme-color">theme-color</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function theme-color() { 
+	$color: map-get($theme-colors,$color-name);
+	@if ($color == null) {
+		@warn &quot;&#39;#{$color-name}&#39; dont exist in theme-colors list&quot;;
+		@return null;
+	}
+
+	@if $color-status==false {
+		@return nth($color, 1);
+	}@else if $color-status==&quot;background&quot; {
+		@return nth($color, 1);
+	}@else if $color-status==&quot;foreground&quot; {
+		@return nth($color, 2);
+	}@else if $color-status==&quot;background-hover&quot; {
+		@return nth($color, 3);
+	}@else if $color-status==&quot;foreground-hover&quot; {
+		@return nth($color, 4);
+	}
+	//if any result found write &quot;none&quot;
+	@return &quot;none&quot;;
+ }" data-collapsed="@function theme-color() { ... }"><code>@function theme-color() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section><section class="main__sub-section" id="theme-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-theme"><h3 class="item__heading"><a class="item__name" href="#mixin-theme">theme</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin theme() { 
+	$color: map-get($theme-colors,$color-name);
+
+	#{$background-property}:nth($color, 1);
+	#{$foreground-property}:nth($color, 2);
+
+	@if $state != false{
+		&amp;:#{$state}{
+			#{$background-property}:nth($color, 3);
+			#{$foreground-property}:nth($color, 4);
+		}
+	}
+ }" data-collapsed="@mixin theme() { ... }"><code>@mixin theme() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><span class="project-info__name">Frontendler-docs</span><!-- Version --><!-- License --></div><a class="footer__watermark" href="http://sassdoc.com"><img src="./assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="./assets/js/main.min.js"></script></body></html>

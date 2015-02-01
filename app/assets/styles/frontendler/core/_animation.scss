@@ -4,7 +4,7 @@
 		transform: translateY(-50%);
 	}
 }
-
+/// @group Animation
 @mixin animation ($keyframe,$delay:0,$duration:$animation-speed)
 {
 	animation: $keyframe $duration;

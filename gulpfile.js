@@ -13,6 +13,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var pagespeed = require('psi');
+var sassdoc = require('sassdoc');
 
 
 //-------------------------------------------------------------------
@@ -109,6 +110,26 @@ gulp.task('html',function() {
         .pipe(plugins.if('*.html', plugins.minifyHtml()))
 		.pipe(gulp.dest(prod + '/'))
 		.pipe(plugins.size({title: 'html'}));
+});
+
+
+gulp.task('docs', function () {
+  var options = {
+    dest: app + '/sass-docs',
+    verbose: true,
+    package:{
+        title:'Frontendler-docs',
+        name:'Frontendler',
+    },
+    display: {
+      access: ['public', 'private'],
+      alias: true,
+      watermark: true,
+    }
+  };
+
+  return gulp.src(app + '/' + styles + '/**/*.scss')
+    .pipe(sassdoc(options));
 });
 
 //-------------------------------------------------------------------

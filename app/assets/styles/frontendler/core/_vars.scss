@@ -13,8 +13,11 @@ $aniamtion-ease: cubic-bezier(0.645, 0.045, 0.355, 1); //easeInOutCubic
 //-----------------------------------------------------------
 //GRID
 //-----------------------------------------------------------
+/// @group Grid
 $grid-gutter: 40px;
+/// @group Grid
 $grid-gutter-outside: 5px;
+/// @group Grid
 $grid-breakpoints:(
 	phone: 100% max 480px,
 	tablet: 100% min 481px max 768px,

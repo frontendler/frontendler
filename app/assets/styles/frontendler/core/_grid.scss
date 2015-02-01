@@ -1,4 +1,8 @@
-
+/// @group Grid
+/// @param {number} $gutter  [$grid-gutter-outside] gutter space
+/// @param {string} $breakpoints [$grid-breakpoints] name of breakpoint
+/// @see $grid-breakpoints
+/// @see $grid-gutter
 @mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) {
 	@extend %clearfix;
 	margin: 0 auto;
@@ -17,6 +21,10 @@
 		}
 	}
 }
+/// @group Grid
+/// @param $col
+/// @param $cols: 12
+/// @param $gutter: $grid-gutter
 @mixin grid-col($col, $cols: 12, $gutter: $grid-gutter) {
 	@extend %clearfix;
 	$width: 100% * $col / $cols;
@@ -33,6 +41,11 @@
 		padding-right: $gutter / 2;
 	}
 }
+/// @group Grid
+/// @param $device
+/// @param $col
+/// @param $cols: 12
+/// @param $gutter: false
 @mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false) {
 	@include grid-breakpoint($device) {
 		$width: 100% * $col / $cols;
@@ -46,6 +59,8 @@
 		@content;
 	}
 }
+/// @group Grid
+/// @param devices...
 @mixin grid-breakpoint($devices...) {
 	@if ($grid-breakpoints != false) {
 		@each $device in $devices {
@@ -68,6 +83,8 @@
 		}
 	}
 }
+/// @group Grid
+/// @param devices...
 @mixin grid-breakpoint-hide($devices...) {
 	@each $device in $devices {
 		@include grid-breakpoint($device) {
@@ -75,6 +92,8 @@
 		}
 	}
 }
+/// @group Grid
+/// @param devices...
 @mixin grid-breakpoint-show($devices...) {
 	@each $device in $devices {
 		@include grid-breakpoint($device) {
