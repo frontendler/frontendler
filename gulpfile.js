@@ -13,6 +13,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var pagespeed = require('psi');
+var mdoc = require('mdoc');
 
 
 //-------------------------------------------------------------------
@@ -109,6 +110,14 @@ gulp.task('html',function() {
         .pipe(plugins.if('*.html', plugins.minifyHtml()))
 		.pipe(gulp.dest(prod + '/'))
 		.pipe(plugins.size({title: 'html'}));
+});
+
+gulp.task('docs',function() {
+	return mdoc.run({
+            // configuration options (specified below)
+            inputDir: 'app/docs',
+            outputDir: 'dist/docs'
+        });
 });
 
 //-------------------------------------------------------------------
