@@ -21,7 +21,7 @@ body {
 }
 
 *{
-	transition-property: all; 
+	transition-property: all;
 }
 
 
@@ -69,7 +69,7 @@ h1 {
 	font-size: 120px;
 	color: #fff;
 	margin: 0;
-	@include animation (rollIn,0.8s,1s);
+	@include animation (fadeIn,0.8s,1s);
 	@include grid-breakpoint(phone) {
 		font-size: 70px;
 		line-height: 40px;

@@ -13,12 +13,11 @@ http://frontendler.com.br/
 
 ## Dependencies
 
-Frontendler need sass,nodeJs and gulp to run.
+Frontendler need Sass, Node js and Gulp to run.
 
 RUBY - [How to install](https://www.ruby-lang.org/)
 
 SASS (3.3.14) ```$ gem install sass -v 3.3.14```
-
 
 NODE JS - [How to install](http://nodejs.org/)
 

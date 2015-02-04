@@ -11,7 +11,11 @@ html(lang="en")
 		// FAVICON - DESKTOP 
 		link(rel='icon', href='/assets/images/favicon/favicon.png')
 		// FAVICON - APPLE 
-		link(rel="apple-touch-startup-image",href="startup.png")
+		link(href="assets/images/startup/",rel="apple-touch-startup-image")
+		//- iPhone < 5 retina startup image
+		link(href='assets/images/startup/startup-640x920.png', media='(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)', rel='apple-touch-startup-image')
+		//- iPhone 5 startup image
+		link(href='assets/images/startup/startup-640x1096.png', media='(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)', rel='apple-touch-startup-image')
 		meta(name="apple-mobile-web-app-capable",content="yes")
 		meta(name="apple-mobile-web-app-status-bar-style",content="black-translucent")
 		meta(name="apple-mobile-web-app-title",content="Frontendler app")
@@ -20,9 +24,9 @@ html(lang="en")
 		link(rel='apple-touch-icon',sizes='76x76',href='/assets/images/favicon/icon_76x76.png')
 		link(rel='apple-touch-icon',href='/assets/images/ico/icon_57x57.png')
 		// FAVICON - ANDROID 
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="application-name" content="Web Starter Kit">
-		<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+		meta(name='mobile-web-app-capable', content='yes')
+		meta(name='application-name', content='Web Starter Kit')
+		link(rel='icon', sizes='192x192', href='images/touch/chrome-touch-icon-192x192.png')
 		// FAVICON - WINDOWS TILE 
 		meta(name='msapplication-TileImage', content='/assets/images/ico/tile.png')
 		meta(name='msapplication-TileColor', content='#174c6b')
@@ -36,7 +40,6 @@ html(lang="en")
 		// build:js /assets/scripts/modernizr.js
 		script(src='assets/scripts/libs/modernizr.js')
 		// endbuild
-
 		body(class="home")
 			block content
 			// build:js /assets/scripts/main.js
@@ -50,6 +53,5 @@ html(lang="en")
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
 				ga('create', 'UA-XXXXX-X', 'auto');
 				ga('send', 'pageview');
