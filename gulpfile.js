@@ -1,6 +1,5 @@
 'use strict';
 
-
 //-------------------------------------------------------------------
 // VARS
 //-------------------------------------------------------------------
@@ -14,7 +13,6 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var pagespeed = require('psi');
 var mdoc = require('mdoc');
-
 
 //-------------------------------------------------------------------
 // SETUP
@@ -112,6 +110,10 @@ gulp.task('html',function() {
 		.pipe(plugins.size({title: 'html'}));
 });
 
+//-------------------------------------------------------------------
+// DOCS
+//-------------------------------------------------------------------
+
 gulp.task('docs',function() {
 	return mdoc.run({
             // configuration options (specified below)
@@ -119,6 +121,7 @@ gulp.task('docs',function() {
             outputDir: 'dist/docs'
         });
 });
+
 
 //-------------------------------------------------------------------
 // WATCH
