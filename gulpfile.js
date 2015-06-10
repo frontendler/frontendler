@@ -47,21 +47,14 @@ var AUTOPREFIXER_BROWSERS = [
 // TASKS
 //-------------------------------------------------------------------
 
-gulp.task('styles',function() {
-	return gulp.src( app + '/' + styles + '/*.scss')
-		.pipe(plugins.plumber())
-
-        //if you want genarate only the changed file
-		//.pipe(plugins.changed(app + '/' + styles, {extension: '.scss'}))
-
-		.pipe(plugins.rubySass({
-			style: 'expanded',
-			precision: 10,
-			loadPath: [app]
-		}))
-		.pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
-		.pipe(gulp.dest( dev + '/' + styles))
-        .pipe(plugins.size({title: 'styles'}));
+gulp.task('styles', function () {
+  gulp.src( app + '/' + styles + '/**/*.scss')
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.sass().on('error', plugins.sass.logError))
+    .pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(plugins.sourcemaps.write())
+    .pipe(gulp.dest( dev + '/' + styles))
+    .pipe(plugins.size({title: 'styles'}));
 });
 
 gulp.task('scripts', function() {
