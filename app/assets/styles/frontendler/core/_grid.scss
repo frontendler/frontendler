@@ -1,6 +1,6 @@
 
 @mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) {
-	@extend %clearfix;
+	@include clearfix();
 	margin: 0 auto;
 	display: block;
 	box-sizing:border-box;
@@ -19,7 +19,7 @@
 }
 
 @mixin grid-col($col, $cols: 12, $gutter: $grid-gutter) {
-	@extend %clearfix;
+	@include clearfix();
 	$width: 100% * $col / $cols;
 	width: $width;
 	box-sizing:border-box;

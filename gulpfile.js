@@ -49,6 +49,7 @@ var AUTOPREFIXER_BROWSERS = [
 
 gulp.task('styles', function () {
   gulp.src( app + '/' + styles + '/**/*.scss')
+    .pipe(plugins.plumber())
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass().on('error', plugins.sass.logError))
     .pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
