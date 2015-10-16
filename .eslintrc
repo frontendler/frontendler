@@ -3,7 +3,6 @@
 	"env": {
 		"node": 1,
 		"browser": 1
-
 	},
 	"ecmaFeatures": {
 		"classes": true
@@ -13,8 +12,8 @@
 		"$":true
 	},
 	"rules": {
+		"quotes": [2, "double"],
 		"camelcase": 1,
-		"quotes": 0,
 		"strict": 0,
 		"eqeqeq": 0,
 		"new-cap":0,
