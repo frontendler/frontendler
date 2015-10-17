@@ -55,11 +55,11 @@ grid-breakpoints
 
 ```scss
 $grid-breakpoints:(
-	phone: 100% max 480px,
-	tablet: 100% min 481px max 768px,
-	tablet-large: 100% min 769px max 1023px,
-	desktop: 1024px min 1024px max 1199px,
-	desktop-large: 1200px min 1200px
+	"phone": 100% max 480px,
+	"tablet": 100% min 481px max 768px,
+	"tablet-large": 100% min 769px max 1023px,
+	"desktop": 1024px min 1024px max 1199px,
+	"desktop-large": 1200px min 1200px
 );
 ```
 grid-row
@@ -112,17 +112,17 @@ theme-colors
 
 ```scss
 $theme-colors:(
-	ocean:   #00a7ca,
-	blue:    #0075d3,
-	purple:  #8244a7,
-	pink:    #dd318a,
-	green:   #71be48,
-	yellow:  #f59d37,
-	orange:  #f75925,
-	red:     #dd202b,
-	dark:    #1c2731,
-	gray:    #606c78,
-	silver:  #939fac
+	"ocean":   #00a7ca,
+	"blue":    #0075d3,
+	"purple":  #8244a7,
+	"pink":    #dd318a,
+	"green":   #71be48,
+	"yellow":  #f59d37,
+	"orange":  #f75925,
+	"red":     #dd202b,
+	"dark":    #1c2731,
+	"gray":    #606c78,
+	"silver":  #939fac
 );
 ```
 
