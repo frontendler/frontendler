@@ -19,11 +19,11 @@
 @mixin animation ($keyframe,$delay:0,$duration:$animation-speed)
 {
 	animation: $keyframe $duration;
-	animation-timing-function: $aniamtion-ease;
+	animation-timing-function: $animation-ease;
 	animation-delay:$delay;
 	animation-fill-mode: both;
 
-	transition-timing-function: $aniamtion-ease;
+	transition-timing-function: $animation-ease;
 	transition-delay:$delay;
 	transform-origin: center center;
 

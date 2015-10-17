@@ -3,7 +3,7 @@
 	$color-hex: nth($color, 1);
 
 	@if ($color == null) {
-		@warn "'#{$color-name}' dont exist in theme-colors list";
+		@error "'#{$color-name}' dont exist in theme-colors list";
 		@return null;
 	}
 

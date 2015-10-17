@@ -1,4 +1,3 @@
-
 @mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints) {
 	@include clearfix();
 	margin: 0 auto;
@@ -52,7 +51,7 @@
 				}
 			}
 			@else{
-				@warn $device "is not a valid grid breakpoint";
+				@error $device "is not a valid grid breakpoint";
 			}
 		}
 	}
