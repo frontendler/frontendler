@@ -34,11 +34,11 @@
 	}
 }
 
-@mixin grid-breakpoint($devices...) {
+@mixin grid-breakpoint($breakpoints...) {
 	@if ($grid-breakpoints != false) {
-		@each $device in $devices {
-			@if (map-get($grid-breakpoints,$device) != null) {
-				$break:map-get($grid-breakpoints,$device);
+		@each $breakpoint in $breakpoints {
+			@if (map-get($grid-breakpoints,$breakpoint) != null) {
+				$break:map-get($grid-breakpoints,$breakpoint);
 				@if (length($break) > 3) {
 					@media only screen and (#{nth($break, 2)}-width: nth($break, 3)) and (#{nth($break, 4)}-width: nth($break, 5)) {
 						@content;
@@ -51,7 +51,7 @@
 				}
 			}
 			@else{
-				@error $device "is not a valid grid breakpoint";
+				@error $breakpoint "is not a valid grid breakpoint";
 			}
 		}
 	}
@@ -63,8 +63,8 @@
 	}
 }
 
-@mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false) {
-	@include grid-breakpoint($device) {
+@mixin grid-col-breakpoint($breakpoint, $col, $cols: 12, $gutter: false) {
+	@include grid-breakpoint($breakpoint) {
 		$width: 100% * $col / $cols;
 		width: $width;
 
@@ -90,9 +90,9 @@
 	}
 }
 
-@mixin grid-breakpoint-hide($devices...) {
-	@each $device in $devices {
-		@include grid-breakpoint($device) {
+@mixin grid-breakpoint-hide($breakpoints...) {
+	@each $breakpoint in $breakpoints {
+		@include grid-breakpoint($breakpoint) {
 			display: none;
 		}
 	}
@@ -104,9 +104,9 @@
 	}
 }
 
-@mixin grid-breakpoint-show($devices...) {
-	@each $device in $devices {
-		@include grid-breakpoint($device) {
+@mixin grid-breakpoint-show($breakpoints...) {
+	@each $breakpoint in $breakpoints {
+		@include grid-breakpoint($breakpoint) {
 			display: block;
 		}
 	}

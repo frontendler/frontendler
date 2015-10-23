@@ -7,128 +7,121 @@
 //Exemple CSS
 //------------------------------------------------------
 $font-family-logo: "Grand Hotel";
-
-html,body {
-	width: 100%;
-	font-family: $font-family;
-	font-size:$font-size-text;
-	transition-duration:$animation-speed;
-	animation-duration: $animation-speed;
-}
-
+html,
 body {
-	color: theme-color("gray");
+    width: 100%;
+    font-family: $font-family;
+    font-size: $font-size-text;
+    transition-duration: $animation-speed;
+    animation-duration: $animation-speed;
 }
-
-*{
-	transition-property: all;
+body {
+    color: theme-color("gray");
 }
-
-
-
-h1,h2,h3,h4,h5,h6 {
-	color: theme-color("dark");
-	font-weight: normal;
+* {
+    transition-property: all;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: theme-color("dark");
+    font-weight: normal;
+}
 .btn {
-	border-radius:3px;
-	transition: background-color $animation-speed, color $animation-speed;
-	box-sizing:border-box;
-	display: inline-block;
-	padding: $grid-gutter/4 $grid-gutter/2 ;
-	cursor: pointer;
-	font-weight: 600;
-	font-size: 14px;
-	margin: 0 $grid-gutter / 2 $grid-gutter / 2 0;
-	&.documentation{
-		background-color: theme-color("ocean");
-		color: theme-color("ocean",20%);
-	}
-	&.github{
-		background-color: theme-color("blue");
-		color: theme-color("blue",20%);
-	}
+    border-radius: 3px;
+    transition: background-color $animation-speed, color $animation-speed;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: $grid-gutter/4 $grid-gutter/2;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    &.documentation {
+        background-color: theme-color("ocean");
+        color: theme-color("ocean",20%);
+    }
+    &.github {
+        background-color: theme-color("blue");
+        color: theme-color("blue",20%);
+    }
 }
-
-.note{
-	font-weight:600;
-	font-size:14px;
+.note {
+    font-weight: 600;
+    font-size: 14px;
 }
-
-header{
-	background: theme-color("dark");
-	.container{
-		@include grid-row();
-		padding-top:50px;
-		padding-bottom:50px;
-	}
+header {
+    background: theme-color("dark");
+    .container {
+        @include grid-row();
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }
-
 h1 {
-	font-family: $font-family-logo;
-	font-size: 120px;
-	color: #fff;
-	margin: 0;
-	@include animation(fadeIn,0.8s,1s);
-	@include grid-breakpoint("phone") {
-		font-size: 70px;
-		line-height: 40px;
-	}
-
-	small {
-		color: theme-color("ocean",20%);
-		font-family: $font-family;
-		font-size: 15px;
-		margin-left: 20px;
-		font-weight: normal;
-		@include grid-breakpoint("phone") {
-			display: block;
-			margin-left: 0;
-		}
-	}
+    font-family: $font-family-logo;
+    font-size: 120px;
+    color: #fff;
+    margin: 0;
+    @include animation(fadeIn,0.8s,1s);
+    @include grid-breakpoint("phone") {
+        font-size: 70px;
+        line-height: 40px;
+    }
+    small {
+        color: theme-color("ocean",20%);
+        font-family: $font-family;
+        font-size: 15px;
+        margin-left: 20px;
+        font-weight: normal;
+        @include grid-breakpoint("phone") {
+            display: block;
+            margin-left: 0;
+        }
+    }
 }
 h2 {
-	//color: theme-color(dark,foreground);
-	color: theme-color("ocean",10%);
-	margin: 10px 0;
 
+    //color: theme-color(dark,foreground);
+    color: theme-color("ocean",10%);
+    margin: 10px 0;
 }
 h3 {
-	margin-top: 0;
-	margin-bottom: 30px;
-	color: theme-color("ocean",10%);
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: theme-color("ocean",10%);
 }
 .info {
-	@include grid-col(12, 12);
+    @include grid-col(12, 12);
 }
-
-main{
-	margin-top: $grid-gutter;
-	.container {
-		@include grid-row;
-	}
-	.item {
-		@include grid-col(12);
-		margin-bottom: $grid-gutter;
-		h4 {
-			font-size: 20px;
-			margin-bottom: $grid-gutter / 2;
-		}
-	}
+main {
+    margin-top: $grid-gutter;
+    .container {
+        @include grid-row;
+    }
+    .item {
+        @include grid-col(12);
+        margin-bottom: $grid-gutter;
+        h4 {
+            font-size: 20px;
+            margin-bottom: $grid-gutter / 2;
+        }
+    }
 }
-
 footer {
-	@include grid-breakpoint-hide("tablet");
-	.container {
-		@include grid-row();
-		@include grid-col(12);
-	}
-	background: theme-color("dark");
-	color: theme-color("dark");
-	padding: 15px 0;
-	a{
-		color:theme-color("ocean");
-		font-weight:normal;
-	}
+    @include grid-breakpoint-hide("tablet");
+    .container {
+        @include grid-row();
+        @include grid-col(12);
+    }
+    background: theme-color("dark");
+    color: theme-color("dark");
+    padding: 15px 0;
+    a {
+        color: theme-color("ocean");
+        font-weight: normal;
+    }
 }
