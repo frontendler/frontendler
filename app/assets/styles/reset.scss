@@ -1,67 +1,74 @@
-/*---------------------------------------------------------
-INSPECT RESET - CSS
-@author name Daniel Beff
-@author email daniel.beff@gmail.com
-@author site http://www.danielbeff.com
-@version 1.0.0
-@licence MIT
----------------------------------------------------------*/
+// --------------------------------------------------------
+// GLOBAL
+//---------------------------------------------------------
+
 html {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	box-sizing: border-box;
-	text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+}
+body {
+    margin: 0;
 }
 
-body{
-	margin:0;
+*,
+*:before,
+*:after {
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    box-sizing: inherit;
+    color: inherit;
+	font: inherit;
 }
 
-* {
-	box-sizing: inherit;
-	-webkit-font-smoothing:inherit;
-	-moz-osx-font-smoothing: inherit;
-}
-
-*:before, *:after {
-	box-sizing: inherit;
-}
 
 // --------------------------------------------------------
 // TYPOGRAPHY
 //---------------------------------------------------------
 a {
-	cursor: pointer;
-	text-decoration: none;
-	display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    background-color: transparent;
 }
-
+a:active,
+a:hover {
+    outline: 0;
+}
 pre {
-	overflow: auto;
+    overflow: auto;
 }
 
 // --------------------------------------------------------
 // EMBEDDED
 //---------------------------------------------------------
 img {
-	border: 0;
+    border: 0;
 }
 
 // --------------------------------------------------------
 // LISTS
 //---------------------------------------------------------
 nav ul {
-	list-style: none;
+    list-style: none;
 }
 
 // --------------------------------------------------------
 // TABLE
 //---------------------------------------------------------
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td,
+th {
+    padding: 0;
 }
 
-td,th {
-	padding: 0;
+// --------------------------------------------------------
+// FORM
+//---------------------------------------------------------
+textarea {
+  overflow: auto;
 }

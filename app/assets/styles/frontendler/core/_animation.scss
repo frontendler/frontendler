@@ -22,7 +22,7 @@
 }
 @mixin animation ($keyframe, $delay:0, $duration:$animation-speed) {
     animation: $keyframe $duration;
-    animation-timing-function: $animation-ease;
+    animation-timing-function: $aniamtion-ease;
     animation-delay: $delay;
     animation-fill-mode: both;
     @if $duration != $animation-speed {

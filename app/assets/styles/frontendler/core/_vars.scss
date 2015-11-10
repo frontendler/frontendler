@@ -8,7 +8,8 @@ $font-size-text: 14px;
 //ANIMATION
 //-----------------------------------------------------------
 $animation-speed: 0.3s;
-$animation-ease: cubic-bezier(0.645, 0.045, 0.355, 1); //easeInOutCubic
+$aniamtion-ease: cubic-bezier(0.645, 0.045, 0.355, 1); //easeInOutCubic
+ //easeInOutCubic
 
 //-----------------------------------------------------------
 //GRID
@@ -16,11 +17,11 @@ $animation-ease: cubic-bezier(0.645, 0.045, 0.355, 1); //easeInOutCubic
 $grid-gutter: 40px !default;
 $grid-gutter-outside: 5px;
 $grid-breakpoints:(
-	"small": 100% max 640px,
-	"medium": 100% min 641px max 1024px,
-	"large": 100% min 1025px max 1440px,
-	"xlarge": 100% min 1025px max 1440px,
-	"xxlarge": 100% min 1441px,
+	"small":   100% max 640px,
+	"medium":  100% min 641px max 1024px,
+	"large":   1024px min 1025px max 1440px,
+	"xlarge":  1440px min 1441px max 1920px,
+	"xxlarge": 1920px min 1921px
 );
 
 //-----------------------------------------------------------
