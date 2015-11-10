@@ -13,14 +13,14 @@ $animation-ease: cubic-bezier(0.645, 0.045, 0.355, 1); //easeInOutCubic
 //-----------------------------------------------------------
 //GRID
 //-----------------------------------------------------------
-$grid-gutter: 40px;
+$grid-gutter: 40px !default;
 $grid-gutter-outside: 5px;
 $grid-breakpoints:(
-	"phone": 100% max 480px,
-	"tablet": 100% min 481px max 768px,
-	"tablet-large": 100% min 769px max 1023px,
-	"desktop": 1024px min 1024px max 1199px,
-	"desktop-large": 1200px min 1200px
+	"small": 100% max 640px,
+	"medium": 100% min 641px max 1024px,
+	"large": 100% min 1025px max 1440px,
+	"xlarge": 100% min 1025px max 1440px,
+	"xxlarge": 100% min 1441px,
 );
 
 //-----------------------------------------------------------

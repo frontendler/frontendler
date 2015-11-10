@@ -68,20 +68,20 @@ grid-row
 @mixin grid-row($gutter: $grid-gutter-outside, $breakpoints: $grid-breakpoints)
 ```
 
-grid-col
+grid-column
 
 ```scss
-@mixin grid-col($col, $cols: 12, $gutter: $grid-gutter)
+@mixin grid-column($column, $columns: 12, $gutter: $grid-gutter)
 ```
 
-grid-col-breakpoint
+grid-column-breakpoint
 
 ```scss
-@mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false)
+@mixin grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false)
 ```
 or
 ```scss
-@mixin grid-col-breakpoint($device, $col, $cols: 12, $gutter: false){
+@mixin grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false){
 	"optional custom css"
 }
 ```
@@ -89,7 +89,7 @@ or
 grid-breakpoint
 
 ```scss
-@mixin grid-breakpoint($devices...){
+@mixin grid-breakpoint($breakpoints...){
 	...
 };
 ```
@@ -97,13 +97,13 @@ grid-breakpoint
 grid-breakpoint-hide
 
 ```scss
-@mixin grid-breakpoint-hide ($devices...);
+@mixin grid-breakpoint-hide ($breakpoints...);
 ```
 
 grid-breakpoint-show
 
 ```scss
-@mixin grid-breakpoint-show ($devices...);
+@mixin grid-breakpoint-show ($breakpoints...);
 ```
 
 ### THEME

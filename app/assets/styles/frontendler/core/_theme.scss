@@ -1,17 +1,17 @@
-@function theme-color($color-name,$amount:50%) {
-	$color: map-get($theme-colors,$color-name);
-	$color-hex: nth($color, 1);
-
-	@if ($color == null) {
-		@error "'#{$color-name}' dont exist in theme-colors list";
-		@return null;
-	}
-
-	@if $amount < 50% {
-		@return mix(white, $color-hex, (100% - ($amount * 2)));
-	} @else if $amount == 50% {
-		@return $color-hex;
-	} @else if $amount > 50% {
-		@return mix(black, $color-hex, ($amount - 50%) * 2);
-	}
+@function theme-color($color-name, $amount:50%) {
+    $color: map-get($theme-colors,$color-name);
+    $color-hex: nth($color, 1);
+    @if ($color == null) {
+        @error "'#{$color-name}' dont exist in theme-colors list";
+        @return null;
+    }
+    @if $amount < 50% {
+        @return mix(white, $color-hex, (100% - ($amount * 2)));
+    }
+    @else if $amount == 50% {
+        @return $color-hex;
+    }
+    @else if $amount > 50% {
+        @return mix(black, $color-hex, ($amount - 50%) * 2);
+    }
 }

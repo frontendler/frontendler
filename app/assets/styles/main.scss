@@ -39,7 +39,7 @@ h6 {
     cursor: pointer;
     font-weight: 600;
     font-size: 14px;
-    margin: 0;
+    margin: 0 10px 0 0;
     &.documentation {
         background-color: theme-color("ocean");
         color: theme-color("ocean",20%);
@@ -67,7 +67,7 @@ h1 {
     color: #fff;
     margin: 0;
     @include animation(fadeIn,0.8s,1s);
-    @include grid-breakpoint("phone") {
+    @include grid-breakpoint("small") {
         font-size: 70px;
         line-height: 40px;
     }
@@ -77,7 +77,7 @@ h1 {
         font-size: 15px;
         margin-left: 20px;
         font-weight: normal;
-        @include grid-breakpoint("phone") {
+        @include grid-breakpoint("small") {
             display: block;
             margin-left: 0;
         }
@@ -95,15 +95,16 @@ h3 {
     color: theme-color("ocean",10%);
 }
 .info {
-    @include grid-col(12, 12);
+    @include grid-column(12, 12);
 }
 main {
+    $grid-gutter: 20px;
     margin-top: $grid-gutter;
     .container {
         @include grid-row;
     }
     .item {
-        @include grid-col(12);
+        @include grid-column(12);
         margin-bottom: $grid-gutter;
         h4 {
             font-size: 20px;
@@ -112,10 +113,10 @@ main {
     }
 }
 footer {
-    @include grid-breakpoint-hide("tablet");
+    @include grid-breakpoint-hide("medium");
     .container {
         @include grid-row();
-        @include grid-col(12);
+        @include grid-column(12);
     }
     background: theme-color("dark");
     color: theme-color("dark");

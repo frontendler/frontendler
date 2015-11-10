@@ -17,9 +17,9 @@
 	}
 }
 
-@mixin grid-col($col, $cols: 12, $gutter: $grid-gutter) {
+@mixin grid-column($column, $columns: 12, $gutter: $grid-gutter) {
 	@include clearfix();
-	$width: 100% * $col / $cols;
+	$width: 100% * $column / $columns;
 	width: $width;
 	box-sizing:border-box;
 
@@ -63,9 +63,9 @@
 	}
 }
 
-@mixin grid-col-breakpoint($breakpoint, $col, $cols: 12, $gutter: false) {
+@mixin grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false) {
 	@include grid-breakpoint($breakpoint) {
-		$width: 100% * $col / $cols;
+		$width: 100% * $column / $columns;
 		width: $width;
 
 		//include gutter
@@ -77,9 +77,9 @@
 	}
 }
 
-@mixin grid-col-breakpoint-custom ($min-width, $max-width, $col, $cols: 12, $gutter: false) {
+@mixin grid-column-breakpoint-custom ($min-width, $max-width, $column, $columns: 12, $gutter: false) {
 	@include grid-breakpoint-custom ($min-width,$max-width) {
-		$width: 100% * $col / $cols;
+		$width: 100% * $column / $columns;
 		width: $width;
 
 		//include gutter
