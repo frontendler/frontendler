@@ -83,10 +83,12 @@ h1 {
 h2 {
 
     //color: theme-color(dark,foreground);
+    font-size: 20px;
     color: theme-color("ocean",10%);
     margin: 10px 0;
 }
 h3 {
+    font-size: 15px;
     margin-top: 0;
     margin-bottom: 30px;
     color: theme-color("ocean",10%);
