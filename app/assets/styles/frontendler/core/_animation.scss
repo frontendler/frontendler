@@ -1,31 +1,28 @@
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }
-@keyframes rollIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50%);
-    }
+@keyframes rubberBand {
+    0% {transform: scale3d(1, 1, 1);}
+    30% {transform: scale3d(1.25, 0.75, 1);}
+    40% {transform: scale3d(0.75, 1.25, 1);}
+    50% {transform: scale3d(1.15, 0.85, 1);}
+    65% {transform: scale3d(.95, 1.05, 1);}
+    75% {transform: scale3d(1.05, .95, 1);}
+    100% {transform: scale3d(1, 1, 1);}
 }
-@mixin animation ($keyframe, $delay:0, $duration:$animation-speed) {
-    animation: $keyframe $duration;
-    animation-timing-function: $aniamtion-ease;
-    animation-delay: $delay;
-    animation-fill-mode: both;
-    @if $duration != $animation-speed {
-        animation-duration: $duration;
-    }
+@mixin animation ($keyframe, $delay:0, $duration:$animation-speed, $repeat:1, $direction:normal) {
+    // animation-name
+    // animation-duration
+    // animation-timing-function
+    // animation-delay
+    // animation-iteration-count
+    // animation-direction
+    // animation-fill-mode
+    // animation-play-state
+    animation: $keyframe $duration $aniamtion-ease $delay $repeat $direction both;
 }
