@@ -9,6 +9,11 @@ $font-size-text: 14px;
 //-----------------------------------------------------------
 $animation-speed: 0.3s;
 $aniamtion-ease: cubic-bezier(0.645, 0.045, 0.355, 1); //easeInOutCubic
+$animation-keyframes:(
+	fadeIn,
+	fadeOut,
+	rubberBand
+);
  //easeInOutCubic
 
 //-----------------------------------------------------------

@@ -10,10 +10,6 @@ $font-family-logo: "Grand Hotel";
 html,
 body {
     width: 100%;
-    font-family: $font-family;
-    font-size: $font-size-text;
-    transition-duration: $animation-speed;
-    animation-duration: $animation-speed;
 }
 body {
     color: theme-color("gray");
