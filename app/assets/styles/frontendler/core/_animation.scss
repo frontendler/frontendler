@@ -1,34 +1,34 @@
-%fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-%fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
-}
-
-@mixin animation-keyframes($animation-name){
-    @debug $animation-name;
-    @keyframes #{$animation-name} {
-        // @content;
-        // @include #{$animation-name};
-        @extend %#{$animation-name};
+// @error "$animation-keyframes not found in settings.";
+@if variable-exists(animation-keyframes){
+    @if index($animation-keyframes, "fadeIn") != null {
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
     }
+
+    @if index($animation-keyframes, "fadeOut") != null {
+        @keyframes fadeOut {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+        }
+    }
+
+    @if index($animation-keyframes, "rubberBand") != null {
+        @keyframes rubberBand {
+            0% {transform: scale3d(1, 1, 1);}
+            30% {transform: scale3d(1.25, 0.75, 1);}
+            40% {transform: scale3d(0.75, 1.25, 1);}
+            50% {transform: scale3d(1.15, 0.85, 1);}
+            65% {transform: scale3d(.95, 1.05, 1);}
+            75% {transform: scale3d(1.05, .95, 1);}
+            100% {transform: scale3d(1, 1, 1);}
+        }
+    }
+} @else {
+    @error "$animation-keyframes not found in settings.";
 }
 
-@include animation-keyframes(fadeIn);
-// @include animation-keyframes(fadeOut):
-
-@mixin rubberBand {
-    0% {transform: scale3d(1, 1, 1);}
-    30% {transform: scale3d(1.25, 0.75, 1);}
-    40% {transform: scale3d(0.75, 1.25, 1);}
-    50% {transform: scale3d(1.15, 0.85, 1);}
-    65% {transform: scale3d(.95, 1.05, 1);}
-    75% {transform: scale3d(1.05, .95, 1);}
-    100% {transform: scale3d(1, 1, 1);}
-}
 @mixin animation ($keyframe, $delay:0, $duration:$animation-speed, $repeat:1, $direction:normal) {
     $animation-fill-mode:both;
     $animation-play-state: running;
