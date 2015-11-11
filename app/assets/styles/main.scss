@@ -39,7 +39,7 @@ h6 {
         color: theme-color("ocean",20%);
     }
     &.github {
-        @include animation(fadeIn,1.5s,1s);
+        @include animation(rubberBand,1.5s,1s);
         background-color: theme-color("blue");
         color: theme-color("blue",20%);
     }
@@ -61,7 +61,7 @@ h1 {
     font-size: 120px;
     color: #fff;
     margin: 0;
-    @include animation(rubberBand,0.8s,1s);
+    @include animation(fadeIn,0.8s,1s);
     @include grid-breakpoint("small") {
         font-size: 70px;
         line-height: 40px;
