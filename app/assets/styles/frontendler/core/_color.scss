@@ -1,5 +1,5 @@
-@function theme-color($color-name, $amount:50%) {
-    $color: map-get($theme-colors,$color-name);
+@function color($color-name, $amount:50%) {
+    $color: map-get($colors,$color-name);
     $color-hex: nth($color, 1);
     @if ($color == null) {
         @error "'#{$color-name}' dont exist in theme-colors list";

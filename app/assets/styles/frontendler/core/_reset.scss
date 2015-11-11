@@ -1,7 +1,6 @@
 // --------------------------------------------------------
 // GLOBAL
 //---------------------------------------------------------
-
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -13,7 +12,6 @@ html {
 body {
     margin: 0;
 }
-
 *,
 *:before,
 *:after {
@@ -21,13 +19,31 @@ body {
     -moz-osx-font-smoothing: inherit;
     box-sizing: inherit;
     color: inherit;
-	font: inherit;
+    font: inherit;
 }
-
 
 // --------------------------------------------------------
 // TYPOGRAPHY
 //---------------------------------------------------------
+// http://www.w3.org/TR/CSS21/sample.html
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.17em;
+}
+h4 {
+    font-size: 1.12em;
+}
+h5 {
+    font-size: 0.83em;
+}
+h6 {
+    font-size: 0.75em;
+}
 a {
     cursor: pointer;
     text-decoration: none;
@@ -72,5 +88,5 @@ th {
 // FORM
 //---------------------------------------------------------
 textarea {
-  overflow: auto;
+    overflow: auto;
 }

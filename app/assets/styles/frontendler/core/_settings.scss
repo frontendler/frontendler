@@ -1,38 +1,37 @@
 //-----------------------------------------------------------
 //FONT
 //-----------------------------------------------------------
-$font-family: "Open Sans";
-$font-size-text: 14px;
+$font-family: "Open Sans" !default;
+$font-size-text: 14px !default;
 
 //-----------------------------------------------------------
 //ANIMATION
 //-----------------------------------------------------------
-$animation-speed: 0.3s;
-$aniamtion-ease: cubic-bezier(0.645, 0.045, 0.355, 1); //easeInOutCubic
+$animation-speed: 0.3s !default;
+$animation-ease: cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 $animation-keyframes:(
 	"fadeIn",
 	"fadeOut",
 	"rubberBand"
-);
- //easeInOutCubic
+) !default;
 
 //-----------------------------------------------------------
 //GRID
 //-----------------------------------------------------------
 $grid-gutter: 40px !default;
-$grid-gutter-outside: 5px;
+$grid-gutter-outside: 5px !default;
 $grid-breakpoints:(
 	"small":   100% max 640px,
 	"medium":  100% min 641px max 1024px,
 	"large":   1024px min 1025px max 1440px,
 	"xlarge":  1440px min 1441px max 1920px,
 	"xxlarge": 1920px min 1921px
-);
+) !default;
 
 //-----------------------------------------------------------
-//THEME
+//COLOR
 //-----------------------------------------------------------
-$theme-colors:(
+$colors:(
 	"ocean":   #00a7ca,
 	"blue":    #0075d3,
 	"purple":  #8244a7,

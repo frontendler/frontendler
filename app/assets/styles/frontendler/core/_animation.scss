@@ -1,4 +1,3 @@
-// @error "$animation-keyframes not found in settings.";
 @if variable-exists(animation-keyframes){
     @if index($animation-keyframes, "fadeIn") != null {
         @keyframes fadeIn {
@@ -32,5 +31,5 @@
 @mixin animation ($keyframe, $delay:0, $duration:$animation-speed, $repeat:1, $direction:normal) {
     $animation-fill-mode:both;
     $animation-play-state: running;
-    animation: $keyframe $duration $aniamtion-ease $delay $repeat $direction $animation-fill-mode $animation-play-state;
+    animation: $keyframe $duration $animation-ease $delay $repeat $direction $animation-fill-mode $animation-play-state;
 }
