@@ -2,7 +2,7 @@
     $color: map-get($colors,$color-name);
     $color-hex: nth($color, 1);
     @if ($color == null) {
-        @error "'#{$color-name}' dont exist in theme-colors list";
+        @error "'#{$color-name}' dont exist in $colors settings";
         @return null;
     }
     @if $amount < 50% {

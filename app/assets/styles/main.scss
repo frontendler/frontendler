@@ -12,7 +12,7 @@ body {
     width: 100%;
 }
 body {
-    color: theme-color("gray");
+    color: color("gray");
 }
 h1,
 h2,
@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: theme-color("dark");
+    color: color("dark");
     font-weight: normal;
 }
 .btn {
@@ -35,13 +35,13 @@ h6 {
     margin: 0 10px 0 0;
     &.documentation {
         @include animation(fadeIn,1s,1s);
-        background-color: theme-color("ocean");
-        color: theme-color("ocean",20%);
+        background-color: color("ocean");
+        color: color("ocean",20%);
     }
     &.github {
         @include animation(rubberBand,1.5s,1s);
-        background-color: theme-color("blue");
-        color: theme-color("blue",20%);
+        background-color: color("blue");
+        color: color("blue",20%);
     }
 }
 .note {
@@ -49,7 +49,7 @@ h6 {
     font-size: 14px;
 }
 header {
-    background: theme-color("dark");
+    background: color("dark");
     .container {
         @include grid-row();
         padding-top: 50px;
@@ -68,7 +68,7 @@ h1 {
     }
     display: table;
     small {
-        color: theme-color("ocean",20%);
+        color: color("ocean",20%);
         font-family: $font-family;
         font-size: 15px;
         margin-left: 20px;
@@ -81,16 +81,16 @@ h1 {
 }
 h2 {
 
-    //color: theme-color(dark,foreground);
+    //color: color(dark,foreground);
     font-size: 20px;
-    color: theme-color("ocean",10%);
+    color: color("ocean",10%);
     margin: 10px 0;
 }
 h3 {
     font-size: 15px;
     margin-top: 0;
     margin-bottom: 30px;
-    color: theme-color("ocean",10%);
+    color: color("ocean",10%);
 }
 .info {
     @include grid-column(12, 12);
@@ -116,11 +116,11 @@ footer {
         @include grid-row();
         @include grid-column(12);
     }
-    background: theme-color("dark");
-    color: theme-color("dark");
+    background: color("dark");
+    color: color("dark");
     padding: 15px 0;
     a {
-        color: theme-color("ocean");
+        color: color("ocean");
         font-weight: normal;
     }
 }

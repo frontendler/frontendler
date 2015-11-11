@@ -106,12 +106,12 @@ grid-breakpoint-show
 @mixin grid-breakpoint-show ($breakpoints...);
 ```
 
-### THEME
+###  COLOR
 
-theme-colors
+colors
 
 ```scss
-$theme-colors:(
+$colors:(
 	"ocean":   #00a7ca,
 	"blue":    #0075d3,
 	"purple":  #8244a7,
@@ -126,7 +126,7 @@ $theme-colors:(
 );
 ```
 
-theme-color
+color
 ```scss
-@function theme-color($color-name,$amount:50%)
+@function color($color-name,$amount:50%)
 ```
