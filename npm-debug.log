@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'git@github.com:frontendler/frontendler-sass-core.git' ]
+2 info using npm@3.3.6
+3 info using node@v5.0.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData git@github.com:frontendler/frontendler-sass-core.git
+8 silly fetchPackageMetaData Error: Unsupported URL Type: github.com:frontendler/frontendler-sass-core.git
+8 silly fetchPackageMetaData     at parseUrl (/usr/local/lib/node_modules/npm/node_modules/npm-package-arg/npa.js:168:13)
+8 silly fetchPackageMetaData     at npa (/usr/local/lib/node_modules/npm/node_modules/npm-package-arg/npa.js:75:12)
+8 silly fetchPackageMetaData     at module.exports (/usr/local/lib/node_modules/npm/node_modules/realize-package-specifier/index.js:12:15)
+8 silly fetchPackageMetaData     at fetchPackageMetadata (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:53:12)
+8 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/lib/install/deps.js:168:5
+8 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
+8 silly fetchPackageMetaData     at Array.forEach (native)
+8 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
+8 silly fetchPackageMetaData     at Array.forEach (native)
+8 silly fetchPackageMetaData     at asyncMap (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:51:8)
+8 silly fetchPackageMetaData  error for git@github.com:frontendler/frontendler-sass-core.git [Error: Unsupported URL Type: github.com:frontendler/frontendler-sass-core.git]
+9 silly rollbackFailedOptional Starting
+10 silly rollbackFailedOptional Finishing
+11 silly runTopLevelLifecycles Starting
+12 silly runTopLevelLifecycles Finishing
+13 silly install printInstalled
+14 verbose stack Error: Unsupported URL Type: github.com:frontendler/frontendler-sass-core.git
+14 verbose stack     at parseUrl (/usr/local/lib/node_modules/npm/node_modules/npm-package-arg/npa.js:168:13)
+14 verbose stack     at npa (/usr/local/lib/node_modules/npm/node_modules/npm-package-arg/npa.js:75:12)
+14 verbose stack     at module.exports (/usr/local/lib/node_modules/npm/node_modules/realize-package-specifier/index.js:12:15)
+14 verbose stack     at fetchPackageMetadata (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:53:12)
+14 verbose stack     at /usr/local/lib/node_modules/npm/lib/install/deps.js:168:5
+14 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
+14 verbose stack     at Array.forEach (native)
+14 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
+14 verbose stack     at Array.forEach (native)
+14 verbose stack     at asyncMap (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:51:8)
+15 verbose cwd /Users/danielbeff/Projetos/frontendler
+16 error Darwin 15.0.0
+17 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "git@github.com:frontendler/frontendler-sass-core.git"
+18 error node v5.0.0
+19 error npm  v3.3.6
+20 error Unsupported URL Type: github.com:frontendler/frontendler-sass-core.git
+21 error If you need help, you may report this error at:
+21 error     <https://github.com/npm/npm/issues>
+22 verbose exit [ 1, true ]

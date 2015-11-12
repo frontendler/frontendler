@@ -5,11 +5,11 @@
 // plugins
 var gulp = require("gulp"),
     plugins = require("gulp-load-plugins")(),
+    moduleImporter = require("sass-module-importer"),
     del = require("del"),
     runSequence = require("run-sequence"),
     browserSync = require("browser-sync"),
     pagespeed = require("psi");
-
 
 //-------------------------------------------------------------------
 // SETUP
@@ -47,7 +47,9 @@ gulp.task("styles", function() {
     gulp.src(app + "/" + styles + "/**/*.scss")
         .pipe(plugins.plumber())
         .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.sass().on("error", plugins.sass.logError))
+        .pipe(plugins.sass({
+            importer: moduleImporter()
+        }).on("error", plugins.sass.logError))
         .pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
         .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(dev + "/" + styles))
@@ -114,7 +116,6 @@ gulp.task("html", function() {
 // WATCH
 //-------------------------------------------------------------------
 
-
 gulp.task("clean:dev", del.bind(null, [dev]));
 gulp.task("serve:dev", function() {
 
@@ -157,7 +158,6 @@ gulp.task("copy:prod", function() {
 gulp.task("build", ["clean:prod"], function(cb) {
     runSequence(["styles", "scripts", "templates", "images", "copy:prod"], "html", cb);
 });
-
 
 // Update `url` below to the public URL for your site
 gulp.task("pagespeed", function() {
