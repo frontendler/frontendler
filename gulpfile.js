@@ -5,7 +5,6 @@
 // plugins
 var gulp = require("gulp"),
     plugins = require("gulp-load-plugins")(),
-    moduleImporter = require("sass-module-importer"),
     del = require("del"),
     runSequence = require("run-sequence"),
     browserSync = require("browser-sync"),
@@ -48,7 +47,7 @@ gulp.task("styles", function() {
         .pipe(plugins.plumber())
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass({
-            importer: moduleImporter()
+            includePaths: ["./node_modules"]
         }).on("error", plugins.sass.logError))
         .pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
         .pipe(plugins.sourcemaps.write())
