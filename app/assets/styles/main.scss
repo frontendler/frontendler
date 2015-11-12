@@ -34,12 +34,10 @@ h6 {
     font-size: 14px;
     margin: 0 10px 0 0;
     &.documentation {
-        @include animation(fadeIn,1s,1s);
         background-color: color("ocean");
         color: color("ocean",20%);
     }
     &.github {
-        @include animation(rubberBand,1.5s,1s);
         background-color: color("blue");
         color: color("blue",20%);
     }
@@ -61,7 +59,6 @@ h1 {
     font-size: 120px;
     color: #fff;
     margin: 0;
-    @include animation(fadeIn,0.8s,1s);
     @include grid-breakpoint("small") {
         font-size: 70px;
         line-height: 40px;
@@ -124,3 +121,15 @@ footer {
         font-weight: normal;
     }
 }
+
+
+@mixin test ($p1:1,$p2:2,$p3:3){
+    color:$p1;
+    background:$p2;
+    font:$p3;
+}
+
+@include test((
+    p1:5,
+    p3:10
+)...);

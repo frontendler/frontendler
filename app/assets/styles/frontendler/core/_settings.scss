@@ -8,11 +8,23 @@ $font-size-text: 14px !default;
 //ANIMATION
 //-----------------------------------------------------------
 $animation-speed: 0.3s !default;
-$animation-ease: cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+
+$animation-ease: (
+	"ease-in-out-quad": cubic-bezier(0.455, 0.030, 0.515, 0.955),
+	"ease-in-out-cubic": cubic-bezier(0.645, 0.045, 0.355, 1.000),
+	"ease-in-out-quart": cubic-bezier(0.770, 0.000, 0.175, 1.000),
+	"ease-in-out-quint": cubic-bezier(0.860, 0.000, 0.070, 1.000),
+	"ease-in-out-sine": cubic-bezier(0.445, 0.050, 0.550, 0.950),
+	"ease-in-out-expo": cubic-bezier(1.000, 0.000, 0.000, 1.000),
+	"ease-in-out-circ": cubic-bezier(0.785, 0.135, 0.150, 0.860),
+) !default;
 $animation-keyframes:(
-	"fadeIn",
-	"fadeOut",
-	"rubberBand"
+	"fade-in",
+	"fade-out",
+	"rubber-band",
+	"zoom-in",
+	"slide-in-up",
+	"slide-in-down"
 ) !default;
 
 //-----------------------------------------------------------
@@ -43,4 +55,4 @@ $colors:(
 	"dark":    #1c2731,
 	"gray":    #606c78,
 	"silver":  #939fac
-);
+) !default;

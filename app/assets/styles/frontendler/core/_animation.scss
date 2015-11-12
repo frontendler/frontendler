@@ -1,20 +1,20 @@
 @if variable-exists(animation-keyframes){
-    @if index($animation-keyframes, "fadeIn") != null {
-        @keyframes fadeIn {
+    @if index($animation-keyframes, "fade-in") != null {
+        @keyframes fade-in {
             0% {opacity: 0;}
             100% {opacity: 1;}
         }
     }
 
     @if index($animation-keyframes, "fadeOut") != null {
-        @keyframes fadeOut {
+        @keyframes fade-out {
             0% {opacity: 1;}
             100% {opacity: 0;}
         }
     }
 
     @if index($animation-keyframes, "rubberBand") != null {
-        @keyframes rubberBand {
+        @keyframes rubber-band {
             0% {transform: scale3d(1, 1, 1);}
             30% {transform: scale3d(1.25, 0.75, 1);}
             40% {transform: scale3d(0.75, 1.25, 1);}
@@ -24,8 +24,51 @@
             100% {transform: scale3d(1, 1, 1);}
         }
     }
+
+    @if index($animation-keyframes, "zoomIn") != null {
+        @keyframes zoom-in {
+            0% {
+                opacity: 0;
+                transform:scale3d(.3, .3, .3);
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    }
+
+    @if index($animation-keyframes, "slideInUp") != null {
+        @keyframes slideInUp {
+            0% {
+              opacity: 0;
+              transform:translateY(15px);
+            }
+            100% {
+                transform:translateY(0);
+            }
+        }
+    }
+
+    @if index($animation-keyframes, "slideInDown") != null {
+        @keyframes slideInDown {
+            0% {
+              opacity: 0;
+              transform:translateY(-15px);
+            }
+            100% {
+                transform:translateY(0);
+            }
+        }
+    }
+
 } @else {
     @error "$animation-keyframes not found in settings.";
+}
+
+@function animation-ease($name) {
+    $ease: map-get($animation-ease,$name);
+    $ease-value: nth($ease, 1);
+    @return $ease-value;
 }
 
 @mixin animation ($keyframe, $delay:0, $duration:$animation-speed, $repeat:1, $direction:normal) {
