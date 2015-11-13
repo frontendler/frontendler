@@ -2,12 +2,10 @@
 //FRONTENDLER
 //------------------------------------------------------
 @import "frontendler/core";
-@import "frontendler/ui";
 
 //------------------------------------------------------
 //Exemple CSS
 //------------------------------------------------------
-$font-family-logo: "Grand Hotel";
 html,
 body {
     width: 100%;
@@ -37,8 +35,10 @@ h6 {
     &.documentation {
         background-color: color("ocean");
         color: color("ocean",20%);
+        animation: alert 1s infinite both;
     }
     &.github {
+        animation: bounce-in-down 1s animation-ease("in-out-quad");
         background-color: color("blue");
         color: color("blue",20%);
     }
@@ -56,7 +56,7 @@ header {
     }
 }
 h1 {
-    font-family: $font-family-logo;
+    font-family: "Grand Hotel";
     font-size: 120px;
     color: #fff;
     margin: 0;
@@ -83,6 +83,9 @@ h2 {
     font-size: 20px;
     color: color("ocean",10%);
     margin: 10px 0;
+    @include grid-breakpoint("small") {
+        font-size: 17px;
+    }
 }
 h3 {
     font-size: 15px;
@@ -94,7 +97,6 @@ h3 {
     @include grid-column(12, 12);
 }
 main {
-    $grid-gutter: 20px;
     margin-top: $grid-gutter;
     .container {
         @include grid-row;
@@ -122,15 +124,9 @@ footer {
         font-weight: normal;
     }
 }
-
-
-@mixin test ($p1:1,$p2:2,$p3:3){
-    color:$p1;
-    background:$p2;
-    font:$p3;
+@mixin test ($p1:1, $p2:2, $p3:3) {
+    color: $p1;
+    background: $p2;
+    font: $p3;
 }
-
-@include test((
-    p1:5,
-    p3:10
-)...);
+@include test(( p1:5, p3:10 )...);

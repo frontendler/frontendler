@@ -1,78 +1,150 @@
-@if variable-exists(animation-keyframes){
+@if variable-exists(animation-keyframes) {
     @if index($animation-keyframes, "fade-in") != null {
         @keyframes fade-in {
-            0% {opacity: 0;}
-            100% {opacity: 1;}
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     }
-
-    @if index($animation-keyframes, "fadeOut") != null {
+    @if index($animation-keyframes, "fade-out") != null {
         @keyframes fade-out {
-            0% {opacity: 1;}
-            100% {opacity: 0;}
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+    @if index($animation-keyframes, "bounce-in-down") != null {
+        @keyframes bounce-in-down {
+            0% {
+                opacity: 0;
+                transform:translateY(20px);
+            }
+            30% {
+                opacity: 1;
+                transform:translateY(-10px);
+            }
+            50% {
+                transform:translateY(10px);
+            }
+            70% {
+                transform:translateY(-5px);
+            }
+            90% {
+                transform:translateY(2px);
+            }
+            100% {
+                transform:translateY(0);
+            }
         }
     }
 
-    @if index($animation-keyframes, "rubberBand") != null {
+    @if index($animation-keyframes, "bounce-in-up") != null {
+        @keyframes bounce-in-up {
+            0% {
+                opacity: 0;
+                transform:translateY(-20px);
+            }
+            30% {
+                opacity: 1;
+                transform:translateY(10px);
+            }
+            50% {
+                transform:translateY(-10px);
+            }
+            70% {
+                transform:translateY(5px);
+            }
+            90% {
+                transform:translateY(-2px);
+            }
+            100% {
+                transform:translateY(0);
+            }
+        }
+    }
+    @if index($animation-keyframes, "rubber-band") != null {
         @keyframes rubber-band {
-            0% {transform: scale3d(1, 1, 1);}
-            30% {transform: scale3d(1.25, 0.75, 1);}
-            40% {transform: scale3d(0.75, 1.25, 1);}
-            50% {transform: scale3d(1.15, 0.85, 1);}
-            65% {transform: scale3d(.95, 1.05, 1);}
-            75% {transform: scale3d(1.05, .95, 1);}
-            100% {transform: scale3d(1, 1, 1);}
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+            30% {
+                transform: scale3d(1.25, 0.75, 1);
+            }
+            40% {
+                transform: scale3d(0.75, 1.25, 1);
+            }
+            50% {
+                transform: scale3d(1.15, 0.85, 1);
+            }
+            65% {
+                transform: scale3d(.95, 1.05, 1);
+            }
+            75% {
+                transform: scale3d(1.05, .95, 1);
+            }
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
         }
     }
-
-    @if index($animation-keyframes, "zoomIn") != null {
+    @if index($animation-keyframes, "zoom-in") != null {
         @keyframes zoom-in {
             0% {
                 opacity: 0;
-                transform:scale3d(.3, .3, .3);
+                transform: scale3d(.3, .3, .3);
             }
             50% {
                 opacity: 1;
             }
         }
     }
-
-    @if index($animation-keyframes, "slideInUp") != null {
-        @keyframes slideInUp {
+    @if index($animation-keyframes, "slide-up") != null {
+        @keyframes slide-up {
             0% {
-              opacity: 0;
-              transform:translateY(15px);
+                opacity: 0;
+                transform: translateY(15px);
             }
             100% {
-                transform:translateY(0);
+                transform: translateY(0);
             }
         }
     }
-
-    @if index($animation-keyframes, "slideInDown") != null {
-        @keyframes slideInDown {
+    @if index($animation-keyframes, "slide-down") != null {
+        @keyframes slide-down {
             0% {
-              opacity: 0;
-              transform:translateY(-15px);
+                opacity: 0;
+                transform: translateY(-15px);
             }
             100% {
-                transform:translateY(0);
+                transform: translateY(0);
             }
         }
     }
-
-} @else {
+    @if index($animation-keyframes, "alert") != null {
+        @keyframes alert {
+            0% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100%{
+                opacity: 0.5;
+            }
+        }
+    }
+}
+@else {
     @error "$animation-keyframes not found in settings.";
 }
-
 @function animation-ease($name) {
     $ease: map-get($animation-ease,$name);
     $ease-value: nth($ease, 1);
     @return $ease-value;
-}
-
-@mixin animation ($keyframe, $delay:0, $duration:$animation-speed, $repeat:1, $direction:normal) {
-    $animation-fill-mode:both;
-    $animation-play-state: running;
-    animation: $keyframe $duration $animation-ease $delay $repeat $direction $animation-fill-mode $animation-play-state;
 }
