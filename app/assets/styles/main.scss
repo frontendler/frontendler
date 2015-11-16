@@ -42,19 +42,17 @@ h6 {
     &.documentation {
         background-color: color("ocean");
         color: color("ocean",20%);
-        &:hover{
-            background-color:color("ocean",40%);
+        &:hover {
+            background-color: color("ocean",40%);
         }
     }
     &.github {
         background-color: color("blue");
         color: color("blue",20%);
-        &:hover{
-            background-color:color("blue",40%);
+        &:hover {
+            background-color: color("blue",40%);
         }
     }
-
-
 }
 .note {
     font-weight: 600;
@@ -92,8 +90,6 @@ h1 {
     }
 }
 h2 {
-
-    //color: color(dark,foreground);
     font-size: 20px;
     color: color("ocean",10%);
     margin: 10px 0;
