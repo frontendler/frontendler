@@ -7,8 +7,7 @@ $font-size-text: 14px !default;
 //-----------------------------------------------------------
 //ANIMATION
 //-----------------------------------------------------------
-$animation-speed: 0.3s !default;
-
+$animation-duration: 0.25s !default;
 $animation-ease: (
 	"in-out-quad": cubic-bezier(0.455, 0.030, 0.515, 0.955),
 	"in-out-cubic": cubic-bezier(0.645, 0.045, 0.355, 1.000),

@@ -1,10 +1,15 @@
 //------------------------------------------------------
 //FRONTENDLER
 //------------------------------------------------------
-@import "frontendler/core";
+@import "frontendler/frontendler";
 
 //------------------------------------------------------
-//Exemple CSS
+//RESET CSS
+//------------------------------------------------------
+@include reset();
+
+//------------------------------------------------------
+//CSS EXAMPLE
 //------------------------------------------------------
 html,
 body {
@@ -24,7 +29,7 @@ h6 {
 }
 .btn {
     border-radius: 3px;
-    transition: background-color $animation-speed, color $animation-speed;
+    transition: background-color $animation-duration, color $animation-duration;
     box-sizing: border-box;
     display: inline-block;
     padding: $grid-gutter/4 $grid-gutter/2;
@@ -32,16 +37,24 @@ h6 {
     font-weight: 600;
     font-size: 14px;
     margin: 0 10px 0 0;
+    opacity: 1;
+    transition-property: background;
     &.documentation {
         background-color: color("ocean");
         color: color("ocean",20%);
-        animation: alert 1s infinite both;
+        &:hover{
+            background-color:color("ocean",40%);
+        }
     }
     &.github {
-        animation: bounce-in-down 1s animation-ease("in-out-quad");
         background-color: color("blue");
         color: color("blue",20%);
+        &:hover{
+            background-color:color("blue",40%);
+        }
     }
+
+
 }
 .note {
     font-weight: 600;
@@ -71,6 +84,7 @@ h1 {
         font-size: 15px;
         margin-left: 20px;
         font-weight: normal;
+        animation: alert 1s infinite both;
         @include grid-breakpoint("small") {
             display: block;
             margin-left: 0;
@@ -124,9 +138,3 @@ footer {
         font-weight: normal;
     }
 }
-@mixin test ($p1:1, $p2:2, $p3:3) {
-    color: $p1;
-    background: $p2;
-    font: $p3;
-}
-@include test(( p1:5, p3:10 )...);

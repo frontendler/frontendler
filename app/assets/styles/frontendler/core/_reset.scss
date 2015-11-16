@@ -1,92 +1,97 @@
-// --------------------------------------------------------
-// GLOBAL
-//---------------------------------------------------------
-html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    box-sizing: border-box;
-    text-size-adjust: 100%;
-    font-family: $font-family;
-    font-size: $font-size-text;
-}
-body {
-    margin: 0;
-}
-*,
-*:before,
-*:after {
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-    box-sizing: inherit;
-    color: inherit;
-    font: inherit;
-}
+@mixin reset (){
+    // --------------------------------------------------------
+    // GLOBAL
+    //---------------------------------------------------------
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        box-sizing: border-box;
+        text-size-adjust: 100%;
+        font-family: $font-family;
+        font-size: $font-size-text;
+        transition-timing-function:ease-in-out;
+        transition-duration: $animation-duration;
+    }
+    body {
+        margin: 0;
+    }
+    *,
+    *:before,
+    *:after {
+        -webkit-font-smoothing: inherit;
+        -moz-osx-font-smoothing: inherit;
+        box-sizing: inherit;
+        color: inherit;
+        font: inherit;
+    }
 
-// --------------------------------------------------------
-// TYPOGRAPHY
-//---------------------------------------------------------
-// http://www.w3.org/TR/CSS21/sample.html
-h1 {
-    font-size: 2em;
-}
-h2 {
-    font-size: 1.5em;
-}
-h3 {
-    font-size: 1.17em;
-}
-h4 {
-    font-size: 1.12em;
-}
-h5 {
-    font-size: 0.83em;
-}
-h6 {
-    font-size: 0.75em;
-}
-a {
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    background-color: transparent;
-}
-a:active,
-a:hover {
-    outline: 0;
-}
-pre {
-    overflow: auto;
-}
+    // --------------------------------------------------------
+    // TYPOGRAPHY
+    //---------------------------------------------------------
+    // http://www.w3.org/TR/CSS21/sample.html
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.17em;
+    }
+    h4 {
+        font-size: 1.12em;
+    }
+    h5 {
+        font-size: 0.83em;
+    }
+    h6 {
+        font-size: 0.75em;
+    }
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        background-color: transparent;
+    }
+    a:active,
+    a:hover {
+        outline: 0;
+    }
+    pre {
+        overflow: auto;
+    }
 
-// --------------------------------------------------------
-// EMBEDDED
-//---------------------------------------------------------
-img {
-    border: 0;
-}
+    // --------------------------------------------------------
+    // EMBEDDED
+    //---------------------------------------------------------
+    img {
+        border: 0;
+    }
 
-// --------------------------------------------------------
-// LISTS
-//---------------------------------------------------------
-nav ul {
-    list-style: none;
-}
+    // --------------------------------------------------------
+    // LISTS
+    //---------------------------------------------------------
+    nav ul {
+        list-style: none;
+    }
 
-// --------------------------------------------------------
-// TABLE
-//---------------------------------------------------------
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-td,
-th {
-    padding: 0;
-}
+    // --------------------------------------------------------
+    // TABLE
+    //---------------------------------------------------------
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    td,
+    th {
+        padding: 0;
+    }
 
-// --------------------------------------------------------
-// FORM
-//---------------------------------------------------------
-textarea {
-    overflow: auto;
+    // --------------------------------------------------------
+    // FORM
+    //---------------------------------------------------------
+    textarea {
+        overflow: auto;
+    }
+
 }
