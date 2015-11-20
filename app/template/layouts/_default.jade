@@ -1,49 +1,44 @@
 doctype html
 html(lang="en")
 	head
-		// META - DOCUMENT 
+		// SETTINGS - DOCUMENT 
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		meta(name="viewport",content="width=device-width, initial-scale=1, user-scalable=no")
+		meta(name="viewport",content="initial-scale=1.0,minimum-scale=1,maximum-scale=1.0")
 		title Frontendler
 		meta(name='description',content='')
 		meta(name='author',content='')
-		// WEB APP - APPLE
+		// SETTINGS - IOS
 		meta(name="apple-mobile-web-app-capable",content="yes")
-		meta(name="apple-mobile-web-app-status-bar-style",content="black-translucent")
-		meta(name="apple-mobile-web-app-title",content="Frontendler app")
-		link(href="assets/images/startup/",rel="apple-touch-startup-image")
-		//- iPhone < 5 retina startup image
-		link(href='assets/images/startup/startup-640x920.png', media='(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)', rel='apple-touch-startup-image')
-		//- iPhone 5 startup image
-		link(href='assets/images/startup/startup-640x1096.png', media='(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)', rel='apple-touch-startup-image')
-		// FAVICON - DESKTOP 
-		link(rel='icon', href='/assets/images/favicon/favicon.png')
-		// FAVICON - APPLE 
+		meta(name="apple-mobile-web-app-status-bar-style",content="black")
+		meta(name="apple-mobile-web-app-title",content="Frontendler")
 		link(rel='apple-touch-icon',sizes='152x152',href= '/assets/images/favicon/icon_152x152.png')
 		link(rel='apple-touch-icon',sizes='120x120',href='/assets/images/favicon/icon_120x120.png')
 		link(rel='apple-touch-icon',sizes='76x76',href='/assets/images/favicon/icon_76x76.png')
 		link(rel='apple-touch-icon',href='/assets/images/ico/icon_57x57.png')
-		// FAVICON - ANDROID 
+		link(rel="apple-touch-startup-image",href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/apple-touch-startup-image-640x1096.png",media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)")
+		// SETTINGS - ANDROID 
 		meta(name='mobile-web-app-capable', content='yes')
-		meta(name='application-name', content='Web Starter Kit')
+		meta(name='application-name', content='Frontendler')
 		link(rel='icon', sizes='192x192', href='images/touch/chrome-touch-icon-192x192.png')
-		// FAVICON - WINDOWS TILE 
+		// SETTINGS - WINDOWS
 		meta(name='msapplication-TileImage', content='/assets/images/ico/tile.png')
 		meta(name='msapplication-TileColor', content='#174c6b')
+		// SETTINGS - DEFAULT
+		link(rel='icon', href='/assets/images/favicon/favicon.png')
 		// CSS - FONT 
-		link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Grand+Hotel|Open+Sans:400italic,400,600,700,300',rel='stylesheet',type='text/css')
+		link(href='http://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400italic,400,600,700,300',rel='stylesheet',type='text/css')
 		// CSS - HEAD 
 		// build:css /assets/styles/main.css
 		link(rel='stylesheet', href='/assets/styles/main.css')
 		// endbuild
-		// build:js /assets/scripts/modernizr.js
-		script(src='assets/scripts/libs/modernizr.js')
-		// endbuild
-		body(class="home")
+		// SCRIPT - HEAD 
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js')
+		body
 			block content
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js')
 			// build:js /assets/scripts/main.js
-			script(src='/assets/scripts/libs/jquery.js')
 			script(src='/assets/scripts/main.js')
 			// endbuild
 			// STATISTICS - GOOGLE ANALITCS 
