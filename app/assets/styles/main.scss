@@ -60,6 +60,7 @@ h6 {
 }
 header {
     background: color("dark");
+
     .container {
         @include grid-row();
         padding-top: 50px;
@@ -71,7 +72,7 @@ h1 {
     font-size: 120px;
     color: #fff;
     margin: 0;
-    @include grid-breakpoint("small") {
+    @include grid-breakpoint("xsmall") {
         font-size: 70px;
         line-height: 40px;
     }
@@ -83,7 +84,7 @@ h1 {
         margin-left: 20px;
         font-weight: normal;
         animation: alert 1s infinite both;
-        @include grid-breakpoint("small") {
+        @include grid-breakpoint("xsmall") {
             display: block;
             margin-left: 0;
         }
@@ -93,7 +94,7 @@ h2 {
     font-size: 20px;
     color: color("ocean",10%);
     margin: 10px 0;
-    @include grid-breakpoint("small") {
+    @include grid-breakpoint("xsmall") {
         font-size: 17px;
     }
 }
