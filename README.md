@@ -170,3 +170,10 @@ clearfix
 ```scss
 @include clearfix;
 ```
+
+
+clearfix
+
+```scss
+@include clearfix;
+```
