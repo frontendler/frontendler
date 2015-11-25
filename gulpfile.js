@@ -47,7 +47,7 @@ gulp.task("styles", function() {
         .pipe(plugins.plumber())
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass({
-            includePaths: ["./node_modules"]
+            includePaths: ["./node_modules/frontendler-sass"]
         }).on("error", plugins.sass.logError))
         .pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
         .pipe(plugins.sourcemaps.write())
