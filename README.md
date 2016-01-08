@@ -62,25 +62,25 @@ $grid-breakpoints:(
 grid-row
 
 ```scss
-@mixin grid-row()
+@include grid-row()
 ```
 
 grid-column
 
 ```scss
-@mixin grid-column($column, $columns: 12, $gutter: $grid-gutter)
+@include grid-column($column, $columns: 12, $gutter: $grid-gutter)
 ```
 
 grid-column-breakpoint
 
 ```scss
-@mixin grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false)
+@include grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false)
 ```
 
 or
 
 ```scss
-@mixin grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false){
+@include grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false){
     "optional custom css"
 }
 ```
@@ -88,7 +88,7 @@ or
 grid-breakpoint
 
 ```scss
-@mixin grid-breakpoint($breakpoints...){
+@include grid-breakpoint($breakpoints...){
     ...
 };
 ```
@@ -96,13 +96,13 @@ grid-breakpoint
 grid-breakpoint-hide
 
 ```scss
-@mixin grid-breakpoint-hide ($breakpoints...);
+@include grid-breakpoint-hide ($breakpoints...);
 ```
 
 grid-breakpoint-show
 
 ```scss
-@mixin grid-breakpoint-show ($breakpoints...);
+@include grid-breakpoint-show ($breakpoints...);
 ```
 
 ### COLOR
