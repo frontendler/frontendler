@@ -51,12 +51,12 @@ grid-breakpoints
 
 ```scss
 $grid-breakpoints:(
-    "xsmall": 100% max 600px,
+	"xsmall": 100% max 600px,
 	"small":  100% min 601px max 960px,
 	"medium": 100% min 961px max 1280px,
 	"large":  1280px min 1281px max 1600px,
     "xlarge": 1600px min 1601px
-) !default;
+)!default;
 ```
 
 grid-row
@@ -132,6 +132,10 @@ color
 
 ### ANIMATIONS
 
+animations
+```scss
+@include animations;
+```
 animation-duration
 ```scss
 $animation-duration: 0.25s !default;
@@ -148,7 +152,6 @@ $animation-time-functions: (
 	"in-out-circ": cubic-bezier(0.785, 0.135, 0.150, 0.860),
 ) !default;
 ```
-
 animation-keyframes
 ```scss
 $animation-keyframes:(
@@ -172,8 +175,8 @@ clearfix
 ```
 
 
-clearfix
+box-shadow
 
 ```scss
-@include clearfix;
+@include box-shadow ($level);
 ```
