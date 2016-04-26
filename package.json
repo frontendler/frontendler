@@ -19,7 +19,7 @@
     "browser-sync": "^2.9.11",
     "del": "^2.2.0",
     "eslint": "^2.3.0",
-    "frontendler-sass": "^0.1.4",
+    "frontendler-sass": "^0.3.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.2",
