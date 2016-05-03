@@ -5,7 +5,7 @@ The responsive frontend kit.
 
 Simple, efficient.
 
-[http://frontendler.com.br/](http://frontendler.com.br/)
+[http://frontendler.io/](http://frontendler.io/)
 
 ## Dependencies
 Frontendler need Nodejs and Gulp to run.
