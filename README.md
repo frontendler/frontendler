@@ -80,7 +80,7 @@ grid-column-breakpoint
 or
 
 ```scss
-@include grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false){
+@include grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false) {
     "optional custom css"
 }
 ```
@@ -88,7 +88,7 @@ or
 grid-breakpoint
 
 ```scss
-@include grid-breakpoint($breakpoints...){
+@include grid-breakpoint($breakpoints...) {
     ...
 };
 ```
