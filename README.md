@@ -81,7 +81,7 @@ or
 
 ```scss
 @include grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false) {
-    "optional custom css"
+    //optional custom css
 }
 ```
 
