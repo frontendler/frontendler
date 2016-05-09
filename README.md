@@ -10,44 +10,44 @@ Simple, efficient.
 ## Dependencies
 Frontendler need Nodejs and Gulp to run.
 
-NODE JS - [How to install](http://nodejs.org/)
+Node.Js - [How to install](http://nodejs.org/)
 
-GULP `$ npm install gulp -g`
+Gulp `$ npm install gulp -g`
 
 ## Install
 Install project node dependencies `$ npm install`
 
 ## Run frontendler
-watch
+**watch**
 
 ```
 $ gulp watch
 ```
 
-build
+**build**
 
 ```
 $ gulp build
 ```
 
-## SASS
+## Sass
 
-### RESET
-reset
+#### Reset
+**reset**
 
 ```scss
 @include reset;
 ```
 
 
-### GRID
-grid-gutter
+#### Grid
+**grid-gutter**
 
 ```scss
 $grid-gutter: 40px !default;
 ```
 
-grid-breakpoints
+**grid-breakpoints**
 
 ```scss
 $grid-breakpoints:(
@@ -59,25 +59,25 @@ $grid-breakpoints:(
 )!default;
 ```
 
-grid-row
+**grid-row**
 
 ```scss
 @include grid-row()
 ```
 
-grid-column
+**grid-column**
 
 ```scss
 @include grid-column($column, $columns: 12, $gutter: $grid-gutter)
 ```
 
-grid-column-breakpoint
+**grid-column-breakpoint**
 
 ```scss
 @include grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false)
 ```
 
-or
+**or**
 
 ```scss
 @include grid-column-breakpoint($breakpoint, $column, $columns: 12, $gutter: false) {
@@ -85,7 +85,7 @@ or
 }
 ```
 
-grid-breakpoint
+**grid-breakpoint**
 
 ```scss
 @include grid-breakpoint($breakpoints...) {
@@ -93,20 +93,20 @@ grid-breakpoint
 };
 ```
 
-grid-breakpoint-hide
+**grid-breakpoint-hide**
 
 ```scss
 @include grid-breakpoint-hide ($breakpoints...);
 ```
 
-grid-breakpoint-show
+**grid-breakpoint-show**
 
 ```scss
 @include grid-breakpoint-show ($breakpoints...);
 ```
 
-### COLOR
-colors
+#### Colors
+**colors**
 
 ```scss
 $colors:(
@@ -124,23 +124,23 @@ $colors:(
 ) !default;
 ```
 
-color
+**color**
 
 ```scss
 @function color($color-name,$amount:50%)
 ```
 
-### ANIMATIONS
+#### Animations
 
-animations
+**animations**
 ```scss
 @include animations;
 ```
-animation-duration
+**animation-duration**
 ```scss
 $animation-duration: 0.25s !default;
 ```
-animation-time-functions
+**animation-time-functions**
 ```scss
 $animation-time-functions: (
 	"in-out-quad": cubic-bezier(0.455, 0.030, 0.515, 0.955),
@@ -152,7 +152,7 @@ $animation-time-functions: (
 	"in-out-circ": cubic-bezier(0.785, 0.135, 0.150, 0.860),
 ) !default;
 ```
-animation-keyframes
+**animation-keyframes**
 ```scss
 $animation-keyframes:(
 	"fade-in",
@@ -167,15 +167,20 @@ $animation-keyframes:(
 ) !default;
 ```
 
-### UTILS
-clearfix
+#### Utils
+
+**clearfix**
+
+More about this mixin in this [link](http://cssmojo.com/latest_new_clearfix_so_far/).
 
 ```scss
 @include clearfix;
 ```
 
 
-box-shadow
+**box-shadow**
+
+Based in this awesome [freebie](https://medium.com/@Florian/freebie-google-material-design-shadow-helper-2a0501295a2d).
 
 ```scss
 @include box-shadow ($level);
