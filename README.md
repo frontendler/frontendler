@@ -7,6 +7,8 @@ Simple, efficient.
 
 [http://frontendler.com.br/](http://frontendler.com.br/)
 
+---
+
 ## Dependencies
 Frontendler need Nodejs and Gulp to run.
 
@@ -180,3 +182,6 @@ box-shadow
 ```scss
 @include box-shadow ($level);
 ```
+
+---
+Made with ♥ by Daniel Beff ([@dbeff](http://www.danielbeff.com.br/))
