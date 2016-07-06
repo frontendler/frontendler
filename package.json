@@ -13,14 +13,13 @@
     "type": "git",
     "url": "https://github.com/frontendler/frontendler"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "apache-server-configs": "^2.14.0",
     "browser-sync": "^2.9.11",
     "del": "^2.2.0",
     "eslint": "^2.3.0",
-    "eslint-config-frontendler": "^0.1.0",
+    "eslint-config-frontendler": "^0.1.1",
     "frontendler-sass": "^0.3.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
