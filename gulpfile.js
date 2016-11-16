@@ -94,9 +94,9 @@ gulp.task("images", function() {
 });
 
 gulp.task("html", function() {
-    return gulp.src([app + "/**/*.html"])
+    return gulp.src([dev + "/**/*.html"])
         .pipe(plugins.plumber())
-        .pipe(useref({ searchPath: "{" + dev + "," + app + "}" }))
+        .pipe(plugins.useref({ searchPath: "{" + dev + "," + app + "}" }))
         .pipe(plugins.if("*.js", plugins.uglify()))
         .pipe(plugins.if("*.css", plugins.csso()))
         .pipe(plugins.if("*.html", plugins.minifyHtml()))
